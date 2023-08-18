@@ -15,11 +15,11 @@
 .left-section {
     background: #F3F7FB;
     text-align: left !important;
-    gap: 72px;
     flex: 1.5;
     /* This sets equal width for both divs */
+    gap: 72px;
     flex-basis: 0;
-    padding: 32px;
+    padding: 41px;
     width: 100%;
     border-radius: 12px 0px 0px 12px;
 }
@@ -48,7 +48,7 @@ span#nest {
 .review-text {
     gap: 9px;
     margin-bottom: 48px;
-    margin-top: 11px;
+    margin-top: 41px;
 }
 
 h2#hero-text {
@@ -58,6 +58,10 @@ h2#hero-text {
     font-style: normal;
     font-weight: 400;
     line-height: 56px;
+    height: 112px;
+flex: 1 0 0;
+margin-bottom: 30px;
+
 }
 
 p#hero-paragraph {
@@ -180,15 +184,6 @@ input {
     width: 110%;
 }
 
-.alert{
-    color: #eb8585;
-    margin-top: 10px;
-    text-align: center;
-    padding: 0;
-}
-
-
-
 label {
     color: var(--black-colour-black-colour-60, #020202);
     font-family: 'Open Sans', sans-serif;
@@ -207,12 +202,24 @@ input::placeholder {
     line-height: 28px;
 }
 
+.login-success{
+    font-size: 20px;
+    font-weight: 700;
+    color: #00235D;
+}
+
+.login-error{
+    font-size: 20px;
+    font-weight: 700;
+    color: red;
+}
+
 button#sign-up-btn {
     background-color: #011055;
     border: none;
     width: 110%;
     padding: 14px 24px;
-    margin-top: 40px;
+    margin-top: 70px;
     color: #FFF;
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
@@ -261,7 +268,7 @@ span#sign-in {
     /* LEFT-SECTION */
     .left-section {
         gap: 48px;
-        padding: 23px;
+        padding: 35px 46px 35px 24px;
     }
 
     h2#hero-text {

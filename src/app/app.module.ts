@@ -14,8 +14,11 @@ import { WorkSectionComponent } from "./work-section/work-section.component";
 import { SvgComponent } from "./svg/svg.component";
 import { ReviewNowComponent } from "./review-now/review-now.component";
 import { RecentReviewComponent } from "./recent-review/recent-review.component";
-import { SignUpLayoutComponent } from './sign-up-layout/sign-up-layout.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
+import { SignUpLayoutComponent } from "./sign-up-layout/sign-up-layout.component";
+import { SignInComponent } from "./sign-in/sign-in.component";
+import { LandingPageComponent } from "./landing-page/landing-page.component";
+import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -32,9 +35,10 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     ReviewNowComponent,
     RecentReviewComponent,
     SignUpLayoutComponent,
+    SignInComponent,
     LandingPageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
