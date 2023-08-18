@@ -1,6 +1,6 @@
 .recent-section {
   background-color: #011055;
-  max-height: 1162px;
+  min-height: 1162px;
 }
 
 .slider {
@@ -17,6 +17,7 @@
 
 .slider-track {
   width: calc(5 * 378px);
+  display: flex;
   perspective: 100px;
   animation: scroll 40s linear infinite;
 }
@@ -90,4 +91,41 @@
   font-family: "Open Sans", Helvetica;
   color: #ffffff;
   width: 16xx;
+}
+
+@media screen and (max-width: 980px) {
+  .about-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .slider {
+    margin-left: 0;
+  }
+
+  .slider-below {
+    margin-left: -170px;
+  }
+
+  .sub-heading {
+    font-size: 18px;
+    padding-left: 40px;
+  }
+
+  .info {
+    font-size: 16px;
+    width: 100%;
+    line-height: 22px;
+  }
+
+  .padding {
+    padding: 24px;
+  }
+
+  .contact-text {
+    width: 100%;
+    margin-bottom: 24px;
+  }
 }

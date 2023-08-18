@@ -7,8 +7,26 @@
 
 .company {
   margin: 40px auto;
+  overflow: hidden;
 }
 
 .company-logo {
   margin-left: 15px;
+}
+
+@media screen and (max-width: 980px) {
+  .sub-heading-small {
+    font-size: 18px;
+    width: 242px;
+  }
+
+  .info {
+    font-size: 16px;
+    width: 100%;
+    line-height: 22px;
+  }
+
+  .padding {
+    padding: 0 24px;
+  }
 }
