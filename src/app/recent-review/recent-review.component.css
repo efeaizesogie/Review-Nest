@@ -6,7 +6,7 @@
 .slider {
   position: relative;
   overflow: hidden;
-  margin-left: -150px;
+  margin-left: -170px;
 }
 
 .slider-below {
@@ -24,7 +24,7 @@
 .slide {
   display: flex;
   align-items: center;
-  padding: 6px;
+  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -91,32 +91,3 @@
   color: #ffffff;
   width: 16xx;
 }
-
-/* carousel */
-
-.carousel-wrapper {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.carousel-item {
-  flex: 0 0 calc(100% / 4); /* Adjust the percentage as needed */
-  padding: 0 10px;
-}
-
-#continuous-carousel {
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-}
-
-.carousel-inner {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-/* .carousel-item {
-  flex: 0 0 calc(100% / 3); 
-  transition: transform 0.5s ease-in-out;
-} */

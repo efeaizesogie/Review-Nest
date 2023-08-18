@@ -13,7 +13,7 @@
       </div>
 
       <button
-        class="navbar-toggler bg-white"
+        class="navbar-toggle navbar-toggler custom-toggle"
         type="button"
         data-toggle="collapse"
         data-target="#navbarSupportedContent"
@@ -21,7 +21,7 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon menu-icon"></span>
       </button>
     </div>
 
@@ -44,9 +44,10 @@
         </li>
       </ul>
       <a
-        href="./../sign-up/sign-up.component.html"
+        href="#"
         class="btn btn-up my-2 list-item"
-        [routerLink]="'sign-up'"
+        routerLink="/sign-up"
+        (click)="navigateToSignUp()"
         >Sign Up</a
       >
     </div>

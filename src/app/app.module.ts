@@ -15,6 +15,7 @@ import { SvgComponent } from "./svg/svg.component";
 import { ReviewNowComponent } from "./review-now/review-now.component";
 import { RecentReviewComponent } from "./recent-review/recent-review.component";
 import { SignUpLayoutComponent } from './sign-up-layout/sign-up-layout.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { SignUpLayoutComponent } from './sign-up-layout/sign-up-layout.component
     ReviewNowComponent,
     RecentReviewComponent,
     SignUpLayoutComponent,
+    LandingPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

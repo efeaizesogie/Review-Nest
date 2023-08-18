@@ -1,6 +1,6 @@
 header {
   background-color: #011055;
-  height: 90vh;
+  min-height: 90vh;
 }
 
 .left-items {
@@ -51,8 +51,41 @@ header {
 
 .right-items {
   margin-top: -9px;
+  align-items: center;
+  justify-content: center;
 }
 
-app-svg {
-  height: 500px;
+.hero-img {
+  height: 460px;
+}
+
+@media screen and (max-width: 980px) {
+  .left-items {
+    margin-top: 24px;
+  }
+  .right-items {
+    margin-top: 24px;
+  }
+  .hero-img {
+    height: 340px;
+  }
+
+  .heading {
+    margin-bottom: 12px;
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .right-items {
+    margin-top: 24px;
+  }
+
+  .search-form {
+    width: 100% !important;
+  }
+
+  .padding {
+    padding: 24px;
+  }
 }
