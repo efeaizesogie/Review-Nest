@@ -1,0 +1,60 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Palanquin+Dark:400|Open+Sans:400,700,600|Lato:400");
+
+* {
+  box-sizing: border-box;
+}
+
+.navbar-item {
+  background-color: #010b39;
+  box-shadow: 0px 16px 32px #1214170a;
+  font-family: "Open Sans", Helvetica;
+}
+
+.logo-img {
+  height: 22.88px;
+  width: 30.6px;
+}
+
+.brand-text {
+  color: #f2f7fb;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.brand-span {
+  font-weight: 400;
+}
+
+.btn-up {
+  background-color: #fdba21;
+  color: #fefefe;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.link-items {
+  color: #fefefe;
+  width: fit-content;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.link-active {
+  position: relative;
+}
+
+.link-active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 80%;
+  margin-left: 8px;
+  height: 2px;
+  background-color: #fdba21;
+}
+.list-item {
+  width: 120px;
+}

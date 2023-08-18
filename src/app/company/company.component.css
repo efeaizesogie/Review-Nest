@@ -1,0 +1,14 @@
+.sub-heading-small {
+  font-size: 20px;
+  color: #01082b;
+  font-family: "Open Sans";
+  font-weight: 700;
+}
+
+.company {
+  margin: 40px auto;
+}
+
+.company-logo {
+  margin-left: 15px;
+}
