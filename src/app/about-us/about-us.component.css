@@ -1,0 +1,51 @@
+.sub-heading {
+  font-size: 26px;
+  color: #01082b;
+  font-family: "Open Sans", Helvetica;
+  font-weight: 700;
+}
+
+.padding {
+  padding: 70px 0;
+  font-family: "Open Sans", Helvetica;
+}
+
+.ted-head {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.about-para {
+  font-size: 12px;
+  margin-top: 10px;
+  line-height: 18px;
+  color: #323232;
+}
+
+.info {
+  font-size: 18px;
+  margin-top: 10px;
+  line-height: 20px;
+  color: #323232;
+  width: 75%;
+  line-height: 30px;
+}
+
+.about-col {
+  padding-right: 90px;
+}
+
+.steps {
+  position: absolute;
+  left: 550px;
+  top: -10px;
+}
+
+.sec-row {
+  margin-top: 40px;
+}
+
+.about-item {
+  margin-right: 20px;
+}

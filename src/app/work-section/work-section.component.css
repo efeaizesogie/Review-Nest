@@ -1,0 +1,74 @@
+.sub-heading {
+  font-size: 26px;
+  color: #01082b;
+  font-weight: 700;
+}
+
+.support {
+  width: 281px;
+  height: 360px;
+}
+
+.padding {
+  padding: 20px 30px;
+  font-family: "Open Sans", Helvetica;
+}
+
+.info {
+  font-size: 18px;
+  margin-top: 10px;
+  line-height: 20px;
+  color: #323232;
+  font-family: "Open Sans", Helvetica;
+  width: 70%;
+  font-weight: 400;
+  line-height: 26px;
+  margin: 10px auto;
+}
+
+.small-heading {
+  font-size: 18px;
+  font-weight: 400;
+  color: #000d46;
+  font-weight: 700;
+  font-family: "Open Sans", Helvetica;
+}
+
+.about-para {
+  font-size: 12px;
+  margin-top: 10px;
+  line-height: 18px;
+  color: #323232;
+  font-family: "Open Sans", Helvetica;
+}
+
+.width {
+  width: 340px;
+}
+
+.explain-container {
+  position: relative;
+}
+
+.steps {
+  position: absolute;
+  left: -15px;
+  top: -13px;
+  width: 24px;
+  height: auto;
+}
+
+.explain-container {
+  background-color: #e7e7e7;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 8px;
+  width: 340px;
+}
+
+.explain-head {
+  font-size: 14px;
+  color: #000d46;
+  font-weight: 700;
+  font-family: "Open Sans", Helvetica;
+}

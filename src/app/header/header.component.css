@@ -1,0 +1,58 @@
+header {
+  background-color: #011055;
+  height: 90vh;
+}
+
+.left-items {
+  font-family: "Open Sans", Helvetica;
+  color: #fcfcfc;
+  width: 40%;
+}
+
+.heading {
+  margin-bottom: 24px;
+  font-size: 34px;
+}
+
+.head-span {
+  color: #fdba21;
+}
+
+.search-bg {
+  background-color: #cccccc;
+}
+
+.search-bg::placeholder {
+  color: #2c2c2c;
+  font-size: 12px;
+}
+
+.btn-up {
+  background-color: #fdba21;
+  color: #fefefe;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.padding {
+  padding: 30px 0;
+}
+
+.search-form {
+  margin-top: 30px;
+}
+
+.intro {
+  font-weight: 400;
+  color: #dbd7d7;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.right-items {
+  margin-top: -9px;
+}
+
+app-svg {
+  height: 500px;
+}
