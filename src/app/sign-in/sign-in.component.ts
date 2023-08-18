@@ -1,5 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component} from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 
 // below is for the object present in the api response

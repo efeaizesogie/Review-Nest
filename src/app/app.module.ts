@@ -33,7 +33,7 @@ import { HttpClientModule } from '@angular/common/http'
     SvgComponent,
     ReviewNowComponent,
     RecentReviewComponent,
-    SignUpLayoutComponent,,
+    SignUpLayoutComponent,
     SignInComponent
   ],
   imports: [BrowserModule, AppRoutingModule,
