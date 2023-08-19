@@ -94,7 +94,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-100% + 20px));
+    transform: translateX(calc(-100% + 10px));
   }
 }
 
