@@ -19,6 +19,13 @@ import { SignInComponent } from "./sign-in/sign-in.component";
 import { LandingPageComponent } from "./landing-page/landing-page.component";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { BusinessProfileComponent } from './business-profile/business-profile.component';
+import { DashboardNavComponent } from './dashboard-nav/dashboard-nav.component';
+import { LogoComponent } from './logo/logo.component';
+import { ReviewDashboardComponent } from './review-dashboard/review-dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfileComponent } from './profile/profile.component';
+import { FormCreationComponent } from './form-creation/form-creation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +44,13 @@ import { HttpClientModule } from "@angular/common/http";
     SignInComponent,
     SignUpComponent,
     LandingPageComponent,
+    BusinessProfileComponent,
+    DashboardNavComponent,
+    LogoComponent,
+    ReviewDashboardComponent,
+    DashboardComponent,
+    ProfileComponent,
+    FormCreationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
