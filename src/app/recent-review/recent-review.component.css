@@ -60,7 +60,7 @@
     #ffffff1f 43.06%,
     #ffffff00 100%
   );
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
   padding: 24px;
 }
 
@@ -85,6 +85,44 @@
   font-family: "Open Sans", Helvetica;
   color: #ffffff;
   width: 16xx;
+}
+
+/* slider 1 */
+
+@keyframes autoScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% + 20px));
+  }
+}
+
+.scroll-content {
+  display: flex;
+  min-width: 100%;
+  overflow: hidden;
+}
+
+.scroll-section {
+  display: flex;
+  min-width: 100%;
+  animation: autoScroll 20s linear infinite;
+}
+
+@keyframes autoScrollBack {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(100% + 20px));
+  }
+}
+
+.scroll-section-2 {
+  display: flex;
+  min-width: 100%;
+  animation: autoScrollBack 20s linear infinite;
 }
 
 @media screen and (max-width: 980px) {

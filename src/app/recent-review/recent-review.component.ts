@@ -1,29 +1,21 @@
-import { Component, AfterViewInit, OnInit } from "@angular/core";
-import Swiper from "swiper";
+import { Component, AfterViewInit, ElementRef, ViewChild } from "@angular/core";
 
 @Component({
   selector: "app-recent-review",
   templateUrl: "./recent-review.component.html",
   styleUrls: ["./recent-review.component.css"],
 })
-export class RecentReviewComponent implements OnInit, AfterViewInit {
-  swiper: Swiper | undefined;
+export class RecentReviewComponent implements AfterViewInit {
+  @ViewChild("scrollSection") scrollSection!: ElementRef;
 
-  ngOnInit(): void {}
-
-  ngAfterViewInit(): void {
-    this.initSwiper();
-  }
-
-  initSwiper(): void {
-    console.log("swipper init");
-    this.swiper = new Swiper(".swiper", {
-      speed: 300,
-      autoplay: {
-        delay: 0,
-      },
-      allowSlideNext: true,
-      allowSlidePrev: true,
-    });
+  ngAfterViewInit() {
+    this.scrollSection.nativeElement.addEventListener(
+      "animationiteration",
+      () => {
+        this.scrollSection.nativeElement.appendChild(
+          this.scrollSection.nativeElement.firstElementChild
+        );
+      }
+    );
   }
 }
