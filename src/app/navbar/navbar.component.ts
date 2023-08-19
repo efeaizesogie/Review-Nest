@@ -1,5 +1,4 @@
-import { Component } from "@angular/core";
-import { Router } from "@angular/router";
+import { Component, Renderer2 } from "@angular/core";
 
 @Component({
   selector: "app-navbar",
@@ -7,11 +6,11 @@ import { Router } from "@angular/router";
   styleUrls: ["./navbar.component.css"],
 })
 export class NavbarComponent {
-  constructor(private router: Router) {}
+  constructor(private renderer: Renderer2) {}
 
-  navigateToNewPage() {
-    this.router.navigateByUrl("/sign-up");
+  navigateToSignUp() {
+    const anchor = this.renderer.createElement("a");
+    anchor.href = "./../sign-up/sign-up.component.html"; // Update with the correct URL
+    anchor.click();
   }
 }
-
-function showSignUp() {}

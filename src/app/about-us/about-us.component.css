@@ -26,7 +26,6 @@
 .info {
   font-size: 18px;
   margin-top: 10px;
-  line-height: 20px;
   color: #323232;
   width: 75%;
   line-height: 30px;
@@ -48,4 +47,27 @@
 
 .about-item {
   margin-right: 20px;
+}
+
+@media screen and (max-width: 980px) {
+  .about-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .sub-heading {
+    font-size: 18px;
+  }
+
+  .info {
+    font-size: 16px;
+    width: 100%;
+    line-height: 22px;
+  }
+
+  .padding {
+    padding: 24px;
+  }
 }

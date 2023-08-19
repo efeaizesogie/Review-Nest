@@ -1,12 +1,12 @@
 .recent-section {
   background-color: #011055;
-  max-height: 1162px;
+  min-height: 1162px;
 }
 
 .slider {
   position: relative;
   overflow: hidden;
-  margin-left: -150px;
+  margin-left: -170px;
 }
 
 .slider-below {
@@ -17,6 +17,7 @@
 
 .slider-track {
   width: calc(5 * 378px);
+  display: flex;
   perspective: 100px;
   animation: scroll 40s linear infinite;
 }
@@ -24,7 +25,7 @@
 .slide {
   display: flex;
   align-items: center;
-  padding: 6px;
+  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -92,31 +93,39 @@
   width: 16xx;
 }
 
-/* carousel */
+@media screen and (max-width: 980px) {
+  .about-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0 auto;
+  }
 
-.carousel-wrapper {
-  display: flex;
-  transition: transform 0.5s ease;
+  .slider {
+    margin-left: 0;
+  }
+
+  .slider-below {
+    margin-left: -170px;
+  }
+
+  .sub-heading {
+    font-size: 18px;
+    padding-left: 40px;
+  }
+
+  .info {
+    font-size: 16px;
+    width: 100%;
+    line-height: 22px;
+  }
+
+  .padding {
+    padding: 24px;
+  }
+
+  .contact-text {
+    width: 100%;
+    margin-bottom: 24px;
+  }
 }
-
-.carousel-item {
-  flex: 0 0 calc(100% / 4); /* Adjust the percentage as needed */
-  padding: 0 10px;
-}
-
-#continuous-carousel {
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-}
-
-.carousel-inner {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-/* .carousel-item {
-  flex: 0 0 calc(100% / 3); 
-  transition: transform 0.5s ease-in-out;
-} */

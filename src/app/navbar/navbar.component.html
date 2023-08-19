@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-item">
-  <div class="container">
+<nav class="navbar navbar-expand-lg navbar-item sticky-top">
+  <div class="container-fluid">
     <div class="d-flex justify-content-between align-items-center w-100">
       <div class="d-flex justify-content-between align-items-center">
         <img
@@ -13,20 +13,20 @@
       </div>
 
       <button
-        class="navbar-toggler bg-white"
+        class="navbar-toggle navbar-toggler custom-toggle"
         type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon menu-icon"></span>
       </button>
     </div>
 
     <div
-      class="collapse navbar-collapse justify-content-end"
+      class="collapse navbar-collapse justify-content-end mobile-nav"
       id="navbarSupportedContent"
     >
       <ul class="navbar-nav list-items me-3">
@@ -44,9 +44,10 @@
         </li>
       </ul>
       <a
-        href="./../sign-up/sign-up.component.html"
+        href="#"
         class="btn btn-up my-2 list-item"
-        [routerLink]="'sign-up'"
+        routerLink="/sign-up"
+        (click)="navigateToSignUp()"
         >Sign Up</a
       >
     </div>

@@ -1,3 +1,6 @@
+.support-section {
+}
+
 .sub-heading {
   font-size: 26px;
   color: #01082b;
@@ -5,7 +8,7 @@
 }
 
 .support {
-  width: 281px;
+  width: 100%;
   height: 360px;
 }
 
@@ -43,7 +46,7 @@
 }
 
 .width {
-  width: 340px;
+  width: 320px;
 }
 
 .explain-container {
@@ -71,4 +74,27 @@
   color: #000d46;
   font-weight: 700;
   font-family: "Open Sans", Helvetica;
+}
+
+@media screen and (max-width: 980px) {
+  .about-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .sub-heading {
+    font-size: 18px;
+  }
+
+  .info {
+    font-size: 16px;
+    width: 100%;
+    line-height: 22px;
+  }
+
+  .padding {
+    padding: 18px;
+  }
 }

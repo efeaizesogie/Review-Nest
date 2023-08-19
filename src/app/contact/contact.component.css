@@ -4,6 +4,9 @@
   font-family: "Open Sans", Helvetica;
   font-weight: 700;
 }
+.contact-text {
+  width: 50%;
+}
 
 .padding {
   padding: 70px 0;
@@ -24,6 +27,7 @@
   box-shadow: 0px 16px 32px 0px #1215170a;
   padding: 46px 30px;
   border-radius: 8px;
+  width: 50%;
   background: #f6f6f6;
 }
 
@@ -46,4 +50,36 @@
   padding: 10px 24px 10px 24px;
   font-weight: 600;
   margin-top: 10px;
+}
+
+@media screen and (max-width: 980px) {
+  .about-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .sub-heading {
+    font-size: 18px;
+  }
+
+  .info {
+    font-size: 16px;
+    width: 100%;
+    line-height: 22px;
+  }
+
+  .padding {
+    padding: 24px;
+  }
+
+  .form-section {
+    width: 100%;
+  }
+
+  .contact-text {
+    width: 100%;
+    margin-bottom: 24px;
+  }
 }
