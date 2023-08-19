@@ -36,6 +36,7 @@ import { HttpClientModule } from "@angular/common/http";
     RecentReviewComponent,
     SignUpLayoutComponent,
     SignInComponent,
+    SignUpComponent,
     LandingPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
