@@ -5,6 +5,10 @@
   font-weight: 700;
 }
 
+.left-content {
+  min-width: 375px;
+}
+
 .company {
   margin: 40px auto;
   overflow: hidden;
@@ -12,6 +16,26 @@
 
 .company-logo {
   margin-left: 15px;
+}
+
+@keyframes autoScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.scroll-content {
+  min-width: 100%;
+  overflow: hidden;
+}
+
+.scroll-section {
+  white-space: nowrap;
+  min-width: 100%;
+  animation: autoScroll 40s linear infinite;
 }
 
 @media screen and (max-width: 980px) {
@@ -28,5 +52,11 @@
 
   .padding {
     padding: 0 24px;
+  }
+
+  .company-logo {
+    margin-left: 15px;
+    height: 30px;
+    width: auto;
   }
 }
