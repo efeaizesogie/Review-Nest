@@ -18,8 +18,12 @@ export class RecentReviewComponent implements OnInit, AfterViewInit {
   initSwiper(): void {
     console.log("swipper init");
     this.swiper = new Swiper(".swiper", {
-      speed: 400,
-      spaceBetween: 100,
+      speed: 300,
+      autoplay: {
+        delay: 0,
+      },
+      allowSlideNext: true,
+      allowSlidePrev: true,
     });
   }
 }
