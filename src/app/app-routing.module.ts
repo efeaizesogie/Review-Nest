@@ -10,15 +10,6 @@ import { ReviewDashboardComponent } from "./review-dashboard/review-dashboard.co
 import { DashboardComponent } from "./dashboard/dashboard.component";
 
 const routes: Routes = [
-  // {
-  //   path: "",
-  //   redirectTo: "landing-page",
-  //   pathMatch: "full",
-  // },
-  // {
-  //   path: "landing-page",
-  //   component: AppComponent,
-  // },
   {
     path: "landing-page",
     component: LandingPageComponent
@@ -29,12 +20,12 @@ const routes: Routes = [
   },
   {
     path: "sign-in",
-    component: SignInComponent
-  }
+    component: SignInComponent,
+  },
+  {
     path: "dashboard-home",
     component: DashboardComponent,
   },
-
   {
     path: "form-creation",
     component: FormCreationComponent,
@@ -46,10 +37,6 @@ const routes: Routes = [
   {
     path: "review",
     component: ReviewDashboardComponent,
-  },
-  {
-    path: "sign-in",
-    component: SignInComponent,
   },
 ];
 
