@@ -139,7 +139,7 @@ p#hero-paragraph {
 
 .stars {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
 }
 
 /* LEFT SECTION END */
