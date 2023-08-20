@@ -33,6 +33,7 @@ export class AppComponent {
       )
       .subscribe((event: NavigationEnd) => {
         this.showLandingPage = event.urlAfterRedirects === "/landing-page";
+        this.showLandingPage = event.urlAfterRedirects === "/";
         this.showSignUpPage = event.urlAfterRedirects === "/sign-up";
         this.showSignInPage = event.urlAfterRedirects === "/sign-in";
         this.showDashboardPage = event.urlAfterRedirects === "/dashboard";
