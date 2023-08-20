@@ -5,8 +5,4 @@ import { Component } from "@angular/core";
   templateUrl: "./dashboard-nav.component.html",
   styleUrls: ["./dashboard-nav.component.css"],
 })
-export class DashboardNavComponent {
-  searchTerm: string = "";
-
-  search() {}
-}
+export class DashboardNavComponent {}

@@ -1,0 +1,164 @@
+.dashboard {
+  overflow: hidden;
+  width: 100%;
+  font-family: "Open Sans", Helvetica;
+}
+
+.cover-img {
+  display: flex;
+  height: 150px;
+  width: 790px;
+  margin: 16px auto 0 auto;
+  justify-content: flex-end;
+  border-radius: 4px;
+  background: url(./../../assets/dashboard/profile-section-img.png),
+    lightgray 0px -536.167px / 100.536% 705.838% no-repeat;
+}
+
+.cover-change {
+  display: inline-flex;
+  padding: 6px 10px;
+  max-width: 240px;
+  margin-top: 20px;
+  margin-right: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 16px 32px 0px rgba(18, 21, 23, 0.04);
+}
+
+.contact-wrapper {
+  width: 70%;
+  max-height: 462px;
+  margin: -40px auto 0 auto;
+}
+
+.brand-dis {
+  width: 40%;
+  border-radius: 2px;
+  background: #fefefe;
+  padding: 20px;
+  height: 390px;
+  box-shadow: 0px 24px 32px 0px rgba(18, 21, 23, 0.04);
+}
+
+.brand-profile {
+  width: 55%;
+  background: #fefefe;
+  border-radius: 2px;
+  height: 100%;
+  height: 390px;
+  box-shadow: 0px 24px 32px 0px rgba(18, 21, 23, 0.04);
+  padding: 30px 20px;
+}
+
+.logo-img {
+  width: 88px;
+  height: auto;
+}
+
+.logo-content {
+  position: relative;
+}
+
+.orange-cam {
+  position: absolute;
+  top: 60px;
+  right: 6px;
+  width: 32px;
+  background-color: #fdc546;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.para {
+  font-weight: 400;
+  color: #dbd7d7;
+  font-size: 12px;
+  line-height: 20px;
+  font-family: "Open Sans", Helvetica;
+}
+
+.logo-text {
+  font-size: 16px;
+  color: #010b39;
+  margin: 0;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: "Open Sans", Helvetica;
+}
+
+.description {
+  color: #010b39;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.info {
+  color: #545454;
+
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.img-wrapper {
+  margin-top: 32px;
+}
+
+.des-wrapper {
+  margin-top: 12px;
+}
+
+.sub-heading {
+  color: #010b39;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.info {
+  color: #545454;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.heading {
+  color: #010b39;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.social-links {
+  text-decoration: none;
+  margin-right: 12px;
+}
+
+.btn-up {
+  background-color: #fdba21;
+  color: #000311;
+  width: 133px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn-wrapper {
+  width: 70%;
+  max-height: 462px;
+  margin: 20px auto 0 auto;
+}

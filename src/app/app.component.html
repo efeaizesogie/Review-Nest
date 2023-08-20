@@ -1,6 +1,7 @@
 <app-landing-page *ngIf="showLandingPage"></app-landing-page>
 <app-sign-up *ngIf="showSignUpPage"></app-sign-up>
 <app-sign-in *ngIf="showSignInPage"></app-sign-in>
-<!-- <app-landing-page></app-landing-page> -->
-<app-dashboard-nav></app-dashboard-nav>
-<router-outlet></router-outlet>
+<app-dashboard *ngIf="showDashboardPage"></app-dashboard>
+<app-profile *ngIf="showProfilePage"></app-profile>
+<app-form-creation *ngIf="showFormCreationPage"></app-form-creation>
+<app-review-dashboard *ngIf="showReviewPage"></app-review-dashboard>

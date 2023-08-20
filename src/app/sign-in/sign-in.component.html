@@ -88,13 +88,19 @@
         <div class="login-error" *ngIf="!loginSuccessful && errorMessage">
           Invalid User Credentials
         </div>
-        <button id="sign-up-btn" type="submit" class="btn btn-primary">
+        <button
+          id="sign-up-btn"
+          type="submit"
+          class="btn btn-primary"
+          routerLink="/dashboard"
+        >
           Sign in
         </button>
       </form>
 
       <p id="sign-in" class="mt-4">
-        Don't have an account? <span id="sign-in">Sign up</span>
+        Don't have an account?
+        <a href="" id="sign-in" routerLink="/sign-up">Sign up</a>
       </p>
     </div>
   </div>
