@@ -1,7 +1,7 @@
 .dash-nav {
   background: #010b39;
   width: 368px;
-  min-height: 100vh;
+  min-height: 740px;
   font-family: "Open Sans", Helvetica;
   overflow: hidden;
 }
@@ -16,7 +16,7 @@
 
 .dash-nav-items {
   align-items: flex-start;
-  gap: 156px;
+  gap: 215px;
 }
 
 .nav-items-nav {

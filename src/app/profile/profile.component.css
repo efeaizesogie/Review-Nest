@@ -1,3 +1,7 @@
+app-navbar {
+  display: none;
+}
+
 .dashboard {
   overflow: hidden;
   width: 100%;
@@ -6,7 +10,7 @@
 
 .cover-img {
   display: flex;
-  height: 150px;
+  height: 140px;
   width: 790px;
   margin: 16px auto 0 auto;
   justify-content: flex-end;
@@ -31,8 +35,8 @@
 
 .contact-wrapper {
   width: 70%;
-  max-height: 462px;
-  margin: -40px auto 0 auto;
+  min-height: 462px;
+  margin: -60px auto 0 auto;
 }
 
 .brand-dis {
@@ -159,6 +163,52 @@
 
 .btn-wrapper {
   width: 70%;
-  max-height: 462px;
-  margin: 20px auto 0 auto;
+  padding: 0;
+  margin: 10px auto 0 auto;
+}
+
+@media screen and (max-width: 980px) {
+  app-dashboard-nav {
+    display: none;
+  }
+
+  app-dashboard-nav-right {
+    display: none;
+  }
+
+  app-navbar {
+    display: block;
+  }
+
+  .right-content {
+    width: 100%;
+  }
+
+  .cover-img {
+    max-width: 100%;
+  }
+
+  .contact-wrapper {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .brand-dis {
+    width: 100%;
+  }
+
+  .brand-profile {
+    margin-top: 32px;
+    width: 100%;
+  }
+
+  .btn-wrapper {
+    width: 100%;
+    height: 80px;
+  }
+
+  .left-content {
+    width: 100%;
+  }
 }
