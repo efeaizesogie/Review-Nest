@@ -8,6 +8,7 @@ import { FormCreationComponent } from "./form-creation/form-creation.component";
 import { ReviewDashboardComponent } from "./review-dashboard/review-dashboard.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { ProfileComponent } from "./profile/profile.component";
+import { EditProfileComponent } from "./edit-profile/edit-profile.component";
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: "review",
     component: ReviewDashboardComponent,
+  },
+  {
+    path: "edit-profile",
+    component: EditProfileComponent,
   },
 ];
 

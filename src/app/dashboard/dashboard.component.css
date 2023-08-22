@@ -2,6 +2,24 @@
   overflow: hidden;
 }
 
+app-navbar {
+  display: none;
+}
+
+@media screen and (max-width: 980px) {
+  app-dashboard-nav {
+    display: none;
+  }
+
+  app-dashboard-nav-right {
+    display: none;
+  }
+
+  app-navbar {
+    display: block;
+  }
+}
+
 .content{
   width: 1072px;
   padding: 38px 38px 38px 42px;
