@@ -1,6 +1,6 @@
 .dash-nav {
   background: #010b39;
-  width: 368px;
+  width: 330px;
   min-height: 100vh;
   font-family: "Open Sans", Helvetica;
   overflow: hidden;
@@ -8,6 +8,7 @@
 
 .navbar-dashboard {
   padding: 56px 32px 0 32px;
+  height: 900px;
 }
 
 .logo-div {

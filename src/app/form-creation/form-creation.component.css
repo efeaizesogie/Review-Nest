@@ -1,3 +1,236 @@
+*{
+  box-sizing: border-box;
+}
+
 .dashboard {
   overflow: hidden;
+}
+
+.content{
+  gap: 40px;
+}
+
+.left {
+  width: 421px;
+  height: 669px;
+  border-radius: 8px;
+  border: 0.5px solid var(--black-colour-black-colour-10, #CCC);
+  background: var(--white-600, #FEFEFE);
+  box-shadow: 0px 24px 32px 0px rgba(18, 21, 23, 0.04);
+  margin-left: 45px;
+
+}
+
+.header{
+  display: inline-flex;
+align-items: center;
+gap: 128px;
+padding: 10px;
+}
+
+.header-text{
+  color: #010B39;
+font-family: Open Sans;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 28px;
+}
+
+.header-btn{
+  display: flex;
+padding: 8px 16px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 8px;
+border: 0.8px solid var(--primary-colour-primary-key-colour, #011055);
+color: #011055;
+cursor: pointer;
+
+/* Medium Bodytext/3 */
+font-family: Open Sans;
+font-size: 12px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px; /* 166.667% */
+}
+
+.profile-pictures{
+  position: relative;
+}
+
+.sec-profile-pic{
+  width: 421px;
+}
+
+.primary-profile-pic{
+  display: inline-flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 8px;
+position: relative;
+top: -45px;
+}
+
+
+
+.profile-picture{
+border-radius: 88px;
+}
+
+.profile-picture img{
+  width: 88px;
+  height: 88px;
+  border-radius: 88px;
+}
+
+p#profile-name{
+  color: #010B39;
+font-family: Open Sans;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 28px; /* 155.556% */
+text-align: center;
+background: #FEFEFE;
+}
+
+p#profile-desc{
+  width: 96px;
+  color: var(--neutral-colours-neutral-colours-100, #545454);
+
+font-family: Open Sans;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px; /* 157.143% */
+background: #FEFEFE;
+}
+
+.feedback{
+align-items: flex-start;
+gap: 24px;
+padding: 0px 24px;
+}
+
+.experience{
+  gap: 10px;
+}
+
+p#how-was{
+  color: var(--primary-colour-primary-colour-80, #010B39);
+
+/* Medium Bodytext/4 */
+font-family: Open Sans;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 22px; /* 157.143% */
+}
+
+.faces{
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+label#top-label{
+  margin-bottom: 8px;
+  color: var(--primary-colour-primary-colour-80, #010B39);
+font-family: Open Sans;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 22px; /* 157.143% */
+}
+
+label#bottom-label{
+  color: var(--neutral-colours-neutral-colours-100, #545454);
+font-family: Open Sans;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px; /* 157.143% */
+}
+
+.ratings{
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+p#rating{
+  color: var(--primary-colour-primary-colour-80, #010B39);
+font-family: Open Sans;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 22px; 
+}
+
+button#submit-btn{
+  display: flex;
+padding: 10px 24px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 8px;
+background: var(--secondary-colour-secondary-colour-60, #FDBA21);
+color: var(--primary-colour-primary-colour-110, #000311);
+
+font-family: Open Sans;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 22px; /* 157.143% */
+}
+
+/* Right SIDE */
+
+.right{
+padding: 32px 79px 32px 80px;
+align-items: center;
+border-radius: 8px;
+border: 0.5px solid var(--black-colour-black-colour-10, #CCC);
+background: var(--white-600, #FEFEFE);
+box-shadow: 0px 24px 32px 0px rgba(18, 21, 23, 0.04);
+width: 440px;
+height: 470px;
+}
+
+p#create-text{
+  color: var(--primary-colour-primary-colour-80, #010B39);
+font-family: Open Sans;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 28px; /* 155.556% */
+margin-bottom: 24px;
+}
+p#create-paragraph{
+  width: 304px;
+  color: var(--neutral-colours-neutral-colours-100, #545454);
+text-align: center;
+font-family: Open Sans;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 25.888px; /* 161.8% */
+margin-bottom: 32px;
+}
+
+button#create-btn{
+  display: flex;
+padding: 10px 24px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 8px;
+background: var(--secondary-colour-secondary-colour-60, #FDBA21);
+color: var(--primary-colour-primary-colour-110, #000311);
+font-family: Open Sans;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 22px; /* 157.143% */
 }
