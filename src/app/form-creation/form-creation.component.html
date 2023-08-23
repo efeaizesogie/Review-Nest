@@ -1,51 +1,93 @@
-<div class="dashboard d-flex">
-  <app-dashboard-nav></app-dashboard-nav>
+<div class="mt-4 container content d-flex flex-column">
+<div class="header d-flex flex-column">
+  <div class="write-a-review">
+    Write a Review
+  </div>
+  <div class="what-do-you-think">
+    What do you think of our products/services? <br>
+Fill in the form below to share your thoughts about us.
+  </div>
+</div>
+  <div class="left">
+    <div class="profile-pictures">
+      <div class="sec-profile-pic">
+        <img
+          id="sec-profile-pic"
+          src="\assets\form-images\sec-profile.png"
+          alt=""
+        />
+      </div>
 
-  <div class="right-content">
-    <app-dashboard-nav-right></app-dashboard-nav-right>
+      <div class="primary-profile-pic d-flex flex-column">
+        <div class="profile-picture">
+          <img src="\assets\form-images\profile-pic.jpg" alt="" />
+        </div>
+        <div class="profile-desc">
+          <p id="profile-name">Suittie</p>
+          <p class="business-type">Fashion Brand</p>
+        </div>
+      </div>
+    </div>
 
-    <!-- Your form code goes here-->
-    <div class="d-flex mt-4 content">
-      <div class="left d-flex flex-column">
-        <div class="header d-flex justify-content-around">
-          <div class="header-text">Give Feedback</div>
-          <div class="header-btn"><p>Save as default</p></div>
+    <div class="feedback d-flex flex-column">
+      <form action="" class="d-flex form">
+        <div class="left-side-form d-flex flex-column">
+          <div class="email">
+            <label for="email" class="form-label">Email Address</label>
+            <input
+              #name="ngModel"
+              required
+              minlength="1"
+              type="text"
+              class="form-control"
+              id="email"
+              aria-describedby="emailHelp"
+              placeholder="Enter email address"
+              name="pEmail"
+              ngModel
+              required=""
+            />
+            <div *ngIf="name.touched && name.invalid" class="alert">
+              Email Address cannot be empty!
+            </div>
+          </div>
+          <div class="username">
+            <label for="username" class="form-label">Username</label>
+            <input
+              #email="ngModel"
+              type="text"
+              class="form-control"
+              id="username"
+              aria-describedby="emailHelp"
+              placeholder="Enter a username"
+              name="pUserName"
+              ngModel
+              required=""
+            />
+            <div *ngIf="name.touched && name.invalid" class="alert">
+              Username cannot be empty!
+            </div>
+          </div>
+          <div class="product">
+            <label for="product" class="form-label">Product/Service</label>
+            <input
+              #password="ngModel"
+              type="text"
+              class="form-control"
+              id="product"
+              placeholder="Enter a product/service you want to review"
+              name="pProduct"
+              ngModel
+              required=""
+            />
+            <div *ngIf="name.touched && name.invalid" class="alert">
+              Product cannot be empty cannot be empty!
+            </div>
+          </div>
         </div>
 
-        <div class="profile-pictures">
-          <div class="sec-profile-pic">
-            <img src="\assets\form-images\sec-profile.png" alt="" />
-          </div>
-
-          <div class="primary-profile-pic d-flex flex-column">
-            <div class="profile-picture">
-              <img src="\assets\form-images\profile-pic.jpg" alt="" />
-            </div>
-            <div class="profile-desc">
-              <p id="profile-name">Suittie</p>
-              <p>Fashion Brand</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="feedback d-flex flex-column">
-          <form action="">
-            <div><p id="how-was">How was your experience?</p></div>
-            <div class="faces d-flex">
-              <div class="face">
-                <img src="\assets\form-images\happy.png" alt="" />
-              </div>
-              <div class="face">
-                <img src="\assets\form-images\very-happy.png" alt="" />
-              </div>
-              <div class="face">
-                <img src="\assets\form-images\sad.png" alt="" />
-              </div>
-              <div class="face">
-                <img src="\assets\form-images\very-sad.png" alt="" />
-              </div>
-            </div>
-
+        <div class="right-side-form d-flex flex-column">
+          <div class="thoughts">
             <label id="top-label" for="thoughts"
               >Do you have any thoughts you’d love to share?</label
             >
@@ -54,50 +96,38 @@
                 class="form-control"
                 placeholder="Leave a comment here"
                 id="thoughts"
-                style="height: 100px; width: 373px"
+                style="height: 121px; width: 400px"
               ></textarea>
               <label id="bottom-label" for="thought"
                 >Share thoughts here...</label
               >
             </div>
+          </div>
 
-            <div class="ratings">
-              <p id="rating" class="mb-1">Rate our services</p>
-              <div class="stars d-flex">
-                <div class="star">
-                  <img src="\assets\form-images\Star 4.png" alt="" />
-                </div>
-                <div class="star">
-                  <img src="\assets\form-images\Star 4.png" alt="" />
-                </div>
-                <div class="star">
-                  <img src="\assets\form-images\Star 4.png" alt="" />
-                </div>
-                <div class="star">
-                  <img src="\assets\form-images\Star 4.png" alt="" />
-                </div>
-                <div class="star">
-                  <img src="\assets\form-images\Star 4.png" alt="" />
-                </div>
+          <div class="ratings">
+            <p id="rating" class="mb-1">Rate our services</p>
+            <div class="stars d-flex">
+              <div class="star">
+                <img src="\assets\form-images\Star 4.png" alt="" />
+              </div>
+              <div class="star">
+                <img src="\assets\form-images\Star 4.png" alt="" />
+              </div>
+              <div class="star">
+                <img src="\assets\form-images\Star 4.png" alt="" />
+              </div>
+              <div class="star">
+                <img src="\assets\form-images\Star 4.png" alt="" />
+              </div>
+              <div class="star">
+                <img src="\assets\form-images\Star 4.png" alt="" />
               </div>
             </div>
+          </div>
 
-            <button id="submit-btn" type="submit" class="btn ">Submit</button>
-          </form>
+          <button id="submit-btn" type="submit" class="btn">Submit</button>
         </div>
-      </div>
-
-      <div class="right d-flex flex-column">
-        <div><p id="create-text">Create New Feedback Form</p></div>
-        <div class="create-img"><img src="\assets\form-images\form.png" alt=""></div>
-        <div class="create-paragraph"><p id="create-paragraph">Seamlessly craft a personalized feedback form to gather the insights you need and improve user experience for your business.</p></div>
-        <button id="create-btn" type="" class="btn ">Create New Form</button>
-      </div>
+      </form>
     </div>
   </div>
 </div>
-
-
-
-<!-- now let me be more specific on the ui
-there's going to be an input field where the user types in the question he wants, then there will be a dropdown to choose the particular answering option he/she wants(left side of the page). Now after the user has typed out the question he/she wants and chosen the answering option he wants, theres a button below that adds the form(question and answering option) to the right side of the page...now each form that is added is displayed on the left side which is a conatiner of 2 columns and multiple rows depending on how many forms are added -->

@@ -6,19 +6,7 @@ app-navbar {
   display: none;
 }
 
-@media screen and (max-width: 980px) {
-  app-dashboard-nav {
-    display: none;
-  }
 
-  app-dashboard-nav-right {
-    display: none;
-  }
-
-  app-navbar {
-    display: block;
-  }
-}
 
 .content{
   width: 1072px;
@@ -212,9 +200,59 @@ height: 152.663px;
 }
 
 
-@media (max-width: 768px) {
+
+@media (max-width: 576px),
+(min-width: 577px) and (max-width: 800px) {
   .carousel-slide {
     width: 100%; /* Full width in mobile view */
   }
+
+  .carousel-container{
+    overflow-x: scroll;
+    width: 340px;
+  }
+
+  .carousel-slide{
+    width: 200px;
+  }
+
+  .graph{
+    width: 312px;
+padding: 24px 16px;
+gap: 16px 180px;
+  }
+
+  .pie-chart-container{
+    width: 312px;
+    padding: 24px;
+    gap: 8px;
+  }
+
+  .chart-and-desc{
+    flex-direction: column;
+  }
+
+  .desc{
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
 }
 
+@media screen and (max-width: 980px) {
+  app-dashboard-nav {
+    display: none;
+  }
+
+  app-dashboard-nav-right {
+    display: none;
+  }
+
+  app-navbar {
+    display: block;
+  }
+
+  .statistics{
+    flex-direction: column;
+  }
+}
