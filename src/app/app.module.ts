@@ -27,6 +27,7 @@ import { ProfileComponent } from "./profile/profile.component";
 import { FormCreationComponent } from "./form-creation/form-creation.component";
 import { DashboardNavRightComponent } from "./dashboard-nav-right/dashboard-nav-right.component";
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { ReviewsComponent } from './reviews/reviews.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +55,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     FormCreationComponent,
     DashboardNavRightComponent,
     EditProfileComponent,
+    ReviewsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

@@ -9,14 +9,17 @@ import { HttpClient } from "@angular/common/http";
 export class EditProfileComponent implements OnInit {
   showEditProfilePage: boolean = false;
 
-  apiData: any; // To store the API response
+  apiData: any;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     // Call the API when the component initializes
-    this.http.get("YOUR_API_URL").subscribe((data) => {
-      this.apiData = data;
-    });
+    this.http
+      .get("https://reviewnest.onrender.com/api/v1/user")
+      .subscribe((data) => {
+        this.apiData = data;
+        console.log(this.apiData);
+      });
   }
 }
