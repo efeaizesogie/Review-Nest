@@ -240,6 +240,10 @@ span#sign-in {
     line-height: 28px;
 }
 
+a#sign-in{
+    text-decoration: none;
+}
+
 /* Rght Section end */
 
 /* Styles for all device sizes */
