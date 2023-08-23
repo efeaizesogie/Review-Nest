@@ -28,6 +28,7 @@ import { FormCreationComponent } from "./form-creation/form-creation.component";
 import { DashboardNavRightComponent } from "./dashboard-nav-right/dashboard-nav-right.component";
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ReviewsComponent } from './reviews/reviews.component';
+import { NavbarDasComponent } from './navbar-das/navbar-das.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +57,7 @@ import { ReviewsComponent } from './reviews/reviews.component';
     DashboardNavRightComponent,
     EditProfileComponent,
     ReviewsComponent,
+    NavbarDasComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

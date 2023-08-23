@@ -141,7 +141,7 @@ thead th {
   background: #2b3871;
 }
 
-app-navbar {
+app-navbar-das {
   display: none;
 }
 
@@ -154,7 +154,7 @@ app-navbar {
     display: none;
   }
 
-  app-navbar {
+  app-navbar-das {
     display: block;
   }
 
