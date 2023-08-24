@@ -30,6 +30,8 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { UserService } from "./user.service";
 import { SubmissionComponent } from './submission/submission.component';
 import { ReviewService } from "./review.service";
+import { ReviewsComponent } from './reviews/reviews.component';
+import { NavbarDasComponent } from './navbar-das/navbar-das.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +60,8 @@ import { ReviewService } from "./review.service";
     DashboardNavRightComponent,
     EditProfileComponent,
     SubmissionComponent,
+    ReviewsComponent,
+    NavbarDasComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, ReactiveFormsModule],
   providers: [UserService, ReviewService],

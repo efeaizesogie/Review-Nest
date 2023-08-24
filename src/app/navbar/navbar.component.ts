@@ -1,4 +1,10 @@
-import { Component, Renderer2 } from "@angular/core";
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Output,
+  Renderer2,
+} from "@angular/core";
 
 @Component({
   selector: "app-navbar",
@@ -6,11 +12,17 @@ import { Component, Renderer2 } from "@angular/core";
   styleUrls: ["./navbar.component.css"],
 })
 export class NavbarComponent {
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   navigateToSignUp() {
     const anchor = this.renderer.createElement("a");
     anchor.href = "./../sign-up/sign-up.component.html"; // Update with the correct URL
     anchor.click();
+  }
+
+  @Output() scrollToSectionEvent = new EventEmitter<string>();
+
+  scrollToSection(sectionId: string) {
+    this.scrollToSectionEvent.emit(sectionId);
   }
 }

@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar-das></app-navbar-das>
 
 <div class="dashboard d-flex">
   <app-dashboard-nav></app-dashboard-nav>
@@ -8,9 +8,9 @@
 
     <div class="cover-img">
       <div class="cover-change d-flex">
-        <div class="camera-icon">
+        <div class="camera-icon me-1">
           <img
-            src=",/../../../assets/dashboard/camera.svg"
+            src="./../../assets/dashboard/basil_camera-outline copy.svg"
             alt="Camera icon"
             class="cam-img"
           />
@@ -39,83 +39,82 @@
               />
             </div>
             <div class="com-logo-text mt-2 text-center">
-              <p class="logo-text mb-1">Suittie</p>
-              <div class="online-status d-flex gap-2">
+              <p class="logo-text mb-1">
+                {{ userInput$.company_name }}
+              </p>
+              <div class="online-status gap-2 text-center d-flex">
                 <img
                   src="./../../assets/dashboard/green-active.svg"
                   alt=""
                   class="active-logo"
                 />
-                <p class="active-now">Active Now</p>
+                <p class="active-now">Active now</p>
               </div>
             </div>
           </div>
-          <div class="img-wrapper">
+          <div class="des-wrapper">
             <p class="sub-heading">Description</p>
-            <p class="info">
-              We are dedicated to pushing creative boundaries, seamlessly
-              blending bold and innovative urban aesthetics with a refined touch
-              of timeless elegance.
-            </p>
+            <p class="info">{{ userInput$.company_description }}</p>
           </div>
           <div class="des-wrapper">
             <p class="sub-heading">Category</p>
-            <p class="info">Fashion Brand</p>
+            <p class="info">{{ userInput$.category }}</p>
           </div>
         </div>
-        <div class="brand-profile">
-          <p class="heading">Contact Information</p>
-          <div class="des-wrapper">
-            <p class="sub-heading">Email address</p>
-            <p class="info">suittie@gmail.com</p>
-          </div>
-          <div class="des-wrapper">
-            <p class="sub-heading">Physical address</p>
-            <p class="info">#30 Cetenary City, Golf Estate, Enugu State</p>
-          </div>
-          <div class="des-wrapper">
-            <p class="sub-heading">Email Address</p>
-            <p class="info">suittie@gmail.com</p>
-          </div>
-          <div class="des-wrapper">
-            <p class="sub-heading">Phone number</p>
-            <p class="info">09065875373, 08167548276</p>
-          </div>
-          <div class="des-wrapper">
-            <p class="sub-heading mb-2">Social media</p>
-            <a href="#" class="social-links"
-              ><img
-                src="./../../assets/dashboard/skill-icons_linkedin.svg"
-                alt=""
-            /></a>
-            <a href="#" class="social-links"
-              ><img
-                src="./../../assets/dashboard/skill-icons_instagram.svg"
-                alt=""
-            /></a>
-            <a href="#" class="social-links"
-              ><img
-                src="./../../assets/dashboard/fa6-brands_square-threads.svg"
-                alt=""
-            /></a>
-            <a href="#" class="social-links"
-              ><img
-                src="./../../assets/dashboard/skill-icons_twitter.svg"
-                alt=""
-            /></a>
-            <a href="#" class="social-links"
-              ><img src="./../../assets/dashboard/logos_facebook.svg" alt=""
-            /></a>
+        <div class="right">
+          <div class="brand-profile">
+            <p class="heading">Contact Information</p>
+            <div class="des-wrapper">
+              <p class="sub-heading">Email address</p>
+              <p class="info">{{ userInput$.email }}</p>
+            </div>
+            <div class="des-wrapper">
+              <p class="sub-heading">Physical address</p>
+              <p class="info">{{ userInput$.phyAddress }}</p>
+            </div>
+
+            <div class="des-wrapper">
+              <p class="sub-heading">Phone number</p>
+              <p class="info">
+                {{ userInput$.pNumber }}
+              </p>
+            </div>
+            <div class="des-wrapper">
+              <p class="sub-heading mb-2">Social media</p>
+              <a href="#" class="social-links"
+                ><img
+                  src="./../../assets/dashboard/skill-icons_linkedin.svg"
+                  alt=""
+              /></a>
+              <a href="#" class="social-links"
+                ><img
+                  src="./../../assets/dashboard/skill-icons_instagram.svg"
+                  alt=""
+              /></a>
+              <a href="#" class="social-links"
+                ><img
+                  src="./../../assets/dashboard/fa6-brands_square-threads.svg"
+                  alt=""
+              /></a>
+              <a href="#" class="social-links"
+                ><img
+                  src="./../../assets/dashboard/skill-icons_twitter.svg"
+                  alt=""
+              /></a>
+              <a href="#" class="social-links"
+                ><img src="./../../assets/dashboard/logos_facebook.svg" alt=""
+              /></a>
+            </div>
           </div>
         </div>
       </div>
       <div class="container btn-wrapper">
-        <button class="btn btn-up mt-3" (click)="showEditProfilePage = true">
+        <button class="btn btn-up mt-3" (click)="showEditProfilePage()">
           Edit Profile
         </button>
       </div>
     </div>
 
-    <app-edit-profile *ngIf="showEditProfilePage"></app-edit-profile>
+    <app-edit-profile></app-edit-profile>
   </div>
 </div>

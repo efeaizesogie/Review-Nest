@@ -13,51 +13,54 @@
           <p class="change-text w-75">Click to change image</p>
         </div>
       </div>
-      <div class="close-btn d-flex align-items-center justify-content-center">
+      <div
+        class="close-btn d-flex align-items-center justify-content-center"
+        (click)="hideElement()"
+      >
         <img
           src="./../../assets/dashboard/iconoir_cancel.svg"
           alt="cancel"
           class="close-img"
-          (click)="showEditProfilePage = false"
         />
       </div>
     </div>
   </div>
 
-  <div
+  <form
     class="edit-elements d-sm-flex d-lg-flex justify-content-between flex-wrap"
+    #editForm="ngForm"
   >
     <div class="left">
       <div class="des-wrapper">
-        <label for="brand-name" class="form-label">Brand Name</label>
+        <label for="company_name" class="form-label">Brand Name</label>
         <input
           #brandName="ngModel"
-          name="pbrandName"
+          name="company_name"
           type="text"
           class="form-control"
-          id="brand-name"
+          id="company_name"
           placeholder="Suittie"
           ngModel
         />
       </div>
       <div class="des-wrapper">
-        <label for="brand-name" class="form-label">Catergory</label>
+        <label for="category" class="form-label">Category</label>
         <input
           #brandName="ngModel"
-          name="pbrandName"
+          name="category"
           type="text"
           class="form-control"
-          id="brand-name"
-          placeholder="Fashion Brand"
+          id="category"
+          placeholder=" e.g Fashion Brand"
           ngModel
         />
       </div>
       <div class="des-wrapper">
-        <label for="brand-name" class="form-label">Description</label>
+        <label for="company_description" class="form-label">Description</label>
         <textarea
           #brandName="ngModel"
-          name="pbrandName"
-          id="brand-name"
+          name="company_description"
+          id="company_description"
           class="form-control"
           cols="30"
           rows="6"
@@ -68,60 +71,65 @@
     </div>
     <div class="right">
       <div class="des-wrapper">
-        <label for="brand-name" class="form-label">Email Address</label>
+        <label for="email" class="form-label">Email Address</label>
         <input
           #brandName="ngModel"
-          name="pbrandName"
+          name="email"
           type="text"
           class="form-control"
-          id="brand-name"
-          placeholder="Suittie"
+          id="e-mail"
+          placeholder="Suittie@gmail.com"
           ngModel
         />
       </div>
       <div class="des-wrapper">
-        <label for="brand-name" class="form-label">Physical Address</label>
+        <label for="phyAddress" class="form-label">Physical Address</label>
         <input
           #brandName="ngModel"
-          name="pbrandName"
+          name="phyAddress"
           type="text"
           class="form-control"
-          id="brand-name"
-          placeholder="Fashion Brand"
+          id="phy-address"
+          placeholder="e.g No 27 Nigeria street"
           ngModel
         />
       </div>
       <div class="des-wrapper">
-        <label for="brand-name" class="form-label">Phone Number</label>
+        <label for="pNumber" class="form-label">Phone Number</label>
         <input
           #brandName="ngModel"
-          name="pbrandName"
+          name="pNumber"
           type="text"
           class="form-control"
-          id="brand-name"
-          placeholder="Fashion Brand"
+          id="p-number"
+          placeholder="e.g 090..."
           ngModel
         />
       </div>
       <div class="des-wrapper">
-        <label for="brand-name" class="form-label">Social Medial</label>
+        <label for="socials" class="form-label">Social Media</label>
         <textarea
           #brandName="ngModel"
-          name="pbrandName"
-          id="brand-name"
+          name="socials"
+          id="socials"
           class="form-control"
           cols="30"
           rows="6"
           placeholder="https://suittie@linkedin.com
-    https://suittie@instagram.com
-    https://suittie@threads.com
-    https://suittie@twitter.com
-    https://suittie@facebook.com"
+https://suittie@instagram.com
+https://suittie@threads.com
+https://suittie@twitter.com
+https://suittie@facebook.com"
           ngModel
         ></textarea>
       </div>
     </div>
-  </div>
+  </form>
 
-  <button class="btn btn-up" routerLink="/profile">Update</button>
+  <input
+    class="btn btn-up"
+    type="submit"
+    value="Update"
+    (click)="onUpdateClicked(editForm)"
+  />
 </div>

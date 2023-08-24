@@ -1,8 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@500&display=swap");
+
 .dashboard {
   overflow: hidden;
 }
 
-app-navbar {
+.sub-heading {
+  color: #011055;
+  font-family: "Palanquin Dark";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+}
+
+.review-tab {
+  width: 949px;
+  color: #010b39;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.rate {
+  height: 18px;
+  width: auto;
+}
+
+thead tr {
+  border-radius: 8px 8px 0px 0px;
+}
+
+thead th {
+  border-bottom: 1px solid #ccc;
+  background: #ebebeb;
+}
+
+.tab-body {
+  padding: 12px 16px;
+}
+
+.review-heading {
+  color: #020202;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.review-text {
+  color: #323232;
+
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.display-btn {
+  display: flex;
+  padding: 4px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  background: #d2d2d2;
+}
+
+.date-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.date-content {
+  color: #545454;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.box {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #808080;
+}
+
+.time-content {
+  color: #545454;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.scroll-nav {
+  display: flex;
+  width: 949px;
+  padding: 32px 307px 8px 307px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.scroll-content {
+  width: 330px;
+  height: 36px;
+}
+
+.page-number {
+  display: inline-flex;
+  padding: 8px 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #565656;
+  font-family: Open Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.active {
+  display: inline-flex;
+  color: #ffffff;
+  padding: 8px 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #2b3871;
+}
+
+app-navbar-das {
   display: none;
 }
 
@@ -15,7 +154,23 @@ app-navbar {
     display: none;
   }
 
-  app-navbar {
+  app-navbar-das {
     display: block;
+  }
+
+  table {
+    overflow: auto;
+  }
+
+  .review-tab {
+    overflow: scroll;
+  }
+
+  .tab-head {
+    overflow-x: scroll;
+  }
+
+  .scroll-nav {
+    width: 100vw;
   }
 }

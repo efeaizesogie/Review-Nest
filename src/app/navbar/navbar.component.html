@@ -22,22 +22,39 @@
     >
       <ul class="navbar-nav list-items me-3">
         <li class="nav-item list-item">
-          <a class="nav-link link-items link-active" href="#">Home </a>
+          <a
+            class="nav-link link-items link-active"
+            href="#"
+            (click)="scrollToSection('#header')"
+            >Home
+          </a>
         </li>
         <li class="nav-item list-item">
-          <a class="nav-link link-items" href="#">About Us</a>
+          <a
+            class="nav-link link-items"
+            (click)="scrollToSection('#about')"
+            href="#"
+            >About Us</a
+          >
         </li>
         <li class="nav-item list-item">
-          <a class="nav-link link-items" href="#">Reviews</a>
+          <a
+            class="nav-link link-items"
+            href="#"
+            (click)="scrollToSection('#reviews')"
+            >Reviews</a
+          >
         </li>
         <li class="nav-item list-item">
-          <a class="nav-link link-items" href="#" routerLink="/contact">Contact Us</a>
+          <a
+            class="nav-link link-items"
+            href="#"
+            (click)="scrollToSection('#contact')"
+            >Contact Us</a
+          >
         </li>
       </ul>
-      <a
-        href="#"
-        class="btn btn-up my-2 list-item"
-        routerLink="/sign-up"
+      <a href="#" class="btn btn-up my-2 list-item" routerLink="/sign-up"
         >Sign Up</a
       >
     </div>
