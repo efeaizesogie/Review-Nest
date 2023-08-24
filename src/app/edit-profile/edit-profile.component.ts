@@ -42,6 +42,10 @@ export class EditProfileComponent {
     var formValues = editForm.value;
     this.userInputService.updateUserInput(formValues);
 
+    const elementToHide = document.querySelector(".edit-wrapper");
+    if (elementToHide) {
+      this.renderer.setStyle(elementToHide, "display", "none");
+    }
     console.log(formValues);
 
     const headers = new HttpHeaders({
