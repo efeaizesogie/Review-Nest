@@ -5,6 +5,7 @@ import {
   Event as NavigationEvent,
 } from "@angular/router";
 import { filter } from "rxjs/operators";
+import { UserInputService } from "../user-input.service";
 
 @Component({
   selector: "app-profile",
@@ -13,8 +14,9 @@ import { filter } from "rxjs/operators";
 })
 export class ProfileComponent {
   showEditProfilePage: boolean = false;
+  brandName: any;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private dataService: UserInputService) {
     this.router.events
       .pipe(
         filter(
@@ -26,4 +28,6 @@ export class ProfileComponent {
         this.showEditProfilePage = event.urlAfterRedirects === "/edit-profile";
       });
   }
+
+  userInput$ = this.dataService.userInput$;
 }

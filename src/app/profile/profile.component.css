@@ -11,7 +11,7 @@ app-navbar-das {
 .cover-img {
   display: flex;
   height: 140px;
-  width: 790px;
+  max-width: 790px;
   margin: 16px auto 0 auto;
   justify-content: flex-end;
   border-radius: 4px;
@@ -33,6 +33,11 @@ app-navbar-das {
   box-shadow: 0px 16px 32px 0px rgba(18, 21, 23, 0.04);
 }
 
+.cam-img {
+  width: 24px;
+  height: auto;
+}
+
 .contact-wrapper {
   width: 70%;
   min-height: 462px;
@@ -49,13 +54,12 @@ app-navbar-das {
 }
 
 .brand-profile {
-  width: 55%;
   background: #fefefe;
   border-radius: 2px;
   height: 100%;
   height: 390px;
   box-shadow: 0px 24px 32px 0px rgba(18, 21, 23, 0.04);
-  padding: 30px 20px;
+  padding: 30px 30px;
 }
 
 .logo-img {
@@ -180,13 +184,22 @@ app-navbar-das {
     display: block;
   }
 
+  .cover-img {
+    width: 100%;
+  }
+
   .right-content {
     width: 100%;
   }
 
-  .cover-img {
-    max-width: 100%;
+  .right {
+    width: 100%;
+    margin: 0 auto;
   }
+
+  /* .cover-img {
+    max-width: 100%;
+  } */
 
   .contact-wrapper {
     flex-direction: column;
