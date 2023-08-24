@@ -249,6 +249,12 @@ span#sign-in {
 
 a#sign-in{
     text-decoration: none;
+    color: #011055;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
 }
 
 /* Rght Section end */

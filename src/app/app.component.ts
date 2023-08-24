@@ -22,6 +22,7 @@ export class AppComponent {
   showProfilePage: boolean = false;
   showReviewPage: boolean = false;
   showFormCreationPage: boolean = false;
+  showSubmissionPage: boolean = false;
 
   constructor(private router: Router) {
     this.router.events
@@ -39,8 +40,8 @@ export class AppComponent {
         this.showDashboardPage = event.urlAfterRedirects === "/dashboard";
         this.showProfilePage = event.urlAfterRedirects === "/profile";
         this.showReviewPage = event.urlAfterRedirects === "/review";
-        this.showFormCreationPage =
-          event.urlAfterRedirects === "/form-creation";
+        this.showFormCreationPage = event.urlAfterRedirects === "/form-creation";
+        this.showSubmissionPage = event.urlAfterRedirects === "/success";   
       });
   }
 }

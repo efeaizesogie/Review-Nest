@@ -244,6 +244,10 @@ a#sign-in{
     text-decoration: none;
 }
 
+.error-message{
+    color: red;
+}
+
 /* Rght Section end */
 
 /* Styles for all device sizes */
