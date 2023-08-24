@@ -145,6 +145,18 @@ app-navbar-das {
   display: none;
 }
 
+.star {
+  display: inline-block;
+  width: 18px; /* Adjust the width and height as needed */
+  height: 18px;
+  background-image: url("./../../assets/assets(svg)/Star_empty.svg"); /* Set the path to your unfilled star image */
+  background-size: cover;
+}
+
+.star.filled {
+  background-image: url("./../../assets/assets(svg)/star-4-11.svg"); /* Set the path to your filled star image */
+}
+
 @media screen and (max-width: 980px) {
   app-dashboard-nav {
     display: none;
