@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
-
-// Import the confirmPasswordValidator
 import { confirmPasswordValidator } from '../confirm-password.validator';
 
 @Component({

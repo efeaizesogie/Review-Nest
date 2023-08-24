@@ -13,6 +13,10 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 export class FormCreationComponent {
   feedbackForm: FormGroup;
+  submitted: boolean = false;
+  showOverlay: boolean = false;
+  pRating: number = 0; // Initialize pRating
+
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.feedbackForm = this.fb.group({
@@ -20,25 +24,44 @@ export class FormCreationComponent {
       pUserName: ['', [Validators.required]],
       pProduct: ['', [Validators.required]],
       pThoughts: ['', [Validators.required]],
-      pRating: [0, [Validators.required, Validators.min(1), Validators.max(5)]]
+      pRating: [this.pRating, [Validators.required, Validators.min(1), Validators.max(5)]]
     });
-    console.log('hettttt')
   } 
+
+  setRating(rating: number) {
+    this.pRating = rating;
+    // You can log the selected rating to verify that it's working
+    console.log('Selected rating:', this.pRating);
+  }
+
+  closeSubmissionComponent() {
+    this.submitted = false; // Close the submission component
+  }
   onSubmit(feedbackDetails: { pEmail:string, pProduct:string, pRating:string, pUserName:string, pThoughts:string} ) {
     const userID = localStorage.getItem('userID');
       const feedbackData = {
         email: feedbackDetails.pEmail,
         product: feedbackDetails.pProduct,
-        rating: feedbackDetails.pRating,
+        rating: this.pRating.toString(),
         userName: feedbackDetails.pUserName,
         feedBack: feedbackDetails.pThoughts
       };
+
+      if (this.feedbackForm) { // Check if the form exists
+        const pRatingControl = this.feedbackForm.get('pRating');
+        if (pRatingControl) { // Check if the pRating form control exists
+          pRatingControl.setValue(feedbackDetails.pRating); // Set the value
+          rating: this.pRating.toString()
+        }
+      }
       console.log(feedbackData);
       console.log(userID)
     this.http.post(`https://reviewnest.onrender.com/api/v1/reviews/create/${userID}`, feedbackData)
     .subscribe(
       (response) =>{
-        console.log(response, "feedback submitted")
+        console.log(response, "feedback submitted");
+        this.submitted = true;
+        this.showOverlay = true;
       },
       (error:HttpErrorResponse) =>{
         console.error('Error submitting review', error)
@@ -46,5 +69,7 @@ export class FormCreationComponent {
     )
     
   }
+
+
 }
 

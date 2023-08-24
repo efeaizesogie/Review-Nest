@@ -9,10 +9,18 @@ border-radius: 8px;
 border: 1px solid var(--stroke-light, #DEE2E6);
 background: #FEFEFE;
 box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.08), 0px 0px 2px 0px rgba(0, 0, 0, 0.12);
+position: relative;
 }
 
 .check{
     margin-bottom: 24px;
+}
+
+#close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
 }
 
 p#submission{
