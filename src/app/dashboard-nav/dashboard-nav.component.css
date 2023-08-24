@@ -1,3 +1,7 @@
+a#logo{
+  text-decoration: none;
+}
+
 .dash-nav {
   background: #010b39;
   width: 318px;

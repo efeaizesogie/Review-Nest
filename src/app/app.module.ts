@@ -17,7 +17,7 @@ import { RecentReviewComponent } from "./recent-review/recent-review.component";
 import { SignUpLayoutComponent } from "./sign-up-layout/sign-up-layout.component";
 import { SignInComponent } from "./sign-in/sign-in.component";
 import { LandingPageComponent } from "./landing-page/landing-page.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { DashboardNavComponent } from "./dashboard-nav/dashboard-nav.component";
 import { LogoComponent } from "./logo/logo.component";
@@ -27,6 +27,9 @@ import { ProfileComponent } from "./profile/profile.component";
 import { FormCreationComponent } from "./form-creation/form-creation.component";
 import { DashboardNavRightComponent } from "./dashboard-nav-right/dashboard-nav-right.component";
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { UserService } from "./user.service";
+import { SubmissionComponent } from './submission/submission.component';
+import { ReviewService } from "./review.service";
 import { ReviewsComponent } from './reviews/reviews.component';
 import { NavbarDasComponent } from './navbar-das/navbar-das.component';
 @NgModule({
@@ -56,11 +59,12 @@ import { NavbarDasComponent } from './navbar-das/navbar-das.component';
     FormCreationComponent,
     DashboardNavRightComponent,
     EditProfileComponent,
+    SubmissionComponent,
     ReviewsComponent,
     NavbarDasComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, ReactiveFormsModule],
+  providers: [UserService, ReviewService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
