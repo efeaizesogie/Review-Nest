@@ -2,6 +2,18 @@ app-navbar-das {
   display: none;
 }
 
+.before {
+  content: "";
+  position: absolute;
+  height: 140%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+
 .dashboard {
   overflow: hidden;
   width: 100%;
@@ -45,7 +57,7 @@ app-navbar-das {
 }
 
 .brand-dis {
-  width: 40%;
+  width: 48%;
   border-radius: 2px;
   background: #fefefe;
   padding: 20px;
@@ -132,6 +144,10 @@ app-navbar-das {
   font-style: normal;
   font-weight: 600;
   line-height: 22px;
+}
+
+.right {
+  width: 48%;
 }
 
 .info {

@@ -39,7 +39,9 @@
               />
             </div>
             <div class="com-logo-text mt-2 text-center">
-              <p class="logo-text mb-1">Suittie</p>
+              <p class="logo-text mb-1">
+                {{ userInput$.company_name }}
+              </p>
               <div class="online-status gap-2 text-center d-flex">
                 <img
                   src="./../../assets/dashboard/green-active.svg"
@@ -52,11 +54,11 @@
           </div>
           <div class="des-wrapper">
             <p class="sub-heading">Description</p>
-            <p class="info">{{ userInput$ }}</p>
+            <p class="info">{{ userInput$.company_description }}</p>
           </div>
           <div class="des-wrapper">
             <p class="sub-heading">Category</p>
-            <p class="info">Fashion Brand</p>
+            <p class="info">{{ userInput$.category }}</p>
           </div>
         </div>
         <div class="right">
@@ -64,19 +66,18 @@
             <p class="heading">Contact Information</p>
             <div class="des-wrapper">
               <p class="sub-heading">Email address</p>
-              <p class="info">suittie@gmail.com</p>
+              <p class="info">{{ userInput$.email }}</p>
             </div>
             <div class="des-wrapper">
               <p class="sub-heading">Physical address</p>
-              <p class="info">#30 Cetenary City, Golf Estate, Enugu State</p>
+              <p class="info">{{ userInput$.phyAddress }}</p>
             </div>
-            <div class="des-wrapper">
-              <p class="sub-heading">Email Address</p>
-              <p class="info">suittie@gmail.com</p>
-            </div>
+
             <div class="des-wrapper">
               <p class="sub-heading">Phone number</p>
-              <p class="info">09065875373, 08167548276</p>
+              <p class="info">
+                {{ userInput$.pNumber }}
+              </p>
             </div>
             <div class="des-wrapper">
               <p class="sub-heading mb-2">Social media</p>
@@ -108,12 +109,12 @@
         </div>
       </div>
       <div class="container btn-wrapper">
-        <button class="btn btn-up mt-3" (click)="showEditProfilePage = true">
+        <button class="btn btn-up mt-3" (click)="showEditProfilePage()">
           Edit Profile
         </button>
       </div>
     </div>
 
-    <app-edit-profile *ngIf="showEditProfilePage"></app-edit-profile>
+    <app-edit-profile></app-edit-profile>
   </div>
 </div>

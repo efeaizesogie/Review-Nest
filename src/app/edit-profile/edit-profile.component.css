@@ -1,14 +1,3 @@
-.box::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  pointer-events: none;
-}
-
 .box {
   width: 100%;
   min-height: 100%;
@@ -19,6 +8,7 @@
 }
 
 .edit-wrapper {
+  display: none;
   width: 690px;
   min-height: 690px;
   margin: 0 auto;

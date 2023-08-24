@@ -1,7 +1,9 @@
 import {
   Component,
+  ElementRef,
   NgModule,
   OnInit,
+  Renderer2,
   importProvidersFrom,
 } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
@@ -14,31 +16,31 @@ import { ActivatedRoute, Router } from "@angular/router";
   templateUrl: "./edit-profile.component.html",
   styleUrls: ["./edit-profile.component.css"],
 })
-export class EditProfileComponent implements OnInit {
+export class EditProfileComponent {
   showEditProfilePage: boolean = false;
 
   apiData: any;
+  userInput$: any;
 
   constructor(
     private http: HttpClient,
     private dataService: UserInputService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private renderer: Renderer2,
+    private userInputService: UserInputService
   ) {}
 
-  ngOnInit() {}
-
-  goBack(): void {
-    this.router.navigate(["../"], {
-      relativeTo: this.route,
-    });
+  hideElement(): void {
+    const elementToHide = document.querySelector(".edit-wrapper");
+    if (elementToHide) {
+      this.renderer.setStyle(elementToHide, "display", "none");
+    }
   }
 
   onUpdateClicked(editForm: NgForm) {
     var formValues = editForm.value;
-    this.showEditProfilePage = false;
-
-    this.dataService.updateUserInput(formValues);
+    this.userInputService.updateUserInput(formValues);
 
     console.log(formValues);
 
