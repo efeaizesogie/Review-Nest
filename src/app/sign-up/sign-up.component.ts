@@ -1,6 +1,10 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
+
+// Import the confirmPasswordValidator
+import { confirmPasswordValidator } from '../confirm-password.validator';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,11 +13,25 @@ import { FormsModule } from '@angular/forms';
 })
 export class SignUpComponent {
 
-    constructor(private http: HttpClient){}
+  usersForm: FormGroup = new FormGroup({
+    pPassword: new FormControl<string>('', [Validators.required]),
+    pConfirmPassword: new FormControl<string>('', [Validators.required]),
+  }, {
+    validators: confirmPasswordValidator 
+  });
 
+  constructor(private http: HttpClient, private fb: FormBuilder) {
+    this.usersForm = this.fb.group({
+      pName: ['', [Validators.required]],
+      pEmail: ['', [Validators.required, Validators.email]],
+      pPassword: ['', [Validators.required]],
+      pConfirmPassword: ['', [Validators.required]]
+    }, {
+      validators: confirmPasswordValidator 
+    });
+  }
 
-  onUsersCreate(userDetails: {pName:string, pEmail:string, pPassword:string }){
-
+  onUsersCreate(userDetails: { pName: string, pEmail: string, pPassword: string }) {
     const userData = {
       company_name: userDetails.pName,
       email: userDetails.pEmail,
@@ -22,13 +40,17 @@ export class SignUpComponent {
 
     console.log(userDetails);
     this.http.post('https://reviewnest.onrender.com/api/v1/user/register', userData)
-    .subscribe(
-      (response) =>{
-        console.log('User registration successful:', response);
-      },
-      (error) =>{
-        console.error('Error while registering user:', error);
-      }
-    )
+      .subscribe(
+        (response) => {
+
+          console.log('User registration successful:', response);
+          alert('Your account has been successfully created');
+          // this.router.navigate(['/sign-in']);
+        },
+        (error:HttpErrorResponse) => {
+          console.error('Error while registering user:', error);
+          alert('Please fill out all the fields properly');
+        }
+      );
   }
 }

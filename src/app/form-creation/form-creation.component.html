@@ -1,3 +1,5 @@
+<app-navbar></app-navbar>
+
 <div class="mt-4 container content d-flex flex-column">
 <div class="header d-flex flex-column">
   <div class="write-a-review">
@@ -30,12 +32,11 @@ Fill in the form below to share your thoughts about us.
     </div>
 
     <div class="feedback d-flex flex-column">
-      <form action="" class="d-flex form">
+      <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit(feedbackForm.value)" action="" class="d-flex form">
         <div class="left-side-form d-flex flex-column">
           <div class="email">
             <label for="email" class="form-label">Email Address</label>
             <input
-              #name="ngModel"
               required
               minlength="1"
               type="text"
@@ -43,46 +44,32 @@ Fill in the form below to share your thoughts about us.
               id="email"
               aria-describedby="emailHelp"
               placeholder="Enter email address"
-              name="pEmail"
-              ngModel
+              formControlName="pEmail"
               required=""
             />
-            <div *ngIf="name.touched && name.invalid" class="alert">
-              Email Address cannot be empty!
-            </div>
           </div>
           <div class="username">
             <label for="username" class="form-label">Username</label>
             <input
-              #email="ngModel"
               type="text"
               class="form-control"
               id="username"
               aria-describedby="emailHelp"
               placeholder="Enter a username"
-              name="pUserName"
-              ngModel
+              formControlName="pUserName"
               required=""
             />
-            <div *ngIf="name.touched && name.invalid" class="alert">
-              Username cannot be empty!
-            </div>
           </div>
           <div class="product">
             <label for="product" class="form-label">Product/Service</label>
             <input
-              #password="ngModel"
               type="text"
               class="form-control"
               id="product"
               placeholder="Enter a product/service you want to review"
-              name="pProduct"
-              ngModel
+              formControlName="pProduct"
               required=""
             />
-            <div *ngIf="name.touched && name.invalid" class="alert">
-              Product cannot be empty cannot be empty!
-            </div>
           </div>
         </div>
 
@@ -93,6 +80,7 @@ Fill in the form below to share your thoughts about us.
             >
             <div class="form-floating">
               <textarea
+                formControlName = "pThoughts"
                 class="form-control"
                 placeholder="Leave a comment here"
                 id="thoughts"
@@ -107,25 +95,13 @@ Fill in the form below to share your thoughts about us.
           <div class="ratings">
             <p id="rating" class="mb-1">Rate our services</p>
             <div class="stars d-flex">
-              <div class="star">
-                <img src="\assets\form-images\Star 4.png" alt="" />
-              </div>
-              <div class="star">
-                <img src="\assets\form-images\Star 4.png" alt="" />
-              </div>
-              <div class="star">
-                <img src="\assets\form-images\Star 4.png" alt="" />
-              </div>
-              <div class="star">
-                <img src="\assets\form-images\Star 4.png" alt="" />
-              </div>
-              <div class="star">
-                <img src="\assets\form-images\Star 4.png" alt="" />
+              <div *ngFor="let star of [1, 2, 3, 4, 5]" class="star">
+                <img src="\assets\dashboard\Star 8.png" alt="" />
               </div>
             </div>
           </div>
 
-          <button id="submit-btn" type="submit" class="btn">Submit</button>
+          <button id="submit-btn" type="submit" class="btn" >Submit</button>
         </div>
       </form>
     </div>

@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {
+  private companyName: string = '';
 
-export class UserService{
+  setCompanyName(name: string): void {
+    this.companyName = name;
+    console.log('Company Name set to:', this.companyName);
+  }
 
-    // SIGN UP - POSTING
-    createUser(){
-        
-    }
+  getCompanyName(): string {
+    console.log('Getting Company Name:', this.companyName);
+    return this.companyName;
+  }
 }

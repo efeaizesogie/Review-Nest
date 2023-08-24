@@ -9,6 +9,9 @@ import { ReviewDashboardComponent } from "./review-dashboard/review-dashboard.co
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { EditProfileComponent } from "./edit-profile/edit-profile.component";
+import { AboutUsComponent } from "./about-us/about-us.component";
+import { ContactComponent } from "./contact/contact.component";
+import { SubmissionComponent } from "./submission/submission.component";
 
 const routes: Routes = [
   {
@@ -49,6 +52,14 @@ const routes: Routes = [
     path: "edit-profile",
     component: EditProfileComponent,
   },
+  {
+    path: "contact",
+    component: ContactComponent
+  },
+  {
+    path: "success",
+    component: SubmissionComponent
+  }
 ];
 
 @NgModule({

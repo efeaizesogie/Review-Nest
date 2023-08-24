@@ -1,6 +1,8 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Component } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { Router } from '@angular/router';
+
 
 // below is for the object present in the api response
 interface ApiResponse {
@@ -23,10 +25,10 @@ interface ApiResponse {
 })
 export class SignInComponent {
   loginError = false;
-  loginSuccessful = false; // Added flag for successful login
+  loginSuccessful = false; 
   loginUnsuccessful = false;
-  errorMessage = ""; // Store error message
-  constructor(private http: HttpClient) {}
+  errorMessage = "";
+  constructor(private http: HttpClient, private router:Router) {}
 
   onUsersLogin(loginDetails: { pEmail: string; pPassword: string }) {
     const userData = {
@@ -44,7 +46,12 @@ export class SignInComponent {
         (response) => {
           if (response.success === true) {
             console.log("User login successful:", response);
-            this.loginSuccessful = true; // Set the flag to true
+            this.loginSuccessful = true; // 
+            this.router.navigate(['/dashboard']);
+            localStorage.setItem('userID', response.user._id);
+            localStorage.setItem('accessToken', response.token);
+            console.log('access token: ', response.token)
+            console.log(response.user._id);
           }
         },
         (error: HttpErrorResponse) => {
