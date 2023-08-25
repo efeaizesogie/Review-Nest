@@ -10,10 +10,11 @@
 .edit-wrapper {
   display: none;
   width: 690px;
-  min-height: 690px;
+  min-height: 120%;
   margin: 0 auto;
   top: 150px;
   left: 36%;
+  z-index: 100;
   position: absolute;
   padding: 30px 35px;
   justify-content: center;
@@ -30,7 +31,6 @@
   width: 164px;
   height: 164px;
   border-radius: 50%;
-  background-image: url("./../../assets/dashboard/com img.svg");
   background-size: cover;
   background-repeat: no-repeat;
   backdrop-filter: opacity(50%);
@@ -39,6 +39,10 @@
 
 .change-logo {
   height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -69,6 +73,14 @@
 .close-img {
   width: 32px;
   height: 32px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  cursor: pointer;
 }
 
 .sub-heading {

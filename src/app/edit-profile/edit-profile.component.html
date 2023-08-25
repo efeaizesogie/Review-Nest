@@ -4,13 +4,25 @@
       <div class="logo-wrapper">
         <div
           class="change-logo d-flex justify-content-center align-content-center flex-wrap"
+          [style.background-image]="'url(' + selectedImageUrl + ')'"
         >
-          <img
-            src="./../../assets/dashboard/camera.svg"
-            alt="company logo"
-            class="change-logo-img"
-          />
-          <p class="change-text w-75">Click to change image</p>
+          <label for="inputTag" class="change-text w-75">
+            <img
+              src="./../../assets/dashboard/camera.svg"
+              alt="company logo"
+              class="change-logo-img"
+            />
+            <br />
+            Click to change image
+            <input
+              id="inputTag"
+              type="file"
+              accept="image/png, image/jpg, image/gif, image/jpeg, image/svg"
+              (change)="onImageSelected($event)"
+            />
+            <br />
+            <span id="imageName"></span>
+          </label>
         </div>
       </div>
       <div
@@ -66,7 +78,10 @@
           rows="6"
           placeholder="We are dedicated to pushing creative boundaries, seamlessly blending bold and innovative urban aesthetics with a refined touch of timeless elegance."
           ngModel
+          (input)="onInput($event)"
+          [maxlength]="maxCharacters"
         ></textarea>
+        <span class="mb-2">{{ characterCount }}/{{ maxCharacters }}</span>
       </div>
     </div>
     <div class="right">
@@ -130,6 +145,7 @@ https://suittie@facebook.com"
     class="btn btn-up"
     type="submit"
     value="Update"
+    [disabled]="!selectedImage || editForm.invalid"
     (click)="onUpdateClicked(editForm)"
   />
 </div>

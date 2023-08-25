@@ -1,16 +1,18 @@
-<div [ngClass]="{ overlay: showOverlay }">
+<div [ngClass]="{ overlay: showOverlay }" class="parent">
   <app-navbar></app-navbar>
-  <app-submission
-    *ngIf="submitted"
-    (closeRequested)="closeSubmissionComponent()"
-    id="submission-component"
-  ></app-submission>
+  <div class="darkBg" [class.active]="isDetailBoxActive">
+    <app-submission
+      *ngIf="submitted"
+      (closeRequested)="closeSubmissionComponent()"
+      id="submission-component"
+    ></app-submission>
+  </div>
   <div class="mt-4 container content d-flex flex-column">
     <div class="header d-flex flex-column">
       <div class="write-a-review">Write a Review</div>
       <div class="what-do-you-think">
-        What do you think of our products/services? <br />
-        Fill in the form below to share your thoughts about us.
+        What do you think of our products/services? Fill in the form below to
+        share your thoughts about us.
       </div>
     </div>
     <div class="left">
@@ -28,7 +30,7 @@
             <img src="\assets\form-images\profile-pic.jpg" alt="" />
           </div>
           <div class="profile-desc">
-            <p id="profile-name">{{companyName}}</p>
+            <p id="profile-name">{{ companyName }}</p>
             <p class="business-type">Fashion Brand</p>
           </div>
         </div>
@@ -104,8 +106,19 @@
               <p id="rating" class="mb-1">Rate our services</p>
               <div class="stars d-flex">
                 <div class="stars d-flex">
-                  <div *ngFor="let star of [1, 2, 3, 4, 5]" class="star" (click)="setRating(star)">
-                    <img [src]="star <= pRating ? '/assets/dashboard/Star 5.png' : '/assets/dashboard/Star 8.png'" alt="" />
+                  <div
+                    *ngFor="let star of [1, 2, 3, 4, 5]"
+                    class="star"
+                    (click)="setRating(star)"
+                  >
+                    <img
+                      [src]="
+                        star <= pRating
+                          ? '/assets/dashboard/Star 5.png'
+                          : '/assets/dashboard/Star 8.png'
+                      "
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>

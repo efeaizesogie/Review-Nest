@@ -110,6 +110,7 @@ thead th {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 
 .scroll-content {
@@ -189,7 +190,8 @@ app-navbar-das {
 .details-box::before {
   content: "";
   position: absolute;
-  height: 140%;
+  height: 100%;
+  overflow: hidden;
   top: 0;
   left: 0;
   right: 0;
@@ -260,6 +262,7 @@ app-navbar-das {
   }
 
   .details {
-    width: 350px;
+    width: 90%;
+    margin: 0 auto;
   }
 }
