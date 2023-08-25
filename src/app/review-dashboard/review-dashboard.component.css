@@ -4,6 +4,13 @@
   overflow: hidden;
 }
 
+.table-container {
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  max-width: 100%;
+}
+
 .sub-heading {
   color: #011055;
   font-family: "Palanquin Dark";
@@ -52,7 +59,6 @@ thead th {
 
 .review-text {
   color: #323232;
-
   font-family: "Open Sans";
   font-size: 12px;
   font-style: normal;
@@ -86,10 +92,8 @@ thead th {
 }
 
 .box {
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: #808080;
+  width: 96%;
+  margin: 0 4%;
 }
 
 .time-content {
@@ -103,9 +107,7 @@ thead th {
 
 .scroll-nav {
   display: flex;
-  width: 949px;
-  padding: 32px 307px 8px 307px;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 10px;
 }
@@ -145,6 +147,96 @@ app-navbar-das {
   display: none;
 }
 
+.star {
+  display: inline-block;
+  width: 18px; /* Adjust the width and height as needed */
+  height: 18px;
+  background-image: url("./../../assets/assets(svg)/Star_empty.svg"); /* Set the path to your unfilled star image */
+  background-size: cover;
+}
+
+.star.filled {
+  background-image: url("./../../assets/assets(svg)/star-4-11.svg"); /* Set the path to your filled star image */
+}
+
+.details {
+  position: absolute;
+  display: flex;
+  width: 579px;
+  padding: 30px 26px;
+  font-family: Open Sans;
+  flex-direction: column;
+  align-items: flex-start;
+  top: 50%;
+  left: 50%;
+  border-radius: 8px;
+  background: #fff;
+  transform: translate(-50%, -50%);
+}
+
+.close-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e7e7e7;
+}
+
+.close-img {
+  width: 32px;
+  height: 32px;
+}
+
+.details-box::before {
+  content: "";
+  position: absolute;
+  height: 140%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.details-box.active::before {
+  opacity: 1;
+}
+
+.product-name-box {
+  color: #323232;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.prod_span {
+  color: #020202;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.btn-up {
+  background-color: #fdba21;
+  font-family: Open Sans;
+  color: #000311;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 24px;
+}
+
+.btn-wrapper {
+  width: 70%;
+  padding: 0;
+  margin: 10px auto 0 auto;
+}
+
 @media screen and (max-width: 980px) {
   app-dashboard-nav {
     display: none;
@@ -158,19 +250,16 @@ app-navbar-das {
     display: block;
   }
 
-  table {
-    overflow: auto;
-  }
-
-  .review-tab {
-    overflow: scroll;
-  }
-
-  .tab-head {
+  .table-container {
     overflow-x: scroll;
+    width: 45%;
   }
 
   .scroll-nav {
     width: 100vw;
+  }
+
+  .details {
+    width: 350px;
   }
 }

@@ -6,11 +6,14 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Company } from '../company.model';
 
+
+
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.css"],
 })
+
 export class HeaderComponent implements OnInit {
 
   searchInput = new FormControl();
@@ -64,3 +67,4 @@ export class HeaderComponent implements OnInit {
     return this.http.get(`https://reviewnest.onrender.com/api/v1/user?search=${searchTerm}`);
   }
 }
+

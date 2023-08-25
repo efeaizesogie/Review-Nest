@@ -6,339 +6,146 @@
   <div class="right-content">
     <app-dashboard-nav-right></app-dashboard-nav-right>
 
-    <div class="container">
-      <div class="container d-flex mt-4 ms-4 flex-column">
+    <div class="box">
+      <div class="d-flex mt-4 flex-column">
         <h2 class="sub-heading">Reviews Received</h2>
-        <table class="table table-bordered mt-3 review-tab">
-          <thead class="tab-head">
-            <tr>
-              <th scope="col" class="col-5">Review</th>
-              <th scope="col">Product</th>
-              <th scope="col">Rating</th>
-              <th scope="col">Details</th>
-              <th scope="col">Date and Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="tab-body">
-              <td>
-                <h2 class="review-heading">Kemi Deborah</h2>
-                <p class="review-text">
-                  Absolutely love the unique designs and impeccable...
+        <div class="review-table d-flex flex-column">
+          <div class="table-container">
+            <table class="table table-bordered mt-3 review-tab">
+              <thead class="tab-head">
+                <tr>
+                  <th scope="col" class="col-5">Review</th>
+                  <th scope="col">Product</th>
+                  <th scope="col">Rating</th>
+                  <th scope="col">Details</th>
+                  <th scope="col">Date and Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="tab-body"
+                  *ngFor="let review of reviews.slice(startIndex, endIndex)"
+                >
+                  <td>
+                    <h2 class="review-heading">{{ review.userName }}</h2>
+                    <p class="review-text">
+                      {{ review.feedBack }}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="product-name">{{ review.product }}</p>
+                  </td>
+                  <td>
+                    <div
+                      class="rating d-flex align-items-center"
+                      *ngIf="review.rating > 0; else noRating"
+                    >
+                      <ng-container
+                        *ngFor="let _ of [1, 2, 3, 4, 5]; let i = index"
+                      >
+                        <span
+                          class="star"
+                          [class.filled]="i < review.rating"
+                        ></span>
+                      </ng-container>
+                    </div>
+                    <ng-template #noRating> No Rating </ng-template>
+                  </td>
+                  <td>
+                    <button
+                      class="btn display-btn"
+                      (click)="showDetails(review)"
+                    >
+                      View Details
+                    </button>
+                  </td>
+                  <td>
+                    <div class="date-time">
+                      <p class="date-content">{{ review.updatedAt }}</p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="scroll-nav">
+            <div
+              class="scroll-content d-flex align-items-center justify-content-center gap-2"
+            >
+              <img
+                src="./../../assets/dashboard/arrow-left.svg"
+                alt=""
+                (click)="prevPage()"
+              />
+              <!-- Display page numbers based on the totalReviews and itemsPerPage -->
+              <ng-container
+                *ngFor="let page of getPageNumbers(); let i = index"
+              >
+                <p
+                  class="page-number"
+                  [class.active]="currentPage === page"
+                  (click)="changePage(page)"
+                >
+                  {{ page }}
                 </p>
-              </td>
-              <td><p class="product-name">Suits</p></td>
-              <td>
-                <div class="rating d-flex align-items-center">
-                  <img
-                    src="./../../assets/assets(svg)/star-1-11.svg"
-                    alt=""
-                    class="rate 1"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-2-11.svg"
-                    alt=""
-                    class="rate 2"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-3-11.svg"
-                    alt=""
-                    class="rate 3"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-4-11.svg"
-                    alt=""
-                    class="rate 4"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-5-11.svg"
-                    alt=""
-                    class="rate 5"
-                  />
-                </div>
-              </td>
-              <td>
-                <button class="btn display-btn">View Details</button>
-              </td>
-              <td>
-                <div class="date-time">
-                  <p class="date-content">17/08/2023</p>
-                  <div class="box"></div>
-                  <p class="time-content">1:17 am</p>
-                </div>
-              </td>
-            </tr>
-            <tr class="tab-body">
-              <td>
-                <h2 class="review-heading">Chinedu Okonkwo</h2>
-                <p class="review-text">
-                  Their clothing collections always keep me ahead of the...
-                </p>
-              </td>
-              <td><p class="product-name">Shirts</p></td>
-              <td>
-                <div class="rating d-flex align-items-center">
-                  <img
-                    src="./../../assets/assets(svg)/star-1-11.svg"
-                    alt=""
-                    class="rate 1"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-2-11.svg"
-                    alt=""
-                    class="rate 2"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-3-11.svg"
-                    alt=""
-                    class="rate 3"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-4-11.svg"
-                    alt=""
-                    class="rate 4"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/Star_empty.svg"
-                    alt=""
-                    class="rate 5"
-                  />
-                </div>
-              </td>
-              <td>
-                <button class="btn display-btn">View Details</button>
-              </td>
-              <td>
-                <div class="date-time">
-                  <p class="date-content">17/08/2023</p>
-                  <div class="box"></div>
-                  <p class="time-content">1:17 am</p>
-                </div>
-              </td>
-            </tr>
-            <tr class="tab-body">
-              <td>
-                <h2 class="review-heading">Kemi Deborah</h2>
-                <p class="review-text">
-                  Absolutely love the unique designs and impeccable...
-                </p>
-              </td>
-              <td><p class="product-name">Suits</p></td>
-              <td>
-                <div class="rating d-flex align-items-center">
-                  <img
-                    src="./../../assets/assets(svg)/star-1-11.svg"
-                    alt=""
-                    class="rate 1"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-2-11.svg"
-                    alt=""
-                    class="rate 2"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-3-11.svg"
-                    alt=""
-                    class="rate 3"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-4-11.svg"
-                    alt=""
-                    class="rate 4"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-5-11.svg"
-                    alt=""
-                    class="rate 5"
-                  />
-                </div>
-              </td>
-              <td>
-                <button class="btn display-btn">View Details</button>
-              </td>
-              <td>
-                <div class="date-time">
-                  <p class="date-content">17/08/2023</p>
-                  <div class="box"></div>
-                  <p class="time-content">1:17 am</p>
-                </div>
-              </td>
-            </tr>
-            <tr class="tab-body">
-              <td>
-                <h2 class="review-heading">Chinedu Okonkwo</h2>
-                <p class="review-text">
-                  Their clothing collections always keep me ahead of the...
-                </p>
-              </td>
-              <td><p class="product-name">Shirts</p></td>
-              <td>
-                <div class="rating d-flex align-items-center">
-                  <img
-                    src="./../../assets/assets(svg)/star-1-11.svg"
-                    alt=""
-                    class="rate 1"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-2-11.svg"
-                    alt=""
-                    class="rate 2"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-3-11.svg"
-                    alt=""
-                    class="rate 3"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-4-11.svg"
-                    alt=""
-                    class="rate 4"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/Star_empty.svg"
-                    alt=""
-                    class="rate 5"
-                  />
-                </div>
-              </td>
-              <td>
-                <button class="btn display-btn">View Details</button>
-              </td>
-              <td>
-                <div class="date-time">
-                  <p class="date-content">17/08/2023</p>
-                  <div class="box"></div>
-                  <p class="time-content">1:17 am</p>
-                </div>
-              </td>
-            </tr>
-            <tr class="tab-body">
-              <td>
-                <h2 class="review-heading">Chinedu Okonkwo</h2>
-                <p class="review-text">
-                  Their clothing collections always keep me ahead of the...
-                </p>
-              </td>
-              <td><p class="product-name">Shirts</p></td>
-              <td>
-                <div class="rating d-flex align-items-center">
-                  <img
-                    src="./../../assets/assets(svg)/star-1-11.svg"
-                    alt=""
-                    class="rate 1"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-2-11.svg"
-                    alt=""
-                    class="rate 2"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-3-11.svg"
-                    alt=""
-                    class="rate 3"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-4-11.svg"
-                    alt=""
-                    class="rate 4"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/Star_empty.svg"
-                    alt=""
-                    class="rate 5"
-                  />
-                </div>
-              </td>
-              <td>
-                <button class="btn display-btn">View Details</button>
-              </td>
-              <td>
-                <div class="date-time">
-                  <p class="date-content">17/08/2023</p>
-                  <div class="box"></div>
-                  <p class="time-content">1:17 am</p>
-                </div>
-              </td>
-            </tr>
-            <tr class="tab-body">
-              <td>
-                <h2 class="review-heading">Chinedu Okonkwo</h2>
-                <p class="review-text">
-                  Their clothing collections always keep me ahead of the...
-                </p>
-              </td>
-              <td class="d-flex align-items-center h-100">
-                <p class="product-name">Shirts</p>
-              </td>
-              <td>
-                <div class="rating d-flex align-items-center">
-                  <img
-                    src="./../../assets/assets(svg)/star-1-11.svg"
-                    alt=""
-                    class="rate 1"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-2-11.svg"
-                    alt=""
-                    class="rate 2"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-3-11.svg"
-                    alt=""
-                    class="rate 3"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/star-4-11.svg"
-                    alt=""
-                    class="rate 4"
-                  />
-                  <img
-                    src="./../../assets/assets(svg)/Star_empty.svg"
-                    alt=""
-                    class="rate 5"
-                  />
-                </div>
-              </td>
-              <td>
-                <button class="btn display-btn">View Details</button>
-              </td>
-              <td>
-                <div class="date-time">
-                  <p class="date-content">17/08/2023</p>
-                  <div class="box"></div>
-                  <p class="time-content">1:17 am</p>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div class="scroll-nav">
-          <div
-            class="scroll-content d-flex align-items-center justify-content-center gap-2"
-          >
-            <img
-              src="./../../assets/dashboard/arrow-left.svg"
-              alt=""
-              class="arrow-btn"
-            />
-            <p class="page-number">1</p>
-            <p class="page-number">2</p>
-            <p class="page-number active">3</p>
-            <div class="box mx-1"></div>
-            <div class="box mx-1"></div>
-            <div class="box mx-1"></div>
-            <p class="page-number">8</p>
-            <p class="page-number">9</p>
-            <p class="page-number">10</p>
-            <img
-              src="./../../assets/dashboard/arrow-right.svg"
-              alt=""
-              class="arrow-btn"
-            />
+              </ng-container>
+              <img
+                src="./../../assets/dashboard/arrow-right.svg"
+                alt=""
+                (click)="nextPage()"
+              />
+            </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="details-box" [class.active]="isDetailBoxActive">
+    <div *ngIf="selectedReview" class="details">
+      <div
+        class="d-flex align-items-center justify-content-end w-100"
+        (click)="closeDetails()"
+      >
+        <div class="close-btn d-flex align-items-center justify-content-center">
+          <img
+            src="./../../assets/dashboard/iconoir_cancel.svg"
+            alt="cancel"
+            class="close-img"
+          />
+        </div>
+      </div>
+      <div
+        class="name_rate d-flex justify-content-between align-items-center w-100 mb-3"
+      >
+        <div class="name_pro">
+          <h2 class="review-heading">{{ selectedReview.userName }}</h2>
+          <p class="product-name-box">
+            <span class="prod_span">Product:</span> {{ selectedReview.product }}
+          </p>
+        </div>
+        <div></div>
+
+        <ng-template>
+          <div
+            class="rating d-flex align-items-center"
+            *ngIf="selectedReview.rating > 0; else noRating"
+          >
+            <ng-container *ngFor="let _ of [1, 2, 3, 4, 5]; let i = index">
+              <span
+                class="star"
+                [class.filled]="i < selectedReview.rating"
+              ></span>
+            </ng-container>
+          </div>
+          <ng-template #noRating> No Rating </ng-template>
+        </ng-template>
+      </div>
+      <p class="review-text my-3">
+        {{ selectedReview.feedBack }}
+      </p>
+      <button class="btn btn-up mt-3" (click)="closeDetails()">
+        Back to Reviews
+      </button>
     </div>
   </div>
 </div>
