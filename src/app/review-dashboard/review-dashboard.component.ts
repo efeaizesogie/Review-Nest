@@ -9,9 +9,11 @@ import { ReviewService } from "../review.service";
 export class ReviewDashboardComponent implements OnInit {
   reviews: any;
   totalReviews: any;
-
+  selectedReview: any | null = null;
   currentPage: number = 1;
   itemsPerPage: number = 5;
+  renderer: any;
+  isDetailBoxActive: boolean = false;
 
   get startIndex(): number {
     return (this.currentPage - 1) * this.itemsPerPage;
@@ -58,5 +60,26 @@ export class ReviewDashboardComponent implements OnInit {
   getPageNumbers(): number[] {
     const totalPages = Math.ceil(this.totalReviews / this.itemsPerPage);
     return Array.from({ length: totalPages }, (_, i) => i + 1);
+  }
+
+  closePage() {
+    const elementToHide = document.querySelector(".details");
+    const darkBg = document.querySelector(".dashboard::before");
+    if (elementToHide) {
+      this.renderer.setStyle(elementToHide, "display", "block");
+      this.renderer.setStyle(darkBg, "display", "block");
+    }
+  }
+  showDetails(review: any) {
+    this.selectedReview = review;
+    this.reviews.forEach((r: any) => (r.showDetails = false)); // Close other details
+    review.showDetails = true;
+    this.isDetailBoxActive = true;
+  }
+
+  closeDetails() {
+    this.selectedReview = null;
+    this.reviews.forEach((r: any) => (r.showDetails = false));
+    this.isDetailBoxActive = false;
   }
 }
