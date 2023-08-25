@@ -25,9 +25,9 @@
         </form>
         <div class="matching-companies" *ngIf="matchingCompanies.length > 0">
           <ul id="companies">
-            <li  (click)="onCompanyClick(company.id)" href="javascript:void(0);" class="companies" *ngFor="let company of matchingCompanies">
+            <li  (click)="onCompanyClick(company.id, company.name)" href="javascript:void(0);" class="companies" *ngFor="let company of matchingCompanies">
               <a id="companies">
-                {{ company.name }}
+                {{ company.name }} 
               </a>
             </li>
           </ul>

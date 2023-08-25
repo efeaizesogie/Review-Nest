@@ -12,6 +12,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 
 export class FormCreationComponent {
+  companyName: string | null = localStorage.getItem('companyName');
   feedbackForm: FormGroup;
   submitted: boolean = false;
   showOverlay: boolean = false;
