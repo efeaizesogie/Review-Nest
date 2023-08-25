@@ -59,7 +59,8 @@ const routes: Routes = [
   {
     path: "success",
     component: SubmissionComponent
-  }
+  },
+  { path: 'form-creation/:companyId', component: FormCreationComponent }
 ];
 
 @NgModule({

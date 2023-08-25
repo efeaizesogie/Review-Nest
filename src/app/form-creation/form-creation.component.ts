@@ -38,7 +38,7 @@ export class FormCreationComponent {
     this.submitted = false; // Close the submission component
   }
   onSubmit(feedbackDetails: { pEmail:string, pProduct:string, pRating:string, pUserName:string, pThoughts:string} ) {
-    const userID = localStorage.getItem('userID');
+    const formID = localStorage.getItem('formID');
       const feedbackData = {
         email: feedbackDetails.pEmail,
         product: feedbackDetails.pProduct,
@@ -55,8 +55,8 @@ export class FormCreationComponent {
         }
       }
       console.log(feedbackData);
-      console.log(userID)
-    this.http.post(`https://reviewnest.onrender.com/api/v1/reviews/create/${userID}`, feedbackData)
+      console.log(formID)
+    this.http.post(`https://reviewnest.onrender.com/api/v1/reviews/create/${formID}`, feedbackData)
     .subscribe(
       (response) =>{
         console.log(response, "feedback submitted");
