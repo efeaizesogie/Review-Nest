@@ -122,6 +122,7 @@ textarea {
   border: 1px solid var(--black-colour-black-colour-10, #ccc);
   padding: 12px 16px;
   width: 290px;
+  resize: none;
   border-radius: 8px;
 }
 
