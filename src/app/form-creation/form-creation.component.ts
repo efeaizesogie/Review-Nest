@@ -13,7 +13,7 @@ export class FormCreationComponent {
   feedbackForm: FormGroup;
   submitted: boolean = false;
   showOverlay: boolean = false;
-  pRating: number = 0; // Initialize pRating
+  pRating: number = 1; // Initialize pRating
   isDetailBoxActive: boolean = false;
 
   constructor(private fb: FormBuilder, private http: HttpClient) {

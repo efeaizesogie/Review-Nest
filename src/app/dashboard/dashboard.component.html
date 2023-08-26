@@ -28,7 +28,7 @@
           </div>
 
         
-
+          
           <div
             id="overall-performance"
             class="carousel-slide d-flex flex-column"
@@ -38,25 +38,21 @@
             </div>
 
             <div class="">
-              <p id="performance">Great</p>
+              <p id="performance">{{performanceText}}</p>
             </div>
 
-            <div class="ratings d-flex">
-              <div class="star">
-                <img src="\assets\dashboard\Star 8.png" alt="" />
-              </div>
-              <div class="star">
-                <img src="\assets\dashboard\Star 8.png" alt="" />
-              </div>
-              <div class="star">
-                <img src="\assets\dashboard\Star 8.png" alt="" />
-              </div>
-              <div class="star">
-                <img src="\assets\dashboard\Star 8.png" alt="" />
-              </div>
-              <div class="star">
-                <img src="\assets\dashboard\Star 8.png" alt="" />
-              </div>
+                <div class="stars d-flex">
+                  <div 
+                  *ngFor="let star of [1, 2, 3, 4, 5]" 
+                  class="ratings d-flex"
+                  >
+                      <img [src]="
+                        star <= pRating
+                        ? '/assets/dashboard/Star 5.png'
+                        : '/assets/dashboard/Star 8.png'
+                      " 
+                      alt="">
+                </div>
             </div>
 
             <div class="based-on">
@@ -64,9 +60,6 @@
             </div>
           </div>
 
-          <!-- <div class="carousel-slide">XXX</div>
-          <div class="carousel-slide">XXX</div>
-          <div class="carousel-slide">XXX</div> -->
         </div>
       </div>
 
