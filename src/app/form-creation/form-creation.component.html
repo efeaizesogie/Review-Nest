@@ -1,11 +1,7 @@
-<div [ngClass]="{ overlay: showOverlay }">
+
   <app-navbar></app-navbar>
-  <app-submission
-    *ngIf="submitted"
-    (closeRequested)="closeSubmissionComponent()"
-    id="submission-component"
-  ></app-submission>
-  <div class="mt-4 container content d-flex flex-column">
+
+  <div class="forms-container mt-4 container content d-flex flex-column">
     <div class="header d-flex flex-column">
       <div class="write-a-review">Write a Review</div>
       <div class="what-do-you-think">
@@ -28,7 +24,7 @@
             <img src="\assets\form-images\profile-pic.jpg" alt="" />
           </div>
           <div class="profile-desc">
-            <p id="profile-name">{{companyName}}</p>
+            <p id="profile-name">{{ companyName }}</p>
             <p class="business-type">Fashion Brand</p>
           </div>
         </div>
@@ -104,8 +100,19 @@
               <p id="rating" class="mb-1">Rate our services</p>
               <div class="stars d-flex">
                 <div class="stars d-flex">
-                  <div *ngFor="let star of [1, 2, 3, 4, 5]" class="star" (click)="setRating(star)">
-                    <img [src]="star <= pRating ? '/assets/dashboard/Star 5.png' : '/assets/dashboard/Star 8.png'" alt="" />
+                  <div
+                    *ngFor="let star of [1, 2, 3, 4, 5]"
+                    class="star"
+                    (click)="setRating(star)"
+                  >
+                    <img
+                      [src]="
+                        star <= pRating
+                          ? '/assets/dashboard/Star 5.png'
+                          : '/assets/dashboard/Star 8.png'
+                      "
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>
@@ -114,7 +121,30 @@
             <button id="submit-btn" type="submit" class="btn">Submit</button>
           </div>
         </form>
+
+       
       </div>
     </div>
+
+
+    <div class="submission overlay d-flex flex-column" *ngIf="showSubmission">
+      <div id="close" (click)="closeSubmission()">
+        <img src="\assets\dashboard\close.png" alt="" />
+      </div>
+      <div class="check">
+        <img src="\assets\assets(png)\check-one.png" alt="" />
+      </div>
+      <div class="submission-text">
+        <p id="submission">Submission Successful!</p>
+        <p id="feedback">
+          Your feedback have been successfully sent to Suittie Fashion
+          Brand.
+        </p>
+      </div>
+      <button id="back">
+        <a id="back-btn" href="" routerLink="/">Back to Home</a>
+      </button>
+    </div>
+
   </div>
-</div>
+

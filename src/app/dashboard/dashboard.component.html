@@ -23,35 +23,11 @@
                 <p class="header-text">Total Responses</p>
               </div>
             </div>
-            <div class="number-count">XXX</div>
+            <div class="number-count">{{totalReviews}}</div>
             <div class="this-month"><p class="this-month">This Month</p></div>
           </div>
 
-          <div id="forms-dispatched" class="carousel-slide d-flex flex-column">
-            <div class="d-flex carousel-header">
-              <div class="header-icon">
-                <img src="\assets\dashboard\send.png" alt="" />
-              </div>
-              <div class="header-text">
-                <p class="header-text">Forms Dispatched</p>
-              </div>
-            </div>
-            <div class="number-count">XXX</div>
-            <div class="this-month"><p class="this-month">This Month</p></div>
-          </div>
-
-          <div id="response-rate" class="carousel-slide d-flex flex-column">
-            <div class="d-flex carousel-header">
-              <div class="header-icon">
-                <img src="\assets\dashboard\reviews.png" alt="" />
-              </div>
-              <div class="header-text">
-                <p class="header-text">Response Rate</p>
-              </div>
-            </div>
-            <div class="number-count">XXX</div>
-            <div class="this-month"><p class="this-month">This Month</p></div>
-          </div>
+        
 
           <div
             id="overall-performance"
@@ -100,6 +76,9 @@
             <div><p id="review-report">Review Report</p></div>
             <div id="filter"><p id="filter">Filter: Monthly</p></div>
           </div>
+          <div class="graph-data">
+            
+          </div>
         </div>
 
         <div class="pie-chart-container d-flex flex-column">
@@ -107,32 +86,35 @@
             <p id="pie-chart-header">Distribution of Stars</p>
           </div>
           <div class="chart-and-desc d-flex">
-            <div class="chart">ddds</div>
+
+            <div class="chart"><app-pie-chart></app-pie-chart></div>
+            
             <div class="desc d-flex flex-column">
-              <div class="d-flex">
+
+              <div class="d-flex percentages">
                 <div><img src="\assets\dashboard\Ellipse 90.png" alt="" /></div>
-                <div><p class="review-text">5 star reviews</p></div>
-                <div class="percentage">()</div>
+                <div><p class="review-text">5-star reviews</p></div>
+                <div class="percentage">{{percentage5}}%</div>
               </div>
-              <div class="d-flex">
-                <div><img src="\assets\dashboard\Ellipse 90.png" alt="" /></div>
-                <div><p class="review-text">5 star reviews</p></div>
-                <div class="percentage">()</div>
+              <div class="d-flex percentages">
+                <div><img src="\assets\dashboard\yellow.png" alt="" /></div>
+                <div><p class="review-text">4-star reviews</p></div>
+                <div class="percentage">{{percentage4}}%</div>
               </div>
-              <div class="d-flex">
-                <div><img src="\assets\dashboard\Ellipse 90.png" alt="" /></div>
-                <div><p class="review-text">5 star reviews</p></div>
-                <div class="percentage">()</div>
+              <div class="d-flex percentages">
+                <div><img src="\assets\dashboard\orange.png" alt="" /></div>
+                <div><p class="review-text">3-star reviews</p></div>
+                <div class="percentage">{{percentage3}}%</div>
               </div>
-              <div class="d-flex">
-                <div><img src="\assets\dashboard\Ellipse 90.png" alt="" /></div>
-                <div><p class="review-text">5 star reviews</p></div>
-                <div class="percentage">()</div>
+              <div class="d-flex percentages">
+                <div><img src="\assets\dashboard\red.png" alt="" /></div>
+                <div><p class="review-text">2-star reviews</p></div>
+                <div class="percentage">{{percentage2}}%</div>
               </div>
-              <div class="d-flex">
-                <div><img src="\assets\dashboard\Ellipse 90.png" alt="" /></div>
-                <div><p class="review-text">5 star reviews</p></div>
-                <div class="percentage">()</div>
+              <div class="d-flex percentages">
+                <div><img src="\assets\dashboard\pink.png" alt="" /></div>
+                <div><p class="review-text">1-star reviews</p></div>
+                <div class="percentage">{{percentage1}}%</div>
               </div>
             </div>
           </div>
@@ -141,3 +123,7 @@
     </div>
   </div>
 </div>
+
+
+
+<!-- <app-pie-chart style="width: 50%; height: 100px;"></app-pie-chart> -->

@@ -12,12 +12,16 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 
 export class FormCreationComponent {
+  showSubmission: boolean = false;
   companyName: string | null = localStorage.getItem('companyName');
   feedbackForm: FormGroup;
   submitted: boolean = false;
   showOverlay: boolean = false;
   pRating: number = 0; // Initialize pRating
 
+  closeSubmission() {
+    this.showSubmission = false;
+  }
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.feedbackForm = this.fb.group({
@@ -35,9 +39,7 @@ export class FormCreationComponent {
     console.log('Selected rating:', this.pRating);
   }
 
-  closeSubmissionComponent() {
-    this.submitted = false; // Close the submission component
-  }
+  
   onSubmit(feedbackDetails: { pEmail:string, pProduct:string, pRating:string, pUserName:string, pThoughts:string} ) {
     const formID = localStorage.getItem('formID');
       const feedbackData = {
@@ -57,16 +59,20 @@ export class FormCreationComponent {
       }
       console.log(feedbackData);
       console.log(formID)
+
+
     this.http.post(`https://reviewnest.onrender.com/api/v1/reviews/create/${formID}`, feedbackData)
     .subscribe(
       (response) =>{
         console.log(response, "feedback submitted");
         this.submitted = true;
         this.showOverlay = true;
+        this.showSubmission = true;
       },
       (error:HttpErrorResponse) =>{
         console.error('Error submitting review', error)
       }
+
     )
     
   }
