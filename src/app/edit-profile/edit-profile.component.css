@@ -164,11 +164,25 @@ textarea::placeholder {
   margin: 10px auto 0 auto;
 }
 
+.invalid-feed {
+  color: #ff0000;
+}
+
 .invalid-feed,
 .word-count {
   font-size: 10px;
   margin-top: -10px;
   margin-bottom: 10px;
+}
+
+.spinner-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 980px) {

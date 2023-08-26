@@ -55,6 +55,7 @@
 .error-msg {
   font-size: 10px;
   margin-top: 5px;
+  color: #ff0000;
   font-family: "Open Sans", Helvetica;
 }
 

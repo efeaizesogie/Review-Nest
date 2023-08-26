@@ -36,6 +36,7 @@ import { NgxChartsModule } from "@swimlane/ngx-charts";
 import { PieChartComponent } from "./pie-chart/pie-chart.component";
 import { NgApexchartsModule } from "ng-apexcharts";
 import { NgxApexchartsModule } from "ngx-apexcharts";
+import { SmoothScrollDirective } from './smooth-scroll.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,6 +68,7 @@ import { NgxApexchartsModule } from "ngx-apexcharts";
     ReviewsComponent,
     NavbarDasComponent,
     PieChartComponent,
+    SmoothScrollDirective,
     // ChartComponent,
   ],
   imports: [

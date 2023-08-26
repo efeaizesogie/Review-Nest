@@ -23,9 +23,10 @@
                 <p class="header-text">Total Responses</p>
               </div>
             </div>
-            <div class="number-count">{{totalReviews}}</div>
+            <div class="number-count">{{ totalReviews }}</div>
             <div class="this-month"><p class="this-month">This Month</p></div>
           </div>
+
 
         
           
@@ -69,9 +70,7 @@
             <div><p id="review-report">Review Report</p></div>
             <div id="filter"><p id="filter">Filter: Monthly</p></div>
           </div>
-          <div class="graph-data">
-            
-          </div>
+          <div class="graph-data"></div>
         </div>
 
         <div class="pie-chart-container d-flex flex-column">
@@ -79,44 +78,46 @@
             <p id="pie-chart-header">Distribution of Stars</p>
           </div>
           <div class="chart-and-desc d-flex">
-
             <div class="chart"><app-pie-chart></app-pie-chart></div>
-            
-            <div class="desc d-flex flex-column">
 
+            <div class="desc d-flex flex-column">
               <div class="d-flex percentages">
                 <div><img src="\assets\dashboard\Ellipse 90.png" alt="" /></div>
                 <div><p class="review-text">5-star reviews</p></div>
-                <div class="percentage">{{percentage5}}%</div>
+                <div class="percentage">{{ percentage5 }}%</div>
               </div>
               <div class="d-flex percentages">
                 <div><img src="\assets\dashboard\yellow.png" alt="" /></div>
                 <div><p class="review-text">4-star reviews</p></div>
-                <div class="percentage">{{percentage4}}%</div>
+                <div class="percentage">{{ percentage4 }}%</div>
               </div>
               <div class="d-flex percentages">
                 <div><img src="\assets\dashboard\orange.png" alt="" /></div>
                 <div><p class="review-text">3-star reviews</p></div>
-                <div class="percentage">{{percentage3}}%</div>
+                <div class="percentage">{{ percentage3 }}%</div>
               </div>
               <div class="d-flex percentages">
                 <div><img src="\assets\dashboard\red.png" alt="" /></div>
                 <div><p class="review-text">2-star reviews</p></div>
-                <div class="percentage">{{percentage2}}%</div>
+                <div class="percentage">{{ percentage2 }}%</div>
               </div>
               <div class="d-flex percentages">
                 <div><img src="\assets\dashboard\pink.png" alt="" /></div>
                 <div><p class="review-text">1-star reviews</p></div>
-                <div class="percentage">{{percentage1}}%</div>
+                <div class="percentage">{{ percentage1 }}%</div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="loading-container" *ngIf="isLoading">
+        <iframe
+          src="https://lottie.host/?file=3216f451-384a-4b43-bff5-a9dfc0777bea/BSKddAIRIa.json"
+        ></iframe>
+      </div>
     </div>
   </div>
 </div>
-
-
 
 <!-- <app-pie-chart style="width: 50%; height: 100px;"></app-pie-chart> -->

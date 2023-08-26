@@ -1,149 +1,156 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .container {
-    margin-top: 35px;
-    height: 100vh;
+  margin-top: 35px;
+  height: 100vh;
 }
 
 .sign-up-container {
-    gap: 72px;
+  gap: 72px;
 }
 
 /* LEFT SECTION */
 .left-section {
-    background: #F3F7FB;
-    text-align: left !important;
-    flex: 1.5;
-    /* This sets equal width for both divs */
-    gap: 72px;
-    flex-basis: 0;
-    padding: 41px;
-    width: 100%;
-    border-radius: 12px 0px 0px 12px;
+  background: #f3f7fb;
+  text-align: left !important;
+  flex: 1.5;
+  /* This sets equal width for both divs */
+  gap: 72px;
+  flex-basis: 0;
+  padding: 41px;
+  width: 100%;
+  border-radius: 12px 0px 0px 12px;
 }
 
 p#review {
-    color: #00235D;
-    font-family: Open Sans;
-    font-size: 27.28px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -1.091px;
-    margin-bottom: 0rem;
+  color: #00235d;
+  font-family: Open Sans;
+  font-size: 27.28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -1.091px;
+  margin-bottom: 0rem;
 }
 
 span#nest {
-    color: #00235D;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 27.28px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: -1.091px;
+  color: #00235d;
+  font-family: "Open Sans", sans-serif;
+  font-size: 27.28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -1.091px;
 }
 
 .review-text {
-    gap: 9px;
-    margin-bottom: 48px;
-    margin-top: 41px;
+  gap: 9px;
+  margin-bottom: 48px;
+  margin-top: 41px;
 }
 
 h2#hero-text {
-    color: #01082B;
-    font-family: 'Palanquin Dark', sans-serif;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 56px;
-    height: 112px;
-flex: 1 0 0;
-margin-bottom: 30px;
-
+  color: #01082b;
+  font-family: "Palanquin Dark", sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 56px;
+  height: 112px;
+  flex: 1 0 0;
+  margin-bottom: 30px;
 }
 
 p#hero-paragraph {
-    color: #565656;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 30px;
+  color: #565656;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
 }
 
 .left-section-bottom {
-    width: 100%;
-    gap: 32px;
+  width: 100%;
+  gap: 32px;
 }
 
 .rectangle-1 {
-    width: 204px;
-    height: 56px;
-    border-radius: 8px;
-    background: linear-gradient(126deg, rgba(1, 16, 85, 0.16) 0%, rgba(255, 255, 255, 0.08) 43.06%, rgba(1, 16, 85, 0.16) 100%);
-    backdrop-filter: blur(20px);
+  width: 204px;
+  height: 56px;
+  border-radius: 8px;
+  background: linear-gradient(
+    126deg,
+    rgba(1, 16, 85, 0.16) 0%,
+    rgba(255, 255, 255, 0.08) 43.06%,
+    rgba(1, 16, 85, 0.16) 100%
+  );
+  backdrop-filter: blur(20px);
 }
 
-
 .profile-img {
-    margin: 11px;
+  margin: 11px;
 }
 
 .thin-lines-1 {
-    gap: 7px;
-    flex: 2;
+  gap: 7px;
+  flex: 2;
 }
 
 .thin-line-1 {
-    width: 90px;
-    height: 6px;
-    border-radius: 4px;
-    background: var(--accent-colour-accent-colour-70, #A2B3C5);
+  width: 90px;
+  height: 6px;
+  border-radius: 4px;
+  background: var(--accent-colour-accent-colour-70, #a2b3c5);
 }
 
 .thin-line-2 {
-    width: 128px;
-    height: 6px;
-    border-radius: 4px;
-    background: var(--accent-colour-accent-colour-70, #A2B3C5);
+  width: 128px;
+  height: 6px;
+  border-radius: 4px;
+  background: var(--accent-colour-accent-colour-70, #a2b3c5);
 }
 
-
 .rectangle-2 {
-    width: 378px;
-    height: 140px;
-    border-radius: 8px;
-    background: linear-gradient(126deg, rgba(43, 56, 113, 0.24) 0%, rgba(255, 255, 255, 0.12) 43.06%, rgba(255, 255, 255, 0.00) 100%);
-    backdrop-filter: blur(20px);
-    gap: 27px;
+  width: 378px;
+  height: 140px;
+  border-radius: 8px;
+  background: linear-gradient(
+    126deg,
+    rgba(43, 56, 113, 0.24) 0%,
+    rgba(255, 255, 255, 0.12) 43.06%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(20px);
+  gap: 27px;
 }
 
 .thin-lines-2 {
-    gap: 8px;
-    margin: 11px;
-    margin-top: 25px;
+  gap: 8px;
+  margin: 11px;
+  margin-top: 25px;
 }
 
 .thin-line-3 {
-    height: 6px;
-    max-width: 280px;
-    align-self: stretch;
-    border-radius: 4px;
-    background: var(--accent-colour-accent-colour-70, #A2B3C5);
+  height: 6px;
+  max-width: 280px;
+  align-self: stretch;
+  border-radius: 4px;
+  background: var(--accent-colour-accent-colour-70, #a2b3c5);
 }
 
 .thin-line-4 {
-    height: 6px;
-    align-self: stretch;
-    border-radius: 4px;
-    background: var(--accent-colour-accent-colour-70, #A2B3C5);
+  height: 6px;
+  align-self: stretch;
+  border-radius: 4px;
+  background: var(--accent-colour-accent-colour-70, #a2b3c5);
 }
 
 .stars {
-    display: flex;
-    align-items: flex-end;
+  display: flex;
+  align-items: flex-end;
 }
 
 /* LEFT SECTION END */
@@ -151,185 +158,194 @@ p#hero-paragraph {
 /* RIGHT SECTION START */
 
 h3#get-started {
-    color: var(--primary-colour-primary-colour-90, #01082B);
-    font-family: Palanquin Dark;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 48px;
+  color: var(--primary-colour-primary-colour-90, #01082b);
+  font-family: Palanquin Dark;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px;
 }
 
 p#sign-up-text {
-    color: var(--neutral-colours-neutral-colours-90, #7E7E7E);
-    font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 30px;
-    margin-bottom: 48px;
+  color: var(--neutral-colours-neutral-colours-90, #7e7e7e);
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  margin-bottom: 48px;
 }
 
 .right-section {
-    flex: 1;
-    /* This sets equal width for both divs */
-    flex-basis: 0;
-    padding: 23px;
+  flex: 1;
+  /* This sets equal width for both divs */
+  flex-basis: 0;
+  padding: 23px;
 }
 
 input {
-    margin-bottom: 24px;
-    border-radius: 8px;
-    border: 1px solid var(--black-colour-black-colour-10, #CCC);
-    padding: 14px 16px;
-    width: 110%;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  border: 1px solid var(--black-colour-black-colour-10, #ccc);
+  padding: 14px 16px;
+  width: 110%;
 }
 
 label {
-    color: var(--black-colour-black-colour-60, #020202);
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 24px;
+  color: var(--black-colour-black-colour-60, #020202);
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
 }
 
 input::placeholder {
-    color: var(--black-colour-black-colour-40, #565656);
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
+  color: var(--black-colour-black-colour-40, #565656);
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
 }
 
-.login-success{
-    font-size: 20px;
-    font-weight: 700;
-    color: #00235D;
+.login-success {
+  font-size: 20px;
+  font-weight: 700;
+  color: #00235d;
 }
 
-.login-error{
-    font-size: 20px;
-    font-weight: 700;
-    color: red;
+.login-error {
+  font-size: 20px;
+  font-weight: 700;
+  color: red;
 }
 
 button#sign-up-btn {
-    background-color: #011055;
-    border: none;
-    width: 110%;
-    padding: 14px 24px;
-    margin-top: 70px;
-    color: #FFF;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 28px;
+  background-color: #011055;
+  border: none;
+  width: 110%;
+  padding: 14px 24px;
+  margin-top: 70px;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
 }
 
 p#sign-in {
-    color: #808080;
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 200;
-    line-height: 28px;
+  color: #808080;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 28px;
 }
 
 span#sign-in {
-    color:#011055;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 28px;
+  color: #011055;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
 }
 
-a#sign-in{
-    text-decoration: none;
-    color: #011055;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 28px;
+a#sign-in {
+  text-decoration: none;
+  color: #011055;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.loading-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-color: rgba(255, 255, 255, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  display: none;
 }
 
 /* Rght Section end */
 
 /* Styles for all device sizes */
-@media (max-width: 576px),
-(min-width: 577px) and (max-width: 800px) {
+@media (max-width: 576px), (min-width: 577px) and (max-width: 800px) {
+  .container {
+    margin-top: 0px;
+    padding: 0px;
+  }
 
-    .container {
-        margin-top: 0px;
-        padding: 0px;
-    }
+  .sign-up-container {
+    flex-direction: column;
+    gap: 10px;
+  }
 
+  /* LEFT-SECTION */
+  .left-section {
+    gap: 48px;
+    padding: 35px 46px 35px 24px;
+  }
 
-    .sign-up-container {
-        flex-direction: column;
-        gap: 10px;
-    }
+  h2#hero-text {
+    font-size: 24px;
+    color: #01082b;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 38px;
+    margin-bottom: 24px;
+  }
 
+  p#hero-paragraph {
+    color: var(--black-colour-black-colour-40, #565656);
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25.888px;
+    margin-bottom: 0;
+  }
 
-    /* LEFT-SECTION */
-    .left-section {
-        gap: 48px;
-        padding: 35px 46px 35px 24px;
-    }
+  .rectangle-2 {
+    width: 350px;
+  }
 
-    h2#hero-text {
-        font-size: 24px;
-        color: #01082B;
-        font-size: 34px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 38px;
-        margin-bottom: 24px;
-    }
+  /* Right section */
+  h3#get-started {
+    color: #01082b;
+    font-family: Palanquin Dark;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+  }
 
-    p#hero-paragraph {
-        color: var(--black-colour-black-colour-40, #565656);
-        font-size: 17px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 25.888px;
-        margin-bottom: 0;
-    }
+  p#sign-up-text {
+    color: #7e7e7e;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25.888px;
+    margin-bottom: 30px;
+  }
 
-    .rectangle-2 {
-        width: 350px;
-    }
+  input {
+    width: 100%;
+  }
 
-    /* Right section */
-    h3#get-started {
-        color: #01082B;
-        font-family: Palanquin Dark;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 32px;
-    }
-
-    p#sign-up-text {
-        color: #7E7E7E;
-        font-family: Open Sans;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 25.888px;
-        margin-bottom: 30px;
-    }
-
-    input{
-        width: 100%;
-    }
-
-    button#sign-up-btn {
-        margin-top: 32px;
-        width: 100%;
-    }
+  button#sign-up-btn {
+    margin-top: 32px;
+    width: 100%;
+  }
 }

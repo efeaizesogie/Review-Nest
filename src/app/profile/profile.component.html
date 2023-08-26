@@ -118,5 +118,11 @@
     <div class="darkBg" [class.active]="isDetailBoxActive">
       <app-edit-profile></app-edit-profile>
     </div>
+
+    <div class="loading-container" *ngIf="isLoading">
+      <iframe
+        src="https://lottie.host/?file=3216f451-384a-4b43-bff5-a9dfc0777bea/BSKddAIRIa.json"
+      ></iframe>
+    </div>
   </div>
 </div>
