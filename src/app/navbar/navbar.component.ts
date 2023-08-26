@@ -20,9 +20,14 @@ export class NavbarComponent {
     anchor.click();
   }
 
-  @Output() scrollToSectionEvent = new EventEmitter<string>();
-
   scrollToSection(sectionId: string) {
-    this.scrollToSectionEvent.emit(sectionId);
+    const element = this.renderer.selectRootElement(`#${sectionId}`);
+    if (element) {
+      const offset = 60;
+      window.scrollTo({
+        top: element.getBoundingClientRect().top + window.scrollY - offset,
+        behavior: "smooth",
+      });
+    }
   }
 }
