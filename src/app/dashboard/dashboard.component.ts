@@ -32,6 +32,9 @@ export class DashboardComponent implements OnInit {
   percentage4: number = 0;
   percentage5: number = 0;
   isLoading: boolean = true;
+  average: number = 0;
+  performanceText: string = '';
+  pRating: number = 1;
 
   constructor(private http: HttpClient, private userService: UserService) {}
 
@@ -112,25 +115,47 @@ export class DashboardComponent implements OnInit {
                 break;
             }
           });
+          // Loop through reviews and count occurrences of each rating
+          reviews.forEach((review) => {
+            const rating = review.rating;
+            switch (rating) {
+              case 1:
+                count1++;
+                break;
+              case 2:
+                count2++;
+                break;
+              case 3:
+                count3++;
+                break;
+              case 4:
+                count4++;
+                break;
+              case 5:
+                count5++;
+                break;
+            }
+          });
 
-          console.log("Count of 1:", count1);
-          console.log("Count of 2:", count2);
-          console.log("Count of 3:", count3);
-          console.log("Count of 4:", count4);
-          console.log("Count of 5:", count5);
+          console.log('Count of 1:', count1);
+          console.log('Count of 2:', count2);
+          console.log('Count of 3:', count3);
+          console.log('Count of 4:', count4);
+          console.log('Count of 5:', count5);
 
           const totalReviews = reviews.length;
-          const percentage1 = (count1 / totalReviews) * 100;
-          const percentage2 = (count2 / totalReviews) * 100;
-          const percentage3 = (count3 / totalReviews) * 100;
-          const percentage4 = (count4 / totalReviews) * 100;
-          const percentage5 = (count5 / totalReviews) * 100;
+          const percentage1 = Math.round((count1 / totalReviews) * 100);
+          const percentage2 = Math.round((count2 / totalReviews) * 100);
+          const percentage3 = Math.round((count3 / totalReviews) * 100);
+          const percentage4 = Math.round((count4 / totalReviews) * 100);
+          const percentage5 = Math.round((count5 / totalReviews) * 100);
+          //  const average =Math.round( (count1 + count2 + count3 + count4 + count5) / totalReviews);
 
-          console.log("Percentage of 1:", percentage1);
-          console.log("Percentage of 2:", percentage2);
-          console.log("Percentage of 3:", percentage3);
-          console.log("Percentage of 4:", percentage4);
-          console.log("Percentage of 5:", percentage5);
+          console.log('Percentage of 1:', percentage1);
+          console.log('Percentage of 2:', percentage2);
+          console.log('Percentage of 3:', percentage3);
+          console.log('Percentage of 4:', percentage4);
+          console.log('Percentage of 5:', percentage5);
 
           // Set these percentages to variables for use in your template
           this.percentage1 = percentage1;
@@ -138,16 +163,37 @@ export class DashboardComponent implements OnInit {
           this.percentage3 = percentage3;
           this.percentage4 = percentage4;
           this.percentage5 = percentage5;
+          //  this.average = average;
+          //  console.log('average rating:',average)
 
-          localStorage.setItem("Percentage1", this.percentage1.toString());
-          localStorage.setItem("Percentage2", this.percentage2.toString());
-          localStorage.setItem("Percentage3", this.percentage3.toString());
-          localStorage.setItem("Percentage4", this.percentage4.toString());
-          localStorage.setItem("Percentage5", this.percentage5.toString());
+          localStorage.setItem('Percentage1', this.percentage1.toString());
+          localStorage.setItem('Percentage2', this.percentage2.toString());
+          localStorage.setItem('Percentage3', this.percentage3.toString());
+          localStorage.setItem('Percentage4', this.percentage4.toString());
+          localStorage.setItem('Percentage5', this.percentage5.toString());
+          localStorage.setItem('average', this.average.toString());
         },
         (error) => {
-          console.error("Error fetching reviews data:", error);
+          console.error('Error fetching reviews data:', error);
         }
       );
+
+
+      
+  }
+  setPerformanceText(average: number) {
+    if (this.average === 5) {
+      this.performanceText = 'Excellent';
+    } else if (average === 4) {
+      this.performanceText = 'Great';
+    } else if (average === 3) {
+      this.performanceText = 'Good';
+    } else if (average === 2) {
+      this.performanceText = 'Poor';
+    } else if (average === 1) {
+      this.performanceText = 'Very Poor';
+    } else {
+      this.performanceText = '';
+    }
   }
 }
