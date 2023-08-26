@@ -17,10 +17,6 @@ interface ReviewsApiResponse {
     message: string;
     reviews: any[]; // Adjust the type accordingly based on the actual structure
   };
-    success: boolean;
-    message: string;
-    reviews: any[]; // Adjust the type accordingly based on the actual structure
-  };
 }
 
 @Component({
