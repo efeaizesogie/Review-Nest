@@ -136,7 +136,7 @@ p#performance {
 
 .pie-chart-container {
   width: 328px;
-  padding: 24px 12px 48px 24px;
+  padding: 24px 0px 48px 24px;
   align-items: flex-start;
   gap: 30px;
   border-radius: 8px;
