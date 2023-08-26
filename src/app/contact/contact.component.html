@@ -11,16 +11,24 @@
     </div>
 
     <div class="form-section">
-      <form>
+      <form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
         <div class="mb-3">
           <label for="name" class="form-label">Full Name</label>
           <input
-            type="email"
+            type="text"
             class="form-control input"
             id="email"
             aria-describedby="nameHelp"
+            required
+            formControlName="fullName"
             placeholder="Enter name"
           />
+          <div
+            *ngIf="contactForm.get('fullName')?.invalid && formSubmitted"
+            class="error-msg"
+          >
+            Full Name is required.
+          </div>
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Email address</label>
@@ -30,23 +38,45 @@
             id="email"
             aria-describedby="emailHelp"
             placeholder="Enter email"
+            formControlName="email"
+            name="email"
+            required
           />
+          <div
+            *ngIf="contactForm.get('email')?.invalid && formSubmitted"
+            class="error-msg"
+          >
+            Email is required.
+          </div>
         </div>
         <div class="mb-3">
           <label for="text" class="form-label">Message</label>
           <textarea
-            type="text"
             class="form-control input"
-            id="text"
+            id="message"
             placeholder="Enter message"
             name="textarea"
+            formControlName="message"
+            name="message"
             cols="20"
             rows="5"
+            required
           ></textarea>
+          <div
+            *ngIf="contactForm.get('message')?.invalid && formSubmitted"
+            class="error-msg"
+          >
+            Message is required
+          </div>
         </div>
 
         <button type="submit" class="btn btn-up">Send Message</button>
       </form>
     </div>
+  </div>
+
+  <div class="success-msg" [ngClass]="{ 'fade-out': !successMessageVisible }">
+    Your message was sent successfully!
+    <div class="progress-bar"></div>
   </div>
 </div>

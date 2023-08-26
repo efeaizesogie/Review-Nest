@@ -52,6 +52,35 @@
   margin-top: 10px;
 }
 
+.error-msg {
+  font-size: 10px;
+  margin-top: 5px;
+  font-family: "Open Sans", Helvetica;
+}
+
+.success-msg {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #dff0d8;
+  border: 1px solid #d6e9c6;
+  border-radius: 4px;
+  color: #3c763d;
+  opacity: 1;
+  height: 40px;
+  overflow: hidden;
+  transition: height 0.3s ease, opacity 0.3s ease;
+  position: relative;
+}
+
+.success-msg.fade-out {
+  height: 0;
+  opacity: 0;
+}
+
+textarea {
+  resize: none;
+}
+
 @media screen and (max-width: 980px) {
   .about-info {
     display: flex;

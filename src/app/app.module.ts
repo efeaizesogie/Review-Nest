@@ -26,15 +26,16 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { FormCreationComponent } from "./form-creation/form-creation.component";
 import { DashboardNavRightComponent } from "./dashboard-nav-right/dashboard-nav-right.component";
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { EditProfileComponent } from "./edit-profile/edit-profile.component";
 import { UserService } from "./user.service";
-import { SubmissionComponent } from './submission/submission.component';
+import { SubmissionComponent } from "./submission/submission.component";
 import { ReviewService } from "./review.service";
-import { ReviewsComponent } from './reviews/reviews.component';
-import { NavbarDasComponent } from './navbar-das/navbar-das.component';
+import { ReviewsComponent } from "./reviews/reviews.component";
+import { NavbarDasComponent } from "./navbar-das/navbar-das.component";
 import { NgxChartsModule } from "@swimlane/ngx-charts";
-import { PieChartComponent } from './pie-chart/pie-chart.component';
-import { NgApexchartsModule } from 'ng-apexcharts';
+import { PieChartComponent } from "./pie-chart/pie-chart.component";
+import { NgApexchartsModule } from "ng-apexcharts";
+import { NgxApexchartsModule } from "ngx-apexcharts";
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +69,15 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     PieChartComponent,
     // ChartComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, ReactiveFormsModule, NgxChartsModule, NgApexchartsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    NgxChartsModule,
+    NgxApexchartsModule,
+  ],
   providers: [UserService, ReviewService],
   bootstrap: [AppComponent],
 })
