@@ -40,6 +40,7 @@ export class EditProfileComponent {
   isDetailBoxActive: boolean = false;
   emailInput = new FormControl();
   desc = new FormControl();
+  loading: boolean = false;
 
   constructor(
     private http: HttpClient,
@@ -91,6 +92,7 @@ export class EditProfileComponent {
   onUpdateClicked(editForm: NgForm) {
     if (editForm.valid) {
       if (this.emailInput.valid && this.emailInput.value) {
+        this.loading = true;
         var formValues = editForm.value;
 
         formValues.email = this.emailInput.value;
@@ -122,6 +124,8 @@ export class EditProfileComponent {
           .subscribe((res) => {
             this.apiData = res;
             console.log(this.apiData);
+
+            this.loading = true;
           });
 
         editForm.resetForm();

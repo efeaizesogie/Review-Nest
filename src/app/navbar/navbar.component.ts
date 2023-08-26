@@ -23,11 +23,7 @@ export class NavbarComponent {
   scrollToSection(sectionId: string) {
     const element = this.renderer.selectRootElement(`#${sectionId}`);
     if (element) {
-      const offset = 60;
-      window.scrollTo({
-        top: element.getBoundingClientRect().top + window.scrollY - offset,
-        behavior: "smooth",
-      });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   }
 }

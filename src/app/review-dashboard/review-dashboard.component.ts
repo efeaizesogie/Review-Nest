@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Renderer2 } from "@angular/core";
 import { ReviewService } from "../review.service";
 
 @Component({
@@ -12,8 +12,8 @@ export class ReviewDashboardComponent implements OnInit {
   selectedReview: any | null = null;
   currentPage: number = 1;
   itemsPerPage: number = 5;
-  renderer: any;
   isDetailBoxActive: boolean = false;
+  loading: boolean = true;
 
   get startIndex(): number {
     return (this.currentPage - 1) * this.itemsPerPage;
@@ -23,17 +23,26 @@ export class ReviewDashboardComponent implements OnInit {
     return this.startIndex + this.itemsPerPage;
   }
 
-  constructor(private reviewService: ReviewService) {}
+  constructor(
+    private reviewService: ReviewService,
+    private renderer: Renderer2
+  ) {}
 
   ngOnInit(): void {
+    const loadingScreen = document.querySelector(".spinner-item");
+    console.log(this.loading);
     this.reviewService.getReviews().subscribe(
       (response) => {
         this.reviews = response.Reviews;
         this.totalReviews = this.reviews.length;
         console.log(this.reviews);
+        this.loading = false;
+        this.renderer.setStyle(loadingScreen, "display", "none");
       },
       (error) => {
         console.error(error);
+        this.loading = false;
+        this.renderer.setStyle(loadingScreen, "display", "none");
       }
     );
   }
