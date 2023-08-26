@@ -32,6 +32,9 @@ import { SubmissionComponent } from './submission/submission.component';
 import { ReviewService } from "./review.service";
 import { ReviewsComponent } from './reviews/reviews.component';
 import { NavbarDasComponent } from './navbar-das/navbar-das.component';
+import { NgxChartsModule } from "@swimlane/ngx-charts";
+import { PieChartComponent } from './pie-chart/pie-chart.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,8 +65,10 @@ import { NavbarDasComponent } from './navbar-das/navbar-das.component';
     SubmissionComponent,
     ReviewsComponent,
     NavbarDasComponent,
+    PieChartComponent,
+    // ChartComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, ReactiveFormsModule, NgxChartsModule, NgApexchartsModule],
   providers: [UserService, ReviewService],
   bootstrap: [AppComponent],
 })

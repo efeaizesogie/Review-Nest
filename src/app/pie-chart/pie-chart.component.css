@@ -1,0 +1,20 @@
+/* .chartContainer{
+    height: 400px;
+    width: 200px;
+} */
+
+.no-legend .apexcharts-legend {
+    display: none !important;
+  }
+
+
+  .apexcharts-legend {
+    display: flex;
+    overflow: auto;
+    /* padding: 0 10px; */
+    display: none !important;
+}
+
+#apex-chart.apexcharts-legend.apexcharts-align-center.apx-legend-position-right{
+    display: none !important;
+}

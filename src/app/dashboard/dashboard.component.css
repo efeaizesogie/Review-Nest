@@ -30,7 +30,7 @@ p#dashboard-para {
 }
 
 .carousel-slide {
-  width: 206px;
+  width: 425px;
   height: 140px;
   padding: 16px 24px;
   align-items: flex-start;
@@ -54,17 +54,9 @@ p#dashboard-para {
   background: var(--success-state-success-state-10, #d0ebd2);
 }
 
-#forms-dispatched {
-  background: var(--primary-colour-primary-colour-10, #cccfdd);
-}
-
-#response-rate {
-  background: var(--secondary-colour-secondary-colour-20, #fee8b5);
-}
-
 #overall-performance {
   background: var(--neutral-colours-white-colour, #fff);
-  width: 230px;
+  width: 465px;
   padding: 16px 9px;
 }
 
@@ -144,12 +136,16 @@ p#performance {
 
 .pie-chart-container {
   width: 328px;
-  padding: 24px 24px 48px 24px;
+  padding: 24px 12px 48px 24px;
   align-items: flex-start;
   gap: 30px;
   border-radius: 8px;
   border: 1px solid var(--primary-colour-primary-colour-10, #cccfdd);
   background: #fff;
+}
+
+.percentages{
+  gap: 4px;
 }
 
 p#review-report {
@@ -161,10 +157,18 @@ p#review-report {
   line-height: 24px;
 }
 
+.desc{
+  justify-content: space-around;
+}
+
 div#filter {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.chart-and-desc{
+  justify-content: space-between;
 }
 
 p#pie-chart-header {
@@ -208,16 +212,22 @@ p.review-text {
     width: 200px;
   }
 
+  #overall-performance{
+    width: 210px;
+  }
+
   .graph {
     width: 312px;
     padding: 24px 16px;
     gap: 16px 180px;
+    order: 2;
   }
 
   .pie-chart-container {
     width: 312px;
     padding: 24px;
     gap: 8px;
+    order: 1;
   }
 
   .chart-and-desc {
@@ -228,6 +238,18 @@ p.review-text {
     flex-direction: row !important;
     flex-wrap: wrap;
     gap: 12px;
+  }
+
+  .chart{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+  }
+  .percentage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
