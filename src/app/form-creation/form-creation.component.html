@@ -11,7 +11,7 @@
     <div class="header d-flex flex-column">
       <div class="write-a-review">Write a Review</div>
       <div class="what-do-you-think">
-        What do you think of our products/services? Fill in the form below to
+        What do you think of our products/services? <br> Fill in the form below to
         share your thoughts about us.
       </div>
     </div>
@@ -127,30 +127,7 @@
             <button id="submit-btn" type="submit" class="btn">Submit</button>
           </div>
         </form>
-
-       
       </div>
     </div>
-
-
-    <div class="submission overlay d-flex flex-column" *ngIf="showSubmission">
-      <div id="close" (click)="closeSubmission()">
-        <img src="\assets\dashboard\close.png" alt="" />
-      </div>
-      <div class="check">
-        <img src="\assets\assets(png)\check-one.png" alt="" />
-      </div>
-      <div class="submission-text">
-        <p id="submission">Submission Successful!</p>
-        <p id="feedback">
-          Your feedback have been successfully sent to Suittie Fashion
-          Brand.
-        </p>
-      </div>
-      <button id="back">
-        <a id="back-btn" href="" routerLink="/">Back to Home</a>
-      </button>
-    </div>
-
   </div>
-
+</div>
