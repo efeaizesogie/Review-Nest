@@ -10,7 +10,7 @@
 .edit-wrapper {
   display: none;
   width: 690px;
-  min-height: 120%;
+  min-height: 100%;
   margin: 0 auto;
   top: 150px;
   left: 36%;
@@ -161,6 +161,13 @@ textarea::placeholder {
   width: 70%;
   max-height: 462px;
   margin: 10px auto 0 auto;
+}
+
+.invalid-feed,
+.word-count {
+  font-size: 10px;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 980px) {

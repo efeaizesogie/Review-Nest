@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
   isDetailBoxActive: boolean = false;
   placeholderImageUrl = "./../../assets/dashboard/com img.svg";
   companyName: any;
+  companyImageUrl: string = "";
 
   constructor(
     private router: Router,
@@ -37,6 +38,7 @@ export class ProfileComponent implements OnInit {
       this.sharedService.isDetailBoxActive$.subscribe((isActive) => {
         this.isDetailBoxActive = isActive;
       });
+      this.selectedImageUrl = localStorage.getItem("enteredImageUrl");
     });
 
     this.companyName = this.userService.getCompanyName();

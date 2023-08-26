@@ -1,47 +1,68 @@
 <div class="dash-nav">
   <div class="d-flex flex-column navbar-dashboard">
     <div class="d-flex logo-div">
-     <a id="logo" href="" routerLink="/"><app-logo></app-logo></a> 
+      <a id="logo" href="" routerLink="/"><app-logo></app-logo></a>
     </div>
     <div class="d-inline-flex flex-column dash-nav-items">
       <div class="nav-items-nav d-flex flex-column">
         <div class="dash-nav-item d-flex align-items-center">
-          <img
-            src="./../../assets/dashboard/category.svg"
-            alt="Dashboard"
-            class="nav-icon"
-          />
-          <a href="#" class="dash-text" [routerLink]="'/dashboard'"
-            >Dashboard</a
+          <a
+            href="#"
+            class="dash-text d-flex align-items-center"
+            [routerLink]="'/dashboard'"
+          >
+            <img
+              src="./../../assets/dashboard/category.svg"
+              alt="Dashboard"
+              class="nav-icon"
+            />
+            Dashboard</a
           >
         </div>
         <div class="dash-nav-item d-flex align-items-center">
-          <img
-            src="./../../assets/dashboard/message-text.svg"
-            alt="Dashboard"
-            class="nav-icon"
-          />
-          <a href="#" class="dash-text" [routerLink]="'/review'">Review</a>
+          <a
+            href="#"
+            class="dash-text d-flex align-items-center"
+            [routerLink]="'/review'"
+          >
+            <img
+              src="./../../assets/dashboard/message-text.svg"
+              alt="Dashboard"
+              class="nav-icon"
+            />
+            Review</a
+          >
         </div>
 
         <div class="dash-nav-item d-flex align-items-center">
-          <img
-            src="./../../assets/dashboard/user-square.svg"
-            alt="Dashboard"
-            class="nav-icon"
-          />
-          <a href="#" class="dash-text" [routerLink]="'/profile'">Profile</a>
+          <a
+            href="#"
+            class="dash-text d-flex align-items-center"
+            [routerLink]="'/profile'"
+          >
+            <img
+              src="./../../assets/dashboard/user-square.svg"
+              alt="Dashboard"
+              class="nav-icon"
+            />Profile</a
+          >
         </div>
       </div>
 
       <div class="logout-container">
         <div class="dash-nav-item d-flex align-items-center">
-          <img
-            src="./../../assets/dashboard/logout.svg"
-            alt="Dashboard"
-            class="nav-icon"
-          />
-          <a href="#" class="dash-text" [routerLink]="'/sign-in'">Logout</a>
+          <a
+            href="#"
+            class="dash-text d-flex align-items-center"
+            [routerLink]="'/sign-in'"
+          >
+            <img
+              src="./../../assets/dashboard/logout.svg"
+              alt="Dashboard"
+              class="nav-icon"
+            />
+            Logout</a
+          >
         </div>
       </div>
     </div>

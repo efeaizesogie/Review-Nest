@@ -48,6 +48,10 @@ a#logo {
   font-family: "Open Sans", Helvetica;
 }
 
+.nav-icon {
+  margin-right: 24px;
+}
+
 .active {
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.08);
