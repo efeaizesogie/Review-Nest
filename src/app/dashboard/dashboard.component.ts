@@ -39,9 +39,8 @@ export class DashboardComponent implements OnInit {
   constructor(private http: HttpClient, private userService: UserService) {}
 
   ngOnInit() {
-    const userId = localStorage.getItem("userID");
-    const accessToken = localStorage.getItem("accessToken");
-    this.isLoading = true;
+    const userId = localStorage.getItem('userID');
+    const accessToken = localStorage.getItem('accessToken');
 
     if (userId) {
       this.http
@@ -51,19 +50,16 @@ export class DashboardComponent implements OnInit {
         .subscribe(
           (response) => {
             // Update the company name in the service
-            console.log("API Response:", response);
+            console.log('API Response:', response);
             this.userService.setCompanyName(response.data.company_name);
             // console.log(response.data.company_name)
-            this.isLoading = false;
           },
           (error) => {
-            console.error("Error fetching user data:", error);
-            this.isLoading = false;
+            console.error('Error fetching user data:', error);
           }
         );
     } else {
-      console.error("userId not found in local storage");
-      this.isLoading = false;
+      console.error('userId not found in local storage');
     }
 
     const headers = new HttpHeaders({
@@ -77,16 +73,48 @@ export class DashboardComponent implements OnInit {
       )
       .subscribe(
         (reviewsResponse) => {
-          console.log("Reviews API Response:", reviewsResponse);
+          console.log('Reviews API Response:', reviewsResponse);
           const reviews = reviewsResponse.data.reviews;
           this.totalReviews = reviewsResponse.data.reviews.length;
-          console.log("Total Reviews:", this.totalReviews);
+          console.log('Total Reviews:', this.totalReviews);
+
+          let totalSum = 0;
+          let totalCount = 0;
+
+          const weightedRatings = reviews.reduce((acc, review) => {
+            const rating = review.rating;
+            const count = acc[rating] || 0;
+            acc[rating] = count + 1;
+
+            totalSum += rating * count;
+            console.log('line 96', totalSum);
+            totalCount += count;
+
+            return acc;
+          }, {});
+
+          // Calculate weighted average
+          //  const weightedAverage = totalCount === 0 ? 0 : totalSum / totalCount;
+          //  console.log('total sum is ',totalSum)
+          //  console.log('total count is ',totalCount)
+
+          //  // Set the weighted average to the component property
+          //  this.average = Math.round(weightedAverage);
+          //  this.pRating = this.average
+
+          //  console.log('weighted average',this.average)
 
           reviews.forEach((review) => {
             const rating = review.rating;
-            console.log("Rating:", rating);
-            // You can further process or display the ratings here
+            totalSum += rating;
+            console.log('Rating:', rating);
           });
+          const totalAverage = Math.round(totalSum / reviews.length);
+          this.pRating = totalAverage;
+          this.setPerformanceText(totalAverage);
+          console.log('Total Average:', totalAverage);
+
+          console.log('total ratings =', totalSum);
           // Initialize variables to store counts
           let count1 = 0;
           let count2 = 0;
@@ -94,27 +122,6 @@ export class DashboardComponent implements OnInit {
           let count4 = 0;
           let count5 = 0;
 
-          // Loop through reviews and count occurrences of each rating
-          reviews.forEach((review) => {
-            const rating = review.rating;
-            switch (rating) {
-              case 1:
-                count1++;
-                break;
-              case 2:
-                count2++;
-                break;
-              case 3:
-                count3++;
-                break;
-              case 4:
-                count4++;
-                break;
-              case 5:
-                count5++;
-                break;
-            }
-          });
           // Loop through reviews and count occurrences of each rating
           reviews.forEach((review) => {
             const rating = review.rating;
@@ -182,7 +189,7 @@ export class DashboardComponent implements OnInit {
       
   }
   setPerformanceText(average: number) {
-    if (this.average === 5) {
+    if (average === 5) {
       this.performanceText = 'Excellent';
     } else if (average === 4) {
       this.performanceText = 'Great';
