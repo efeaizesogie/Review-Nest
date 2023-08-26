@@ -2,16 +2,23 @@ app-navbar-das {
   display: none;
 }
 
-.before {
+.darkBg::before {
   content: "";
   position: absolute;
-  height: 140%;
+  height: 135vh;
+  z-index: 99;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.8);
   pointer-events: none;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.darkBg.active::before {
+  opacity: 1;
 }
 
 .dashboard {
@@ -76,11 +83,15 @@ app-navbar-das {
 
 .logo-img {
   width: 88px;
-  height: auto;
+  height: 88px;
+  border-radius: 50%;
 }
 
 .logo-content {
   position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
 
 .orange-cam {

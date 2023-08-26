@@ -38,22 +38,14 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
+  transition: all 0.2s;
 }
 
-.link-active {
-  position: relative;
+.link-items:hover {
+  border-bottom: 2px solid #fdba21;
+  width: fit-content;
 }
 
-.link-active::after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 80%;
-  margin-left: 8px;
-  height: 2px;
-  background-color: #fdba21;
-}
 .list-item {
   width: 120px;
 }
@@ -83,8 +75,9 @@
     width: 100%;
   }
 
-  .link-active {
+  .link-items:hover {
     color: #fdba21;
+    border-bottom: 0;
   }
 
   .link-active::after {

@@ -1,12 +1,18 @@
-
+<div [ngClass]="{ overlay: showOverlay }" class="parent">
   <app-navbar></app-navbar>
-
-  <div class="forms-container mt-4 container content d-flex flex-column">
+  <div class="darkBg" [class.active]="isDetailBoxActive">
+    <app-submission
+      *ngIf="submitted"
+      (closeRequested)="closeSubmissionComponent()"
+      id="submission-component"
+    ></app-submission>
+  </div>
+  <div class="mt-4 container content d-flex flex-column">
     <div class="header d-flex flex-column">
       <div class="write-a-review">Write a Review</div>
       <div class="what-do-you-think">
-        What do you think of our products/services? <br />
-        Fill in the form below to share your thoughts about us.
+        What do you think of our products/services? Fill in the form below to
+        share your thoughts about us.
       </div>
     </div>
     <div class="left">

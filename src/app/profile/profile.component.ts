@@ -6,6 +6,8 @@ import {
 } from "@angular/router";
 import { filter } from "rxjs/operators";
 import { UserInputService } from "../user-input.service";
+import { SharedService } from "../shared.service";
+import { UserService } from "../user.service";
 
 @Component({
   selector: "app-profile",
@@ -15,26 +17,41 @@ import { UserInputService } from "../user-input.service";
 export class ProfileComponent implements OnInit {
   brandName: any;
   userInput$: any;
+  selectedImageUrl: any;
+  isDetailBoxActive: boolean = false;
+  placeholderImageUrl = "./../../assets/dashboard/com img.svg";
+  companyName: any;
+  companyImageUrl: string = "";
 
   constructor(
     private router: Router,
     private dataService: UserInputService,
     private renderer: Renderer2,
-    private userInputService: UserInputService
+    private userInputService: UserInputService,
+    private sharedService: SharedService,
+    private userService: UserService
   ) {}
 
   ngOnInit() {
     this.userInputService.userInput$.subscribe((userInput) => {
       this.userInput$ = userInput;
+      this.sharedService.isDetailBoxActive$.subscribe((isActive) => {
+        this.isDetailBoxActive = isActive;
+      });
+      this.selectedImageUrl = localStorage.getItem("enteredImageUrl");
     });
+
+    this.companyName = this.userService.getCompanyName();
+    console.log("Company Name:", this.companyName);
+
+    this.selectedImageUrl = this.userInputService.getSelectedImageUrl();
   }
 
   showEditProfilePage() {
     const elementToDisplay = document.querySelector(".edit-wrapper");
-    const darkBg = document.querySelector(".dashboard::before");
     if (elementToDisplay) {
       this.renderer.setStyle(elementToDisplay, "display", "block");
-      this.renderer.setStyle(darkBg, "display", "block");
+      this.isDetailBoxActive = true;
     }
   }
 

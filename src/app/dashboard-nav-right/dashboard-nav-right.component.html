@@ -19,13 +19,13 @@
       </div>
       <div class="comp-logo d-flex align-items-center">
         <img
-          src="./../../assets/dashboard/com img.svg"
+          [src]="selectedImageUrl || placeHolderImageUrl"
           alt="company logo"
           class="com-img"
         />
         <div class="com-logo-text">
-          <p class="logo-text">{{ companyName }}</p>
-          Business Admin
+          <p class="logo-text">{{ userInput$.company_name || companyName }}</p>
+          {{ userInput$.category || "Business Admin" }}
         </div>
       </div>
     </div>

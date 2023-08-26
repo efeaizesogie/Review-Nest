@@ -28,8 +28,8 @@
           >
             <div class="logo-content">
               <img
-                src="./../../assets/dashboard/com img.svg"
-                alt=""
+                [src]="selectedImageUrl || placeholderImageUrl"
+                alt="selectedImage"
                 class="logo-img"
               />
               <img
@@ -38,9 +38,9 @@
                 class="orange-cam"
               />
             </div>
-            <div class="com-logo-text mt-2 text-center">
-              <p class="logo-text mb-1">
-                {{ userInput$.company_name }}
+            <div class="com-logo-text text-center">
+              <p class="logo-text mb-2">
+                {{ userInput$.company_name || companyName }}
               </p>
               <div class="online-status gap-2 text-center d-flex">
                 <img
@@ -115,6 +115,8 @@
       </div>
     </div>
 
-    <app-edit-profile></app-edit-profile>
+    <div class="darkBg" [class.active]="isDetailBoxActive">
+      <app-edit-profile></app-edit-profile>
+    </div>
   </div>
 </div>
