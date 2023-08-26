@@ -164,6 +164,10 @@ textarea::placeholder {
   margin: 10px auto 0 auto;
 }
 
+.invalid-feed {
+  color: #ff0000;
+}
+
 .invalid-feed,
 .word-count {
   font-size: 10px;

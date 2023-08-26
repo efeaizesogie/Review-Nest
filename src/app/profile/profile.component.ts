@@ -22,6 +22,8 @@ export class ProfileComponent implements OnInit {
   placeholderImageUrl = "./../../assets/dashboard/com img.svg";
   companyName: any;
   companyImageUrl: string = "";
+  isLoading: boolean = true;
+  loadingDurationMs: number = 5000;
 
   constructor(
     private router: Router,
@@ -30,9 +32,12 @@ export class ProfileComponent implements OnInit {
     private userInputService: UserInputService,
     private sharedService: SharedService,
     private userService: UserService
-  ) {}
+  ) {
+    this.isLoading = true;
+  }
 
   ngOnInit() {
+    this.isLoading = true;
     this.userInputService.userInput$.subscribe((userInput) => {
       this.userInput$ = userInput;
       this.sharedService.isDetailBoxActive$.subscribe((isActive) => {
@@ -45,6 +50,10 @@ export class ProfileComponent implements OnInit {
     console.log("Company Name:", this.companyName);
 
     this.selectedImageUrl = this.userInputService.getSelectedImageUrl();
+
+    setTimeout(() => {
+      this.isLoading = false;
+    }, this.loadingDurationMs);
   }
 
   showEditProfilePage() {
