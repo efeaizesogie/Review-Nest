@@ -5,7 +5,7 @@ a#logo {
 .dash-nav {
   background: #010b39;
   width: 318px;
-  height: 100vh;
+  height: 100%;
   font-family: "Open Sans", Helvetica;
   overflow: hidden;
 }
