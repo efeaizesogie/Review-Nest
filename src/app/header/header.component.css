@@ -72,6 +72,7 @@ li.companies:hover {
 .btn-up {
   background-color: #fdba21;
   color: #fefefe;
+  width: 120px;
   font-size: 16px;
   font-weight: 600;
 }
@@ -99,6 +100,11 @@ li.companies:hover {
 
 .hero-img {
   height: 460px;
+}
+
+.spinner-btn {
+  width: 24px;
+  height: 24px;
 }
 
 @media screen and (max-width: 980px) {

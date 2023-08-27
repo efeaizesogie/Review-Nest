@@ -45,11 +45,17 @@
 
 .btn-up {
   background-color: #fdba21;
-  color: #fefefe;
+  color: #000311;
   font-size: 16px;
+  width: 200px;
   padding: 10px 24px 10px 24px;
   font-weight: 600;
   margin-top: 10px;
+}
+
+.spinner-btn {
+  width: 24px;
+  height: 24px;
 }
 
 .error-msg {
@@ -111,5 +117,9 @@ textarea {
   .contact-text {
     width: 100%;
     margin-bottom: 24px;
+  }
+
+  .btn-up {
+    width: 100%;
   }
 }

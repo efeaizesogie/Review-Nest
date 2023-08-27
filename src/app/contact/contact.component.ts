@@ -14,6 +14,7 @@ export class ContactComponent {
   formSubmitted = false;
   messageSent = false;
   successMessageVisible = false;
+  loading: boolean = false;
 
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
@@ -25,8 +26,9 @@ export class ContactComponent {
 
   onSubmit() {
     this.formSubmitted = true;
+    if (this.contactForm.valid && !this.loading) {
+      this.loading = true;
 
-    if (this.contactForm.valid) {
       console.log("Form submitted");
       console.log("Full Name:", this.contactForm.get("fullName")?.value);
       console.log("Email:", this.contactForm.get("email")?.value);
@@ -34,13 +36,15 @@ export class ContactComponent {
 
       this.contactForm.reset();
       this.formSubmitted = false;
-      this.messageSent = true;
-
-      this.successMessageVisible = true;
 
       setTimeout(() => {
-        this.successMessageVisible = false;
-      }, 3000);
+        this.loading = false;
+        this.successMessageVisible = true;
+
+        setTimeout(() => {
+          this.successMessageVisible = false;
+        }, 3000);
+      }, 1000);
     } else {
       this.markFormGroupAsTouched(this.contactForm);
     }

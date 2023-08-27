@@ -10,24 +10,39 @@
           Bridge businesses and customers through ReviewNest: No website, no
           limits – just impactful insights and shared success!
         </div>
-        <form class="d-flex w-75 search-form" role="search" >
+        <form class="d-flex w-75 search-form" role="search">
           <input
-          class="form-control me-2 search-bg"
-          type="search"
-          placeholder="Enter company name"
-          aria-label="Search"
-          [formControl]="searchInput"
-        />
+            class="form-control me-2 search-bg"
+            type="search"
+            placeholder="Enter company name"
+            aria-label="Search"
+            [formControl]="searchInput"
+          />
 
-          <button class="btn btn-up" type="submit" (click)="onSearchButtonClick()">
-            Search
+          <button
+            type="submit"
+            class="btn btn-up"
+            (click)="onSearchButtonClick()"
+            [disabled]="loading"
+          >
+            <span *ngIf="!loading">Search</span>
+            <span
+              *ngIf="loading"
+              class="spinner-border spinner-btn"
+              role="status "
+            ></span>
           </button>
         </form>
         <div class="matching-companies" *ngIf="matchingCompanies.length > 0">
           <ul id="companies">
-            <li  (click)="onCompanyClick(company.id, company.name)" href="javascript:void(0);" class="companies" *ngFor="let company of matchingCompanies">
+            <li
+              (click)="onCompanyClick(company.id, company.name)"
+              href="javascript:void(0);"
+              class="companies"
+              *ngFor="let company of matchingCompanies"
+            >
               <a id="companies">
-                {{ company.name }} 
+                {{ company.name }}
               </a>
             </li>
           </ul>

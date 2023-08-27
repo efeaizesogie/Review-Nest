@@ -70,7 +70,14 @@
           </div>
         </div>
 
-        <button type="submit" class="btn btn-up">Send Message</button>
+        <button type="submit" class="btn btn-up" [disabled]="loading">
+          <span *ngIf="!loading">Send Message</span>
+          <span
+            *ngIf="loading"
+            class="spinner-border spinner-btn"
+            role="status"
+          ></span>
+        </button>
       </form>
     </div>
   </div>
