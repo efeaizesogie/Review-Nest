@@ -4,10 +4,34 @@ import {
   FormGroup,
   Validators,
   FormControl,
+  AbstractControl,
+  ValidatorFn
 } from "@angular/forms";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { confirmPasswordValidator } from "../confirm-password.validator";
+
+export function passwordValidator(): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const password = control.value;
+
+    // Check for at least one letter
+    const letterPattern = /[a-zA-Z]/;
+    if (!letterPattern.test(password)) {
+      return { noLetter: true };
+    }
+
+    // Check for at least one special character
+    const specialCharPattern = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/;
+    if (!specialCharPattern.test(password)) {
+      return { noSpecialChar: true };
+    }
+
+    return null; // Validation passed
+  };
+}
+
+
 
 @Component({
   selector: "app-sign-up",
@@ -15,6 +39,12 @@ import { confirmPasswordValidator } from "../confirm-password.validator";
   styleUrls: ["./sign-up.component.css"],
 })
 export class SignUpComponent {
+
+  // showPassword: boolean = false;
+                                                // fpr show password
+  // toggleShowPassword() {
+  //   this.showPassword = !this.showPassword;
+  // }
   usersForm: FormGroup = new FormGroup(
     {
       pPassword: new FormControl<string>("", [Validators.required]),
@@ -25,6 +55,10 @@ export class SignUpComponent {
     }
   );
 
+  get pPasswordControl() {
+    return this.usersForm.get('pPassword');
+  }
+
   constructor(
     private http: HttpClient,
     private fb: FormBuilder,
@@ -34,14 +68,21 @@ export class SignUpComponent {
       {
         pName: ["", [Validators.required]],
         pEmail: ["", [Validators.required, Validators.email]],
-        pPassword: ["", [Validators.required]],
-        pConfirmPassword: ["", [Validators.required]],
+        pPassword: new FormControl<string>('', [
+          Validators.required,
+          Validators.minLength(5),
+          passwordValidator(), // Add the custom validator here
+        ]),
+        pConfirmPassword: new FormControl<string>('', [Validators.required]),
       },
       {
         validators: confirmPasswordValidator,
       }
     );
+
+    // this.pPasswordControl = this.usersForm.get('pPassword');
   }
+  
 
   onUsersCreate(userDetails: {
     pName: string;

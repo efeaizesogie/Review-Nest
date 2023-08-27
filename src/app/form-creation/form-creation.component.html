@@ -58,6 +58,9 @@
                 required=""
               />
             </div>
+            <div *ngIf="feedbackForm.get('pEmail')?.hasError('email') && feedbackForm.get('pEmail')?.touched" class="error-message">
+              Invalid email format.
+            </div>
             <div class="username">
               <label for="username" class="form-label">Username</label>
               <input
