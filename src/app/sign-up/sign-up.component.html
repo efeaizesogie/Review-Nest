@@ -74,9 +74,6 @@
             required=""
           />
 
-          <!-- <div *ngIf="usersForm.get('pName').touched && usersForm.get('pName').invalid" class="alert">
-            Business Name cannot be empty!
-          </div> -->
         </div>
         <div class="">
           <label for="email" class="form-label">Email address</label>
@@ -93,10 +90,14 @@
             Email cannot be empty!
           </div> -->
         </div>
+        <div *ngIf="usersForm.get('pEmail')?.hasError('email') && usersForm.get('pEmail')?.touched" class="error-message">
+          Invalid email format.
+        </div>
+        
         <div class="">
           <label for="password" class="form-label">Password</label>
           <input
-            type="password"
+          type="password"
             class="form-control"
             id="password"
             placeholder="********"
@@ -104,6 +105,25 @@
             required=""
             formControlName="pPassword"
           />
+          <!-- <button
+          type="button"
+          class="btn btn-secondary btn-sm mt-2"
+          (click)="toggleShowPassword()"
+        >
+          {{ showPassword ? 'Hide Password' : 'Show Password' }}
+        </button> -->
+          <div *ngIf="pPasswordControl?.hasError('minlength') && pPasswordControl?.touched" class="error-message">
+            Password must be at least 8 characters long.
+          </div>
+          <div *ngIf="pPasswordControl?.hasError('noLetter') && pPasswordControl?.touched" class="error-message">
+            Password must contain at least one letter.
+          </div>
+          
+          <div *ngIf="pPasswordControl?.hasError('noSpecialChar') && pPasswordControl?.touched" class="error-message">
+            Password must contain at least one special character.
+          </div>
+          
+          
           <!-- <div *ngIf="name.touched && name.invalid" class="alert">
             Password cannot be empty!
           </div> -->

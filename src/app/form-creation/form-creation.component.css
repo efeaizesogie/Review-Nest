@@ -206,6 +206,10 @@ p#profile-desc {
   background: #fefefe;
 }
 
+.error-message{
+  color: red;
+}
+
 p.business-type {
   color: var(--neutral-colours-neutral-colours-100, #545454);
 
