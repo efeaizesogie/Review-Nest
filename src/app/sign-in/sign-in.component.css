@@ -221,7 +221,7 @@ input::placeholder {
   color: red;
 }
 
-button#sign-up-btn {
+button.sign-up-btn {
   background-color: #011055;
   border: none;
   width: 110%;
@@ -233,6 +233,11 @@ button#sign-up-btn {
   font-style: normal;
   font-weight: 600;
   line-height: 28px;
+}
+
+.spinner-btn {
+  width: 24px;
+  height: 24px;
 }
 
 p#sign-in {
@@ -344,7 +349,7 @@ a#sign-in {
     width: 100%;
   }
 
-  button#sign-up-btn {
+  button.sign-up-btn {
     margin-top: 32px;
     width: 100%;
   }

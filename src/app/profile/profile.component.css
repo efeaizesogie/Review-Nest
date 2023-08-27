@@ -203,8 +203,14 @@ app-navbar-das {
   width: 133px;
   font-size: 16px;
   font-weight: 600;
+  transition: transform 0.3s ease-in-out;
 }
 
+.btn-up:hover {
+  transform: scale(1.05);
+  outline: 2px solid #fdba21;
+  outline-offset: 2px;
+}
 .btn-wrapper {
   width: 70%;
   padding: 0;

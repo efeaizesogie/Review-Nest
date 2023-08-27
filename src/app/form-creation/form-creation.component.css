@@ -50,62 +50,58 @@
   opacity: 0;
 }
 
-
-
-.check{
+.check {
   margin-bottom: 24px;
 }
 
-#close{
+#close {
   position: absolute;
   right: 10px;
   top: 10px;
   cursor: pointer;
 }
 
-p#submission{
+p#submission {
   color: var(--primary-colour-primary-colour-110, #000311);
-text-align: center;
-/* Medium h/7 */
-font-family: 'Open Sans', sans-serif;
-font-size: 20px;
-font-style: normal;
-font-weight: 600;
-line-height: 28px; /* 140% */
-margin-bottom: 8px;
+  text-align: center;
+  /* Medium h/7 */
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 140% */
+  margin-bottom: 8px;
 }
 
-p#feedback{
+p#feedback {
   color: var(--primary-black-400, #616364);
-text-align: center;
-font-family: 'Open Sans', sans-serif;
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 22px; /* 157.143% */
-margin-bottom: 20px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 157.143% */
+  margin-bottom: 20px;
 }
 
-button#back{
+button#back {
   width: 330px;
   height: 44px;
   color: var(--primary-colour-primary-colour-110, #000311);
-font-family: 'Open Sans', sans-serif;
-font-size: 16px;
-font-style: normal;
-font-weight: 600;
-line-height: 24px; 
-border: none;
-border-radius: 8px;
-background: var(--secondary-colour-secondary-colour-60, #FDBA21);
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  border: none;
+  border-radius: 8px;
+  background: var(--secondary-colour-secondary-colour-60, #fdba21);
 }
 
-a#back-btn{
+a#back-btn {
   text-decoration: none;
   color: #000311;
 }
-
-
 
 /* end of submission codes */
 
@@ -206,7 +202,7 @@ p#profile-desc {
   background: #fefefe;
 }
 
-.error-message{
+.error-message {
   color: red;
 }
 
@@ -303,12 +299,46 @@ button#submit-btn {
   border-radius: 8px;
   background: var(--secondary-colour-secondary-colour-60, #fdba21);
   color: var(--primary-colour-primary-colour-110, #000311);
-  width: 97px;
+  width: 120px;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: 22px; /* 157.143% */
+  transition: transform 0.3s ease-in-out;
+}
+
+button#submit-btn:hover {
+  transform: scale(1.05);
+  outline: 2px solid #fdba21;
+  outline-offset: 2px;
+}
+
+.spinner-btn {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+  outline: none;
+}
+
+.error-msg {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #dc3545;
+  border: 1px solid #d6e9c6;
+  border-radius: 4px;
+  color: #fff;
+  opacity: 1;
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  transition: height 0.3s ease, opacity 0.3s ease;
+  position: relative;
+}
+
+.error-msg.fade-out {
+  height: 0;
+  opacity: 0;
 }
 
 @media screen and (max-width: 990px) {

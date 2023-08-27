@@ -51,8 +51,14 @@
   padding: 10px 24px 10px 24px;
   font-weight: 600;
   margin-top: 10px;
+  transition: transform 0.3s ease-in-out;
 }
 
+.btn-up:hover {
+  transform: scale(1.05);
+  outline: 2px solid #fdba21;
+  outline-offset: 2px;
+}
 .spinner-btn {
   width: 24px;
   height: 24px;

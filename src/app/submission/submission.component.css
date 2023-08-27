@@ -60,6 +60,13 @@ button#back {
   border: none;
   border-radius: 8px;
   background: var(--secondary-colour-secondary-colour-60, #fdba21);
+  transition: transform 0.3s ease-in-out;
+}
+
+button#back:hover {
+  transform: scale(1.05);
+  outline: 2px solid #fdba21;
+  outline-offset: 2px;
 }
 
 a#back-btn {

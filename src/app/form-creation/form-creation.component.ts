@@ -1,17 +1,15 @@
 import { Component } from "@angular/core";
-import {   FormBuilder,
+import {
+  FormBuilder,
   FormGroup,
   Validators,
   FormControl,
   AbstractControl,
-  ValidatorFn } from "@angular/forms";
+  ValidatorFn,
+} from "@angular/forms";
 import { ReviewService } from "../review.service";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { flatMap } from "rxjs";
-
-
-
-
 
 @Component({
   selector: "app-form-creation",
@@ -19,6 +17,7 @@ import { flatMap } from "rxjs";
   styleUrls: ["./form-creation.component.css"],
 })
 export class FormCreationComponent {
+  successMessageVisible: boolean = false;
   companyName: string | null = localStorage.getItem("companyName");
   feedbackForm: FormGroup;
   submitted: boolean = false;
@@ -37,8 +36,7 @@ export class FormCreationComponent {
         this.pRating,
         [Validators.required, Validators.min(1), Validators.max(5)],
       ],
-    }
-    );
+    });
   }
 
   setRating(rating: number) {
@@ -69,13 +67,13 @@ export class FormCreationComponent {
     };
 
     if (this.feedbackForm) {
+      this.loading = true;
       // Check if the form exists
       const pRatingControl = this.feedbackForm.get("pRating");
       if (pRatingControl) {
         // Check if the pRating form control exists
         pRatingControl.setValue(feedbackDetails.pRating); // Set the value
         rating: this.pRating.toString();
-        this.loading = false;
       }
     }
     console.log(feedbackData);
@@ -94,7 +92,15 @@ export class FormCreationComponent {
         },
         (error: HttpErrorResponse) => {
           console.error("Error submitting review", error);
-          this.loading = false;
+
+          setTimeout(() => {
+            this.loading = false;
+            this.successMessageVisible = true;
+
+            setTimeout(() => {
+              this.successMessageVisible = false;
+            }, 3000);
+          }, 2000);
         }
       );
   }

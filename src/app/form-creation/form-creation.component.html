@@ -58,7 +58,13 @@
                 required=""
               />
             </div>
-            <div *ngIf="feedbackForm.get('pEmail')?.hasError('email') && feedbackForm.get('pEmail')?.touched" class="error-message">
+            <div
+              *ngIf="
+                feedbackForm.get('pEmail')?.hasError('email') &&
+                feedbackForm.get('pEmail')?.touched
+              "
+              class="error-message"
+            >
               Invalid email format.
             </div>
             <div class="username">
@@ -139,6 +145,14 @@
                 role="status "
               ></span>
             </button>
+
+            <div
+              class="error-msg btn my-1"
+              [ngClass]="{ 'fade-out': !successMessageVisible }"
+            >
+              Missing required fields!
+              <div class="progress-bar"></div>
+            </div>
           </div>
         </form>
       </div>
