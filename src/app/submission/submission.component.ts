@@ -18,6 +18,6 @@ export class SubmissionComponent {
 
   constructor() {
     this.brandName = localStorage.getItem("companyName") || "";
-    this.brandDesc = localStorage.getItem("companyName") || "";
+    this.brandDesc = localStorage.getItem("") || "";
   }
 }
