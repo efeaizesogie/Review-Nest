@@ -11,8 +11,8 @@
     <div class="header d-flex flex-column">
       <div class="write-a-review">Write a Review</div>
       <div class="what-do-you-think">
-        What do you think of our products/services? <br> Fill in the form below to
-        share your thoughts about us.
+        What do you think of our products/services? <br />
+        Fill in the form below to share your thoughts about us.
       </div>
     </div>
     <div class="left">
@@ -123,8 +123,19 @@
                 </div>
               </div>
             </div>
-
-            <button id="submit-btn" type="submit" class="btn">Submit</button>
+            <button
+              type="submit"
+              class="btn"
+              id="submit-btn"
+              [disabled]="loading"
+            >
+              <span *ngIf="!loading">Submit</span>
+              <span
+                *ngIf="loading"
+                class="spinner-border spinner-btn"
+                role="status "
+              ></span>
+            </button>
           </div>
         </form>
       </div>

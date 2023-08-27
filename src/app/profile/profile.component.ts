@@ -23,7 +23,7 @@ export class ProfileComponent implements OnInit {
   companyName: any;
   companyImageUrl: string = "";
   isLoading: boolean = true;
-  loadingDurationMs: number = 5000;
+  loadingDurationMs: number = 2000;
 
   constructor(
     private router: Router,

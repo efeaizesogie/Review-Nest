@@ -256,6 +256,10 @@ app-navbar-das {
   display: flex;
 }
 
+.right-content {
+  height: 100vh;
+}
+
 @media screen and (max-width: 980px) {
   app-dashboard-nav {
     display: none;

@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ReviewService } from "../review.service";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { flatMap } from "rxjs";
 
 @Component({
   selector: "app-form-creation",
@@ -15,6 +16,7 @@ export class FormCreationComponent {
   showOverlay: boolean = false;
   pRating: number = 1; // Initialize pRating
   isDetailBoxActive: boolean = false;
+  loading: boolean = false;
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.feedbackForm = this.fb.group({
@@ -46,6 +48,7 @@ export class FormCreationComponent {
     pUserName: string;
     pThoughts: string;
   }) {
+    this.loading = true;
     const formID = localStorage.getItem("formID");
     const feedbackData = {
       email: feedbackDetails.pEmail,
@@ -62,6 +65,7 @@ export class FormCreationComponent {
         // Check if the pRating form control exists
         pRatingControl.setValue(feedbackDetails.pRating); // Set the value
         rating: this.pRating.toString();
+        this.loading = false;
       }
     }
     console.log(feedbackData);
@@ -80,6 +84,7 @@ export class FormCreationComponent {
         },
         (error: HttpErrorResponse) => {
           console.error("Error submitting review", error);
+          this.loading = false;
         }
       );
   }
