@@ -1,5 +1,4 @@
 <div [ngClass]="{ overlay: showOverlay }" class="parent">
-
   <div class="darkBg" [class.active]="isDetailBoxActive">
     <app-submission
       *ngIf="submitted"
@@ -32,8 +31,12 @@
           </div> -->
 
           <div class="profile-desc">
-            <img id="white-bg" src="\assets\dashboard\white-bg.png" alt="">
-            <img id="review-pic" src="\assets\dashboard\reviewNest.png" alt="" />
+            <img id="white-bg" src="\assets\dashboard\white-bg.png" alt="" />
+            <img
+              id="review-pic"
+              src="\assets\dashboard\reviewNest.png"
+              alt=""
+            />
             <p id="profile-name">{{ companyName }}</p>
             <!-- <p class="business-type">Fashion Brand</p> -->
           </div>

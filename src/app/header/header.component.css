@@ -22,6 +22,7 @@ header {
 
 .search-bg {
   background-color: #cccccc;
+  padding: 14px 24px 14px 24px;
 }
 
 .search-bg::placeholder {

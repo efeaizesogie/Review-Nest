@@ -89,6 +89,9 @@ export class FormCreationComponent {
           this.submitted = true;
           this.showOverlay = true;
           this.isDetailBoxActive = true;
+          this.loading = false;
+
+          this.feedbackForm.reset();
         },
         (error: HttpErrorResponse) => {
           console.error("Error submitting review", error);
