@@ -88,8 +88,14 @@
         <div class="login-error" *ngIf="!loginSuccessful && errorMessage">
           Invalid User Credentials
         </div>
-        <button id="sign-up-btn" type="submit" class="btn btn-primary">
-          Sign in
+
+        <button type="submit" class="btn sign-up-btn" [disabled]="loading">
+          <span *ngIf="!loading">Sign in</span>
+          <span
+            *ngIf="loading"
+            class="spinner-border spinner-btn"
+            role="status"
+          ></span>
         </button>
       </form>
 
@@ -100,9 +106,9 @@
     </div>
   </div>
 
-  <div class="loading-container">
+  <!-- <div class="loading-container">
     <iframe
       src="https://lottie.host/?file=3216f451-384a-4b43-bff5-a9dfc0777bea/BSKddAIRIa.json"
     ></iframe>
-  </div>
+  </div> -->
 </div>

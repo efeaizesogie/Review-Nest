@@ -27,9 +27,6 @@
             <div class="this-month"><p class="this-month">This Month</p></div>
           </div>
 
-
-        
-          
           <div
             id="overall-performance"
             class="carousel-slide d-flex flex-column"
@@ -39,28 +36,26 @@
             </div>
 
             <div class="">
-              <p id="performance">{{performanceText}}</p>
+              <p id="performance">{{ performanceText }}</p>
             </div>
 
-                <div class="stars d-flex">
-                  <div 
-                  *ngFor="let star of [1, 2, 3, 4, 5]" 
-                  class="ratings d-flex"
-                  >
-                      <img [src]="
-                        star <= pRating
-                        ? '/assets/dashboard/Star 5.png'
-                        : '/assets/dashboard/Star 8.png'
-                      " 
-                      alt="">
-                </div>
+            <div class="stars d-flex">
+              <div *ngFor="let star of [1, 2, 3, 4, 5]" class="ratings d-flex">
+                <img
+                  [src]="
+                    star <= pRating
+                      ? '/assets/dashboard/Star 5.png'
+                      : '/assets/dashboard/Star 8.png'
+                  "
+                  alt=""
+                />
+              </div>
             </div>
 
             <div class="based-on">
               <p class="based-on">Based on your reviews</p>
             </div>
           </div>
-
         </div>
       </div>
 

@@ -34,6 +34,7 @@ export class SignInComponent implements OnInit {
   errorMessage = "";
   formSubmitted = false;
   loginForm: FormGroup;
+  loading: boolean = false;
   constructor(
     private http: HttpClient,
     private router: Router,
@@ -58,12 +59,13 @@ export class SignInComponent implements OnInit {
 
   onUsersLogin(loginDetails: { pEmail: string; pPassword: string }) {
     this.formSubmitted = true;
+    this.loading = true;
     const userData = {
       email: loginDetails.pEmail,
       password: loginDetails.pPassword,
     };
     const loadingScreen = document.querySelector(".loading-container");
-    this.renderer.setStyle(loadingScreen, "display", "flex");
+    // this.renderer.setStyle(loadingScreen, "display", "flex");
 
     console.log(loginDetails);
     this.http
@@ -82,7 +84,8 @@ export class SignInComponent implements OnInit {
             console.log("access token: ", response.token);
             console.log(response.user._id);
 
-            this.renderer.setStyle(loadingScreen, "display", "none");
+            // this.renderer.setStyle(loadingScreen, "display", "none");
+            this.loading = false;
           }
         },
         (error: HttpErrorResponse) => {
@@ -90,7 +93,8 @@ export class SignInComponent implements OnInit {
           this.errorMessage =
             "An error occurred while logging in. Please try again later.";
           console.error("Error while logging in user:", error);
-          this.renderer.setStyle(loadingScreen, "display", "none");
+          // this.renderer.setStyle(loadingScreen, "display", "none");
+          this.loading = false;
         }
       );
   }

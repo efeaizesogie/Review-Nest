@@ -5,7 +5,7 @@ import {
   Validators,
   FormControl,
   AbstractControl,
-  ValidatorFn
+  ValidatorFn,
 } from "@angular/forms";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Router } from "@angular/router";
@@ -31,17 +31,16 @@ export function passwordValidator(): ValidatorFn {
   };
 }
 
-
-
 @Component({
   selector: "app-sign-up",
   templateUrl: "./sign-up.component.html",
   styleUrls: ["./sign-up.component.css"],
 })
 export class SignUpComponent {
-
+  successMessageVisible = false;
+  loading: boolean = false;
   // showPassword: boolean = false;
-                                                // fpr show password
+  // fpr show password
   // toggleShowPassword() {
   //   this.showPassword = !this.showPassword;
   // }
@@ -54,9 +53,10 @@ export class SignUpComponent {
       validators: confirmPasswordValidator,
     }
   );
+  accountSuccess: boolean = false;
 
   get pPasswordControl() {
-    return this.usersForm.get('pPassword');
+    return this.usersForm.get("pPassword");
   }
 
   constructor(
@@ -68,12 +68,12 @@ export class SignUpComponent {
       {
         pName: ["", [Validators.required]],
         pEmail: ["", [Validators.required, Validators.email]],
-        pPassword: new FormControl<string>('', [
+        pPassword: new FormControl<string>("", [
           Validators.required,
           Validators.minLength(5),
           passwordValidator(), // Add the custom validator here
         ]),
-        pConfirmPassword: new FormControl<string>('', [Validators.required]),
+        pConfirmPassword: new FormControl<string>("", [Validators.required]),
       },
       {
         validators: confirmPasswordValidator,
@@ -82,7 +82,6 @@ export class SignUpComponent {
 
     // this.pPasswordControl = this.usersForm.get('pPassword');
   }
-  
 
   onUsersCreate(userDetails: {
     pName: string;
@@ -90,7 +89,8 @@ export class SignUpComponent {
     pPassword: string;
   }) {
     const loadingScreen = document.querySelector(".loading-container");
-    this.renderer.setStyle(loadingScreen, "display", "flex");
+    this.loading = true;
+    // this.renderer.setStyle(loadingScreen, "display", "flex");
     const userData = {
       company_name: userDetails.pName,
       email: userDetails.pEmail,
@@ -103,14 +103,29 @@ export class SignUpComponent {
       .subscribe(
         (response) => {
           console.log("User registration successful:", response);
-          alert("Your account has been successfully created");
+
+          setTimeout(() => {
+            this.accountSuccess = true;
+
+            setTimeout(() => {
+              this.accountSuccess = false;
+            }, 3000);
+          }, 1000);
           // this.router.navigate(['/sign-in']);
-          this.renderer.setStyle(loadingScreen, "display", "none");
+          // this.renderer.setStyle(loadingScreen, "display", "none");
+          this.loading = false;
         },
         (error: HttpErrorResponse) => {
           console.error("Error while registering user:", error);
-          alert("Please fill out all the fields properly");
-          this.renderer.setStyle(loadingScreen, "display", "none");
+          setTimeout(() => {
+            this.successMessageVisible = true;
+            this.loading = false;
+            // this.renderer.setStyle(loadingScreen, "display", "none");
+
+            setTimeout(() => {
+              this.successMessageVisible = false;
+            }, 3000);
+          }, 1000);
         }
       );
   }

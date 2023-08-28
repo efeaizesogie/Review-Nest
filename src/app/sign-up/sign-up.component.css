@@ -213,7 +213,7 @@ input::placeholder {
   line-height: 28px;
 }
 
-button#sign-up-btn {
+button.sign-up-btn {
   background-color: #011055;
   border: none;
   width: 110%;
@@ -225,6 +225,11 @@ button#sign-up-btn {
   font-style: normal;
   font-weight: 600;
   line-height: 28px;
+}
+
+.spinner-btn {
+  width: 24px;
+  height: 24px;
 }
 
 p#sign-in {
@@ -252,6 +257,9 @@ a#sign-in {
 
 .error-message {
   color: red;
+  font-size: 12px;
+  margin-top: -15px;
+  margin-bottom: 5px;
 }
 
 .loading-container {
@@ -265,6 +273,46 @@ a#sign-in {
   align-items: center;
   z-index: 9999;
   display: none;
+}
+
+.success-msg {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #198754;
+  border: 1px solid #d6e9c6;
+  border-radius: 4px;
+  color: #fff;
+  opacity: 1;
+  width: 110%;
+  height: 40px;
+  overflow: hidden;
+  transition: height 0.3s ease, opacity 0.3s ease;
+  position: relative;
+}
+
+.success-msg.fade-out {
+  height: 0;
+  opacity: 0;
+}
+
+.error-msg {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #dc3545;
+  border: 1px solid #d6e9c6;
+  border-radius: 4px;
+  color: #fff;
+  opacity: 1;
+  width: 110%;
+  height: 40px;
+  overflow: hidden;
+  transition: height 0.3s ease, opacity 0.3s ease;
+  position: relative;
+}
+
+.error-msg.fade-out {
+  height: 0;
+  opacity: 0;
 }
 
 /* Rght Section end */
@@ -334,8 +382,16 @@ a#sign-in {
     width: 100%;
   }
 
-  button#sign-up-btn {
+  button.sign-up-btn {
     margin-top: 32px;
+    width: 100%;
+  }
+
+  .success-msg {
+    width: 100%;
+  }
+
+  .error-msg {
     width: 100%;
   }
 }

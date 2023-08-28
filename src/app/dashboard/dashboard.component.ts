@@ -31,17 +31,18 @@ export class DashboardComponent implements OnInit {
   percentage3: number = 0;
   percentage4: number = 0;
   percentage5: number = 0;
-  isLoading: boolean = true;
+  isLoading: boolean = false;
   average: number = 0;
-  performanceText: string = '';
+  performanceText: string = "";
   pRating: number = 1;
 
   constructor(private http: HttpClient, private userService: UserService) {}
 
   ngOnInit() {
-    const userId = localStorage.getItem('userID');
-    const accessToken = localStorage.getItem('accessToken');
+    const userId = localStorage.getItem("userID");
+    const accessToken = localStorage.getItem("accessToken");
 
+    this.isLoading = true;
     if (userId) {
       this.http
         .get<ApiResponse>(
@@ -50,17 +51,19 @@ export class DashboardComponent implements OnInit {
         .subscribe(
           (response) => {
             // Update the company name in the service
-            console.log('API Response:', response);
+            console.log("API Response:", response);
             this.userService.setCompanyName(response.data.company_name);
             
             // console.log(response.data.company_name)
           },
           (error) => {
-            console.error('Error fetching user data:', error);
+            console.error("Error fetching user data:", error);
+            this.isLoading = false;
           }
         );
     } else {
-      console.error('userId not found in local storage');
+      console.error("userId not found in local storage");
+      this.isLoading = false;
     }
 
     const headers = new HttpHeaders({
@@ -74,10 +77,10 @@ export class DashboardComponent implements OnInit {
       )
       .subscribe(
         (reviewsResponse) => {
-          console.log('Reviews API Response:', reviewsResponse);
+          console.log("Reviews API Response:", reviewsResponse);
           const reviews = reviewsResponse.data.reviews;
           this.totalReviews = reviewsResponse.data.reviews.length;
-          console.log('Total Reviews:', this.totalReviews);
+          console.log("Total Reviews:", this.totalReviews);
 
           let totalSum = 0;
           let totalCount = 0;
@@ -88,7 +91,7 @@ export class DashboardComponent implements OnInit {
             acc[rating] = count + 1;
 
             totalSum += rating * count;
-            console.log('line 96', totalSum);
+            console.log("line 96", totalSum);
             totalCount += count;
 
             return acc;
@@ -108,14 +111,14 @@ export class DashboardComponent implements OnInit {
           reviews.forEach((review) => {
             const rating = review.rating;
             totalSum += rating;
-            console.log('Rating:', rating);
+            console.log("Rating:", rating);
           });
           const totalAverage = Math.round(totalSum / reviews.length);
           this.pRating = totalAverage;
           this.setPerformanceText(totalAverage);
-          console.log('Total Average:', totalAverage);
+          console.log("Total Average:", totalAverage);
 
-          console.log('total ratings =', totalSum);
+          console.log("total ratings =", totalSum);
           // Initialize variables to store counts
           let count1 = 0;
           let count2 = 0;
@@ -145,11 +148,11 @@ export class DashboardComponent implements OnInit {
             }
           });
 
-          console.log('Count of 1:', count1);
-          console.log('Count of 2:', count2);
-          console.log('Count of 3:', count3);
-          console.log('Count of 4:', count4);
-          console.log('Count of 5:', count5);
+          console.log("Count of 1:", count1);
+          console.log("Count of 2:", count2);
+          console.log("Count of 3:", count3);
+          console.log("Count of 4:", count4);
+          console.log("Count of 5:", count5);
 
           const totalReviews = reviews.length;
           const percentage1 = Math.round((count1 / totalReviews) * 100);
@@ -159,11 +162,11 @@ export class DashboardComponent implements OnInit {
           const percentage5 = Math.round((count5 / totalReviews) * 100);
           //  const average =Math.round( (count1 + count2 + count3 + count4 + count5) / totalReviews);
 
-          console.log('Percentage of 1:', percentage1);
-          console.log('Percentage of 2:', percentage2);
-          console.log('Percentage of 3:', percentage3);
-          console.log('Percentage of 4:', percentage4);
-          console.log('Percentage of 5:', percentage5);
+          console.log("Percentage of 1:", percentage1);
+          console.log("Percentage of 2:", percentage2);
+          console.log("Percentage of 3:", percentage3);
+          console.log("Percentage of 4:", percentage4);
+          console.log("Percentage of 5:", percentage5);
 
           // Set these percentages to variables for use in your template
           this.percentage1 = percentage1;
@@ -174,34 +177,33 @@ export class DashboardComponent implements OnInit {
           //  this.average = average;
           //  console.log('average rating:',average)
 
-          localStorage.setItem('Percentage1', this.percentage1.toString());
-          localStorage.setItem('Percentage2', this.percentage2.toString());
-          localStorage.setItem('Percentage3', this.percentage3.toString());
-          localStorage.setItem('Percentage4', this.percentage4.toString());
-          localStorage.setItem('Percentage5', this.percentage5.toString());
-          localStorage.setItem('average', this.average.toString());
+          localStorage.setItem("Percentage1", this.percentage1.toString());
+          localStorage.setItem("Percentage2", this.percentage2.toString());
+          localStorage.setItem("Percentage3", this.percentage3.toString());
+          localStorage.setItem("Percentage4", this.percentage4.toString());
+          localStorage.setItem("Percentage5", this.percentage5.toString());
+          localStorage.setItem("average", this.average.toString());
+          this.isLoading = false;
         },
         (error) => {
-          console.error('Error fetching reviews data:', error);
+          console.error("Error fetching reviews data:", error);
+          this.isLoading = false;
         }
       );
-
-
-      
   }
   setPerformanceText(average: number) {
     if (average === 5) {
-      this.performanceText = 'Excellent';
+      this.performanceText = "Excellent";
     } else if (average === 4) {
-      this.performanceText = 'Great';
+      this.performanceText = "Great";
     } else if (average === 3) {
-      this.performanceText = 'Good';
+      this.performanceText = "Good";
     } else if (average === 2) {
-      this.performanceText = 'Poor';
+      this.performanceText = "Poor";
     } else if (average === 1) {
-      this.performanceText = 'Very Poor';
+      this.performanceText = "Very Poor";
     } else {
-      this.performanceText = '';
+      this.performanceText = "";
     }
   }
 }

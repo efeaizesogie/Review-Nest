@@ -11,8 +11,8 @@
     <div class="header d-flex flex-column">
       <div class="write-a-review">Write a Review</div>
       <div class="what-do-you-think">
-        What do you think of our products/services? <br> Fill in the form below to
-        share your thoughts about us.
+        What do you think of our products/services? <br />
+        Fill in the form below to share your thoughts about us.
       </div>
     </div>
     <div class="left">
@@ -58,7 +58,13 @@
                 required=""
               />
             </div>
-            <div *ngIf="feedbackForm.get('pEmail')?.hasError('email') && feedbackForm.get('pEmail')?.touched" class="error-message">
+            <div
+              *ngIf="
+                feedbackForm.get('pEmail')?.hasError('email') &&
+                feedbackForm.get('pEmail')?.touched
+              "
+              class="error-message"
+            >
               Invalid email format.
             </div>
             <div class="username">
@@ -126,8 +132,27 @@
                 </div>
               </div>
             </div>
+            <button
+              type="submit"
+              class="btn"
+              id="submit-btn"
+              [disabled]="loading"
+            >
+              <span *ngIf="!loading">Submit</span>
+              <span
+                *ngIf="loading"
+                class="spinner-border spinner-btn"
+                role="status "
+              ></span>
+            </button>
 
-            <button id="submit-btn" type="submit" class="btn">Submit</button>
+            <div
+              class="error-msg btn my-1"
+              [ngClass]="{ 'fade-out': !successMessageVisible }"
+            >
+              Missing required fields!
+              <div class="progress-bar"></div>
+            </div>
           </div>
         </form>
       </div>

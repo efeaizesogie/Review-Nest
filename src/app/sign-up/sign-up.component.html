@@ -73,8 +73,8 @@
             formControlName="pName"
             required=""
           />
-
         </div>
+
         <div class="">
           <label for="email" class="form-label">Email address</label>
           <input
@@ -86,18 +86,21 @@
             formControlName="pEmail"
             required=""
           />
-          <!-- <div *ngIf="name.touched && name.invalid" class="alert">
-            Email cannot be empty!
-          </div> -->
         </div>
-        <div *ngIf="usersForm.get('pEmail')?.hasError('email') && usersForm.get('pEmail')?.touched" class="error-message">
+        <div
+          *ngIf="
+            usersForm.get('pEmail')?.hasError('email') &&
+            usersForm.get('pEmail')?.touched
+          "
+          class="error-message"
+        >
           Invalid email format.
         </div>
-        
+
         <div class="">
           <label for="password" class="form-label">Password</label>
           <input
-          type="password"
+            type="password"
             class="form-control"
             id="password"
             placeholder="********"
@@ -112,18 +115,18 @@
         >
           {{ showPassword ? 'Hide Password' : 'Show Password' }}
         </button> -->
-          <div *ngIf="pPasswordControl?.hasError('minlength') && pPasswordControl?.touched" class="error-message">
-            Password must be at least 8 characters long.
+          <div
+            *ngIf="
+              pPasswordControl?.hasError('minlength') &&
+              pPasswordControl?.hasError('noSpecialChar') &&
+              pPasswordControl?.touched
+            "
+            class="error-message"
+          >
+            Password must be at least 8 characters long and contain at least one
+            special character.
           </div>
-          <div *ngIf="pPasswordControl?.hasError('noLetter') && pPasswordControl?.touched" class="error-message">
-            Password must contain at least one letter.
-          </div>
-          
-          <div *ngIf="pPasswordControl?.hasError('noSpecialChar') && pPasswordControl?.touched" class="error-message">
-            Password must contain at least one special character.
-          </div>
-          
-          
+
           <!-- <div *ngIf="name.touched && name.invalid" class="alert">
             Password cannot be empty!
           </div> -->
@@ -148,9 +151,29 @@
           </div>
         </div>
 
-        <button id="sign-up-btn" type="submit" class="btn btn-primary">
-          Create Account
+        <button type="submit" class="btn sign-up-btn" [disabled]="loading">
+          <span *ngIf="!loading">Create Account</span>
+          <span
+            *ngIf="loading"
+            class="spinner-border spinner-btn"
+            role="status"
+          ></span>
         </button>
+
+        <div
+          class="error-msg btn my-1"
+          [ngClass]="{ 'fade-out': !successMessageVisible }"
+        >
+          Missing required fields or email already exist!
+          <div class="progress-bar"></div>
+        </div>
+        <div
+          class="success-msg btn"
+          [ngClass]="{ 'fade-out': !accountSuccess }"
+        >
+          User Successfully Registered. Click Sign in to continue
+          <div class="progress-bar"></div>
+        </div>
       </form>
 
       <p id="sign-in" class="mt-4">
@@ -162,9 +185,9 @@
     </div>
   </div>
 
-  <div class="loading-container">
+  <!-- <div class="loading-container">
     <iframe
       src="https://lottie.host/?file=3216f451-384a-4b43-bff5-a9dfc0777bea/BSKddAIRIa.json"
     ></iframe>
-  </div>
+  </div> -->
 </div>

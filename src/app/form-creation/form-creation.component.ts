@@ -1,16 +1,15 @@
 import { Component } from "@angular/core";
-import {   FormBuilder,
+import {
+  FormBuilder,
   FormGroup,
   Validators,
   FormControl,
   AbstractControl,
-  ValidatorFn } from "@angular/forms";
+  ValidatorFn,
+} from "@angular/forms";
 import { ReviewService } from "../review.service";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-
-
-
-
+import { flatMap } from "rxjs";
 
 @Component({
   selector: "app-form-creation",
@@ -18,12 +17,14 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
   styleUrls: ["./form-creation.component.css"],
 })
 export class FormCreationComponent {
+  successMessageVisible: boolean = false;
   companyName: string | null = localStorage.getItem("companyName");
   feedbackForm: FormGroup;
   submitted: boolean = false;
   showOverlay: boolean = false;
   pRating: number = 1; // Initialize pRating
   isDetailBoxActive: boolean = false;
+  loading: boolean = false;
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.feedbackForm = this.fb.group({
@@ -35,8 +36,7 @@ export class FormCreationComponent {
         this.pRating,
         [Validators.required, Validators.min(1), Validators.max(5)],
       ],
-    }
-    );
+    });
   }
 
   setRating(rating: number) {
@@ -56,6 +56,7 @@ export class FormCreationComponent {
     pUserName: string;
     pThoughts: string;
   }) {
+    this.loading = true;
     const formID = localStorage.getItem("formID");
     const feedbackData = {
       email: feedbackDetails.pEmail,
@@ -66,6 +67,7 @@ export class FormCreationComponent {
     };
 
     if (this.feedbackForm) {
+      this.loading = true;
       // Check if the form exists
       const pRatingControl = this.feedbackForm.get("pRating");
       if (pRatingControl) {
@@ -90,6 +92,15 @@ export class FormCreationComponent {
         },
         (error: HttpErrorResponse) => {
           console.error("Error submitting review", error);
+
+          setTimeout(() => {
+            this.loading = false;
+            this.successMessageVisible = true;
+
+            setTimeout(() => {
+              this.successMessageVisible = false;
+            }, 3000);
+          }, 2000);
         }
       );
   }
