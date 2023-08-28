@@ -9,6 +9,7 @@ export class UserService {
   setCompanyName(name: string): void {
     this.companyName = name;
     console.log('Company Name set to:', this.companyName);
+    localStorage.setItem('dashboardName', this.companyName);
   }
 
   getCompanyName(): string {
