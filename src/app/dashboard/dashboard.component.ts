@@ -53,6 +53,7 @@ export class DashboardComponent implements OnInit {
             // Update the company name in the service
             console.log("API Response:", response);
             this.userService.setCompanyName(response.data.company_name);
+            
             // console.log(response.data.company_name)
           },
           (error) => {
