@@ -12,6 +12,7 @@ import { EditProfileComponent } from "./edit-profile/edit-profile.component";
 import { AboutUsComponent } from "./about-us/about-us.component";
 import { ContactComponent } from "./contact/contact.component";
 import { SubmissionComponent } from "./submission/submission.component";
+import { AuthGuard } from "./auth.guard";
 
 const routes: Routes = [
   {
@@ -34,6 +35,7 @@ const routes: Routes = [
   {
     path: "dashboard",
     component: DashboardComponent,
+    canActivate: [AuthGuard],
   },
 
   {
@@ -43,24 +45,27 @@ const routes: Routes = [
   {
     path: "profile",
     component: ProfileComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: "review",
     component: ReviewDashboardComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: "edit-profile",
     component: EditProfileComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: "contact",
-    component: ContactComponent
+    component: ContactComponent,
   },
   {
     path: "success",
-    component: SubmissionComponent
+    component: SubmissionComponent,
   },
-  { path: 'form-creation/:companyId', component: FormCreationComponent }
+  { path: "form-creation/:companyId", component: FormCreationComponent },
 ];
 
 @NgModule({

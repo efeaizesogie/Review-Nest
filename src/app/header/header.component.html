@@ -10,7 +10,7 @@
           Bridge businesses and customers through ReviewNest: No website, no
           limits – just impactful insights and shared success!
         </div>
-        <form class="d-flex w-75 search-form" role="search">
+        <form class="d-flex search-form" role="search">
           <input
             class="form-control me-2 search-bg"
             type="search"
@@ -47,7 +47,10 @@
             </li>
           </ul>
         </div>
-        <div class="no-matching-companies" *ngIf="showNotFoundMessage && !loading">
+        <div
+          class="no-matching-companies"
+          *ngIf="showNotFoundMessage && !loading"
+        >
           Company not found.
         </div>
       </div>
