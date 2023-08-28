@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
   allCompaniesData: any[] = [];
   matchingCompanies: any[] = [];
   loading: boolean = false;
+  showNotFoundMessage: boolean = false;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -42,7 +43,6 @@ export class HeaderComponent implements OnInit {
   onSearchButtonClick() {
     this.loading = true;
     if (this.searchTerm) {
-      this.loading = true;
       this.searchCompany(this.searchTerm).subscribe((result: any) => {
         console.log(result);
         if (result.success && result.data) {
@@ -53,7 +53,7 @@ export class HeaderComponent implements OnInit {
                 .toLowerCase()
                 .includes(this.searchTerm.toLowerCase())
           );
-
+  
           if (matchingCompanies.length > 0) {
             this.matchingCompanies = matchingCompanies.map(
               (company: Company) => ({
@@ -61,22 +61,28 @@ export class HeaderComponent implements OnInit {
                 name: company.company_name,
               })
             );
-
+            this.showNotFoundMessage = false;
             console.log("Matching Companies Details:", this.matchingCompanies);
-
+  
             localStorage.setItem(
               "matchingCompanyDetails",
               JSON.stringify(this.matchingCompanies)
             );
-            this.loading = false;
+          } else {
+            this.matchingCompanies = [];
+            this.showNotFoundMessage = true;
           }
+  
+          this.loading = false;
         }
       });
     } else {
+      this.matchingCompanies = [];
+      this.showNotFoundMessage = false; // Reset flag when no search term
       this.loading = false;
     }
   }
-
+  
   onCompanyClick(companyId: string, companyName: string) {
     localStorage.setItem("formID", companyId);
     localStorage.setItem("companyName", companyName);
