@@ -125,20 +125,18 @@
         </div>
         <div></div>
 
-        <ng-template>
-          <div
-            class="rating d-flex align-items-center"
-            *ngIf="selectedReview.rating > 0; else noRating"
-          >
+        <div class="rating d-flex align-items-center">
+          <ng-container *ngIf="selectedReview.rating > 0; else noRating">
             <ng-container *ngFor="let _ of [1, 2, 3, 4, 5]; let i = index">
               <span
                 class="star"
                 [class.filled]="i < selectedReview.rating"
               ></span>
             </ng-container>
-          </div>
+          </ng-container>
+
           <ng-template #noRating> No Rating </ng-template>
-        </ng-template>
+        </div>
       </div>
       <p class="review-text my-3">
         {{ selectedReview.feedBack }}

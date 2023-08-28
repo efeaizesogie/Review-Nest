@@ -1,7 +1,7 @@
 <div class="edit-wrapper">
   <div class="d-flex justify-content-center d-sm-block">
-    <div class="d-flex justify-content-between align-items-start w-100">
-      <div class="logo-wrapper">
+    <div class="d-flex justify-content-end align-items-start w-100">
+      <!-- <div class="logo-wrapper">
         <div
           class="change-logo d-flex justify-content-center align-content-center flex-wrap"
           [style.background-image]="'url(' + selectedImageUrl + ')'"
@@ -24,7 +24,7 @@
             <span id="imageName"></span>
           </label>
         </div>
-      </div>
+      </div> -->
       <div
         class="close-btn d-flex align-items-center justify-content-center"
         (click)="hideElement()"
@@ -40,11 +40,10 @@
 
   <form
     class="edit-elements d-sm-flex d-lg-flex justify-content-between flex-wrap"
-    #editForm="ngForm"
-    (ngSubmit)="onUpdateClicked(editForm)"
+    [formGroup]="editForm"
   >
     <div class="left">
-      <div class="des-wrapper">
+      <!-- <div class="des-wrapper">
         <label for="company_name" class="form-label">Brand Name</label>
         <input
           #brandName="ngModel"
@@ -64,8 +63,8 @@
             This field is required.
           </div>
         </div>
-      </div>
-      <div class="des-wrapper">
+      </div> -->
+      <!-- <div class="des-wrapper">
         <label for="category" class="form-label">Category</label>
         <input
           #category="ngModel"
@@ -85,7 +84,7 @@
             This field is required.
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="des-wrapper">
         <label for="company_description" class="form-label">Description</label>
         <textarea
@@ -94,7 +93,7 @@
           class="form-control"
           cols="30"
           rows="6"
-          [formControl]="desc"
+          formControlName="company_description"
           minlength="15"
           placeholder="We are dedicated to pushing creative boundaries, seamlessly blending bold and innovative urban aesthetics with a refined touch of timeless elegance."
           (input)="onInput($event)"
@@ -103,11 +102,16 @@
         ></textarea>
         <div class="d-flex justify-content-between w-100">
           <div
-            *ngIf="desc.invalid && (desc.dirty || desc.touched)"
+            *ngIf="
+              company_description.invalid &&
+              (company_description.dirty || company_description.touched)
+            "
             class="invalid-feed"
           >
-            <div *ngIf="desc.errors?.['required']">This field is required.</div>
-            <div *ngIf="desc.errors?.['minlength']">
+            <div *ngIf="company_description.errors?.['required']">
+              This field is required.
+            </div>
+            <div *ngIf="company_description.errors?.['minlength']">
               Please enter more than 10 words.
             </div>
           </div>
@@ -117,105 +121,14 @@
         </div>
       </div>
     </div>
-    <div class="right">
-      <div class="des-wrapper">
-        <label for="email" class="form-label">Email Address</label>
-        <input
-          type="email"
-          class="form-control"
-          id="e-mail"
-          [formControl]="emailInput"
-          required
-        />
-        <div
-          *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)"
-          class="invalid-feed"
-        >
-          <div *ngIf="emailInput.errors?.['required']">Email is required.</div>
-          <div *ngIf="emailInput.hasError('email')">Invalid email format.</div>
-        </div>
-      </div>
-      <div class="des-wrapper">
-        <label for="phyAddress" class="form-label">Physical Address</label>
-        <input
-          #address="ngModel"
-          name="phyAddress"
-          type="text"
-          class="form-control"
-          id="phy-address"
-          placeholder="e.g No 27 Nigeria street"
-          ngModel
-          required
-        />
-        <div
-          *ngIf="phoneNumber.invalid && (address.dirty || address.touched)"
-          class="invalid-feed"
-        >
-          <div *ngIf="address.errors?.['required']">
-            This field is required.
-          </div>
-        </div>
-      </div>
-      <div class="des-wrapper">
-        <label for="pNumber" class="form-label">Phone Number</label>
-        <input
-          #phoneNumber="ngModel"
-          name="pNumber"
-          type="number"
-          class="form-control"
-          id="p-number"
-          placeholder="e.g 090..."
-          ngModel
-          minlength="11"
-          maxlength="11"
-          required
-        />
-        <div
-          *ngIf="
-            phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)
-          "
-          class="invalid-feed"
-        >
-          <div *ngIf="phoneNumber.errors?.['required']">
-            This field is required.
-          </div>
-          <div *ngIf="phoneNumber.errors?.['minlength']">
-            Please enter more than 10 words.
-          </div>
-        </div>
-      </div>
-      <div class="des-wrapper">
-        <label for="socials" class="form-label">Social Media</label>
-        <textarea
-          #brandName="ngModel"
-          name="socials"
-          id="socials"
-          class="form-control"
-          cols="30"
-          rows="6"
-          placeholder="https://suittie@linkedin.com
-https://suittie@instagram.com
-https://suittie@threads.com
-https://suittie@twitter.com
-https://suittie@facebook.com"
-          ngModel
-        ></textarea>
-      </div>
-    </div>
   </form>
 
   <input
     class="btn btn-up"
     type="submit"
     value="Update"
-    [disabled]="
-      !selectedImage ||
-      editForm.invalid ||
-      emailInput.invalid ||
-      !emailInput.value ||
-      desc.invalid
-    "
-    (click)="onUpdateClicked(editForm)"
+    [disabled]="editForm.invalid || company_description.invalid"
+    (click)="onUpdateClicked()"
   />
 
   <div class="spinner-item" *ngIf="loading">

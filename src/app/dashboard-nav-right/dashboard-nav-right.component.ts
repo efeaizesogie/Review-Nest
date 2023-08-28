@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { UserService } from "../user.service";
 import { UserInputService } from "../user-input.service";
 import { SharedService } from "../shared.service";
+import { HttpHeaders } from "@angular/common/http";
+import { ProfileService } from "../profile.service";
 
 @Component({
   selector: "app-dashboard-nav-right",
@@ -16,20 +18,37 @@ export class DashboardNavRightComponent implements OnInit {
   search() {}
   companyName: string = "";
 
+  profileData: any;
+
+  private userID = localStorage.getItem("userID");
+  private accessToken = localStorage.getItem("accessToken");
+  private url = `https://reviewnest.onrender.com/api/v1/user/${this.userID}`;
+
   constructor(
     private userService: UserService,
     private userInputService: UserInputService,
-    private sharedService: SharedService
+    private sharedService: SharedService,
+    private profileService: ProfileService
   ) {}
 
   ngOnInit() {
-    this.companyName = this.userService.getCompanyName();
-    console.log("Company Name:", this.companyName);
-
     this.userInputService.userInput$.subscribe((userInput) => {
       this.userInput$ = userInput;
     });
 
-    this.selectedImageUrl = localStorage.getItem("enteredImageUrl");
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.accessToken}`,
+    });
+
+    this.profileService.get(this.url, headers).subscribe(
+      (data) => {
+        this.profileData = data.data;
+
+        console.log(this.profileData);
+      },
+      (error) => {
+        console.error("Error fetching profile data:", error);
+      }
+    );
   }
 }

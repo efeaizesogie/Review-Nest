@@ -10,9 +10,9 @@
 .edit-wrapper {
   display: none;
   width: 690px;
-  min-height: 100%;
+  min-height: fit-content;
   margin: 0 auto;
-  top: 150px;
+  top: 100px;
   left: 36%;
   z-index: 100;
   position: absolute;
@@ -103,13 +103,14 @@ label {
 
 .des-wrapper {
   display: flex;
-  width: 290px;
+  width: 100%;
   flex-direction: column;
   align-items: flex-start;
 }
 
 .left {
-  margin-top: 18px;
+  margin-top: -18px;
+  width: 100%;
 }
 
 /* Input fields */
@@ -121,7 +122,7 @@ textarea {
   font-family: "Open Sans", sans-serif;
   border: 1px solid var(--black-colour-black-colour-10, #ccc);
   padding: 12px 16px;
-  width: 290px;
+  width: 100%;
   resize: none;
   border-radius: 8px;
 }
@@ -146,7 +147,7 @@ textarea::placeholder {
 }
 
 .right {
-  margin-top: -80px;
+  margin-top: 10px;
 }
 
 .btn-up {
@@ -200,13 +201,13 @@ textarea::placeholder {
     margin: 0 auto;
   }
 
-  .edit-elements {
+  /* .edit-elements {
     width: 100%;
   }
 
   .des-wrapper {
     width: 100%;
-  }
+  } */
 
   .logo-wrapper {
     width: 111px;
@@ -226,11 +227,10 @@ textarea::placeholder {
 
   .left {
     margin-top: 18px;
-    width: 100%;
   }
 
-  .right {
+  /* .right {
     margin-top: 10px;
     width: 100%;
-  }
+  } */
 }

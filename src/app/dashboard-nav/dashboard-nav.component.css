@@ -5,9 +5,8 @@ a#logo {
 .dash-nav {
   background: #010b39;
   width: 318px;
-  height: 110%;
+  height: 106%;
   font-family: "Open Sans", Helvetica;
-  overflow: hidden;
 }
 
 .navbar-dashboard {

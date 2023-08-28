@@ -18,17 +18,15 @@
         <p class="para">Change Cover</p>
       </div>
     </div>
-    <div class="container">
-      <div
-        class="d-flex justify-content-between align-items-center contact-wrapper"
-      >
+    <div class="container" *ngIf="!isLoading">
+      <div class="d-flex justify-content-between contact-wrapper">
         <div class="brand-dis">
           <div
-            class="logo-details d-flex flex-column justify-content-center align-items-center"
+            class="logo-details d-flex flex-column justify-content-center align-items-center text-center"
           >
             <div class="logo-content">
               <img
-                [src]="selectedImageUrl || placeholderImageUrl"
+                src="./../../assets/dashboard/brand_logo.svg"
                 alt="selectedImage"
                 class="logo-img"
               />
@@ -40,7 +38,7 @@
             </div>
             <div class="com-logo-text text-center">
               <p class="logo-text mb-2">
-                {{ userInput$.company_name || companyName }}
+                {{ profileData.company_name }}
               </p>
               <div class="online-status gap-2 text-center d-flex">
                 <img
@@ -54,21 +52,26 @@
           </div>
           <div class="des-wrapper">
             <p class="sub-heading">Description</p>
-            <p class="info">{{ userInput$.company_description }}</p>
+            <p class="info">
+              {{
+                profileData.company_description ||
+                  "Please update your company description by clicking edit profile button below"
+              }}
+            </p>
           </div>
-          <div class="des-wrapper">
+          <!-- <div class="des-wrapper">
             <p class="sub-heading">Category</p>
             <p class="info">{{ userInput$.category }}</p>
-          </div>
+          </div> -->
         </div>
         <div class="right">
           <div class="brand-profile">
             <p class="heading">Contact Information</p>
             <div class="des-wrapper">
               <p class="sub-heading">Email address</p>
-              <p class="info">{{ userInput$.email }}</p>
+              <p class="info">{{ profileData.email }}</p>
             </div>
-            <div class="des-wrapper">
+            <!-- <div class="des-wrapper">
               <p class="sub-heading">Physical address</p>
               <p class="info">{{ userInput$.phyAddress }}</p>
             </div>
@@ -78,8 +81,8 @@
               <p class="info">
                 {{ userInput$.pNumber }}
               </p>
-            </div>
-            <div class="des-wrapper">
+            </div> -->
+            <!-- <div class="des-wrapper">
               <p class="sub-heading mb-2">Social media</p>
               <a href="#" class="social-links"
                 ><img
@@ -104,7 +107,7 @@
               <a href="#" class="social-links"
                 ><img src="./../../assets/dashboard/logos_facebook.svg" alt=""
               /></a>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

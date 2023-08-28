@@ -5,7 +5,7 @@ app-navbar-das {
 .darkBg::before {
   content: "";
   position: absolute;
-  height: 135vh;
+  height: 100%;
   z-index: 99;
   top: 0;
   left: 0;
@@ -35,7 +35,6 @@ app-navbar-das {
 }
 
 .dashboard {
-  overflow: hidden;
   width: 100%;
   font-family: "Open Sans", Helvetica;
 }
@@ -72,8 +71,8 @@ app-navbar-das {
 
 .contact-wrapper {
   width: 70%;
-  min-height: 462px;
-  margin: -60px auto 0 auto;
+  min-height: 350px;
+  margin: -50px auto 0 auto;
 }
 
 .brand-dis {
@@ -81,15 +80,14 @@ app-navbar-das {
   border-radius: 2px;
   background: #fefefe;
   padding: 20px;
-  height: 390px;
+  height: 350px;
   box-shadow: 0px 24px 32px 0px rgba(18, 21, 23, 0.04);
 }
 
 .brand-profile {
   background: #fefefe;
   border-radius: 2px;
-  height: 100%;
-  height: 390px;
+  height: 50%;
   box-shadow: 0px 24px 32px 0px rgba(18, 21, 23, 0.04);
   padding: 30px 30px;
 }
@@ -178,6 +176,7 @@ app-navbar-das {
   color: #545454;
   font-family: Open Sans;
   font-size: 14px;
+  margin-top: 5px;
   font-style: normal;
   font-weight: 400;
   line-height: 22px;
@@ -269,5 +268,9 @@ app-navbar-das {
 
   .left-content {
     width: 100%;
+  }
+
+  .darkBg::before {
+    height: 109%;
   }
 }
