@@ -1,5 +1,5 @@
 <div [ngClass]="{ overlay: showOverlay }" class="parent">
-  <app-navbar></app-navbar>
+
   <div class="darkBg" [class.active]="isDetailBoxActive">
     <app-submission
       *ngIf="submitted"
@@ -26,12 +26,16 @@
         </div>
 
         <div class="primary-profile-pic d-flex flex-column">
-          <div class="profile-picture">
-            <img src="\assets\form-images\profile-pic.jpg" alt="" />
-          </div>
+          <!-- <div class="profile-picture">
+            <img src="\assets\dashboard\white-bg.png" alt="">
+            <img src="\assets\dashboard\reviewNest.png" alt="" />
+          </div> -->
+
           <div class="profile-desc">
+            <img id="white-bg" src="\assets\dashboard\white-bg.png" alt="">
+            <img id="review-pic" src="\assets\dashboard\reviewNest.png" alt="" />
             <p id="profile-name">{{ companyName }}</p>
-            <p class="business-type">Fashion Brand</p>
+            <!-- <p class="business-type">Fashion Brand</p> -->
           </div>
         </div>
       </div>
