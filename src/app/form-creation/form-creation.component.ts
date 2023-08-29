@@ -66,16 +66,16 @@ export class FormCreationComponent {
       feedBack: feedbackDetails.pThoughts,
     };
 
-    if (this.feedbackForm) {
-      this.loading = true;
-      // Check if the form exists
-      const pRatingControl = this.feedbackForm.get("pRating");
-      if (pRatingControl) {
-        // Check if the pRating form control exists
-        pRatingControl.setValue(feedbackDetails.pRating); // Set the value
-        rating: this.pRating.toString();
-      }
-    }
+    // if (this.feedbackForm) {
+    //   this.loading = true;
+    //   // Check if the form exists
+    //   const pRatingControl = this.feedbackForm.get("pRating");
+    //   if (pRatingControl) {
+    //     // Check if the pRating form control exists
+    //     pRatingControl.setValue(feedbackDetails.pRating); // Set the value
+    //     rating: this.pRating.toString();
+    //   }
+    // }
     console.log(feedbackData);
     console.log(formID);
     this.http

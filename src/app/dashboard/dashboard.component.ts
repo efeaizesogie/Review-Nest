@@ -212,7 +212,7 @@ const percentage5 = totalReviews > 0 ? Math.round((count5 / totalReviews) * 100)
     } else if (average === 1) {
       this.performanceText = "Very Poor";
     } else {
-      this.performanceText = "";
+      this.performanceText = "No ratings yet";
     }
   }
 }
