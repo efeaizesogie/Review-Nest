@@ -91,6 +91,7 @@ li.companies:hover {
 
 .search-form {
   margin-top: 30px;
+  width: 75%;
 }
 
 .intro {
@@ -130,15 +131,15 @@ li.companies:hover {
     margin-bottom: 12px;
     font-size: 26px;
   }
+
+  .search-form {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 580px) {
   .right-items {
     margin-top: 24px;
-  }
-
-  .search-form {
-    width: 100% !important;
   }
 
   .padding {
