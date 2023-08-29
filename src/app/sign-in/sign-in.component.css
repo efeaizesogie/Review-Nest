@@ -282,6 +282,10 @@ a#sign-in {
   display: none;
 }
 
+.review-logo {
+  text-decoration: none;
+}
+
 /* Rght Section end */
 
 /* Styles for all device sizes */

@@ -315,6 +315,9 @@ a#sign-in {
   opacity: 0;
 }
 
+.review-logo {
+  text-decoration: none;
+}
 /* Rght Section end */
 
 /* Styles for all device sizes */

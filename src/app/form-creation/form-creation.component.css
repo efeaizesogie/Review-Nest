@@ -150,7 +150,7 @@ a#back-btn {
 
 .profile-pictures {
   position: relative;
-  height: 210px;
+  height: 190px;
 }
 
 img#sec-profile-pic {
@@ -175,18 +175,11 @@ img#sec-profile-pic {
   top: -20px;
 }
 
-img#white-bg{
-  position: absolute;
-  top: -19px;
-    left: 482px;
-}
-
-img#review-pic{
+img#review-pic {
   position: absolute;
   top: 19px;
-    left: 530px;
+  left: 530px;
 }
-
 
 p#profile-name {
   color: #010b39;
@@ -197,7 +190,6 @@ p#profile-name {
   line-height: 28px; /* 155.556% */
   text-align: center;
   background: #fefefe;
-  margin-top: 101px;
 }
 
 p#profile-desc {
@@ -373,15 +365,9 @@ button#submit-btn:hover {
     width: 100% !important;
   }
 
-  img#white-bg{
-    position: absolute;
-    top: -21px;
-      left: 120px;
-  }
-  
-  img#review-pic{
+  img#review-pic {
     position: absolute;
     top: 18px;
-      left: 170px;
+    left: 170px;
   }
 }

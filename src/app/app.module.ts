@@ -37,6 +37,7 @@ import { PieChartComponent } from "./pie-chart/pie-chart.component";
 import { NgApexchartsModule } from "ng-apexcharts";
 import { NgxApexchartsModule } from "ngx-apexcharts";
 import { SmoothScrollDirective } from './smooth-scroll.directive';
+import { FormNavbarComponent } from './form-navbar/form-navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +70,7 @@ import { SmoothScrollDirective } from './smooth-scroll.directive';
     NavbarDasComponent,
     PieChartComponent,
     SmoothScrollDirective,
+    FormNavbarComponent,
     // ChartComponent,
   ],
   imports: [
