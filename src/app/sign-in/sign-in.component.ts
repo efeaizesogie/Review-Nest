@@ -86,6 +86,7 @@ export class SignInComponent implements OnInit {
 
             // this.renderer.setStyle(loadingScreen, "display", "none");
             this.loading = false;
+            this.loginForm.reset();
           }
         },
         (error: HttpErrorResponse) => {

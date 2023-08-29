@@ -31,6 +31,7 @@ export class ReviewDashboardComponent implements OnInit {
   ngOnInit(): void {
     const loadingScreen = document.querySelector(".spinner-item");
     console.log(this.loading);
+
     this.reviewService.getReviews().subscribe(
       (response) => {
         this.reviews = response.Reviews;

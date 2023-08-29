@@ -114,6 +114,7 @@ export class SignUpComponent {
           // this.router.navigate(['/sign-in']);
           // this.renderer.setStyle(loadingScreen, "display", "none");
           this.loading = false;
+          this.usersForm.reset();
         },
         (error: HttpErrorResponse) => {
           console.error("Error while registering user:", error);

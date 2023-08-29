@@ -236,6 +236,7 @@ form.form {
 input {
   display: flex;
   padding: 14px 16px;
+  font-family: "Open Sans", sans-serif;
   align-items: flex-start;
   gap: 10px;
   align-self: stretch;
@@ -253,6 +254,10 @@ input::placeholder {
   font-style: normal;
   font-weight: 400;
   line-height: 22px; /* 157.143% */
+}
+
+textarea {
+  font-family: "Open Sans", sans-serif;
 }
 
 label {
