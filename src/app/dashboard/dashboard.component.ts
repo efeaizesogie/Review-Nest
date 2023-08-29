@@ -155,11 +155,20 @@ export class DashboardComponent implements OnInit {
           console.log("Count of 5:", count5);
 
           const totalReviews = reviews.length;
-          const percentage1 = Math.round((count1 / totalReviews) * 100);
-          const percentage2 = Math.round((count2 / totalReviews) * 100);
-          const percentage3 = Math.round((count3 / totalReviews) * 100);
-          const percentage4 = Math.round((count4 / totalReviews) * 100);
-          const percentage5 = Math.round((count5 / totalReviews) * 100);
+const percentage1 = totalReviews > 0 ? Math.round((count1 / totalReviews) * 100) : 0;
+const percentage2 = totalReviews > 0 ? Math.round((count2 / totalReviews) * 100) : 0;
+const percentage3 = totalReviews > 0 ? Math.round((count3 / totalReviews) * 100) : 0;
+const percentage4 = totalReviews > 0 ? Math.round((count4 / totalReviews) * 100) : 0;
+const percentage5 = totalReviews > 0 ? Math.round((count5 / totalReviews) * 100) : 0;
+
+
+// const totalReviews = reviews.length;
+// const percentage1 = Math.round((count1 / totalReviews) * 100);
+// const percentage2 = Math.round((count2 / totalReviews) * 100);
+// const percentage3 = Math.round((count3 / totalReviews) * 100);
+// const percentage4 = Math.round((count4 / totalReviews) * 100);
+// const percentage5 = Math.round((count5 / totalReviews) * 100);
+
           //  const average =Math.round( (count1 + count2 + count3 + count4 + count5) / totalReviews);
 
           console.log("Percentage of 1:", percentage1);
@@ -203,7 +212,7 @@ export class DashboardComponent implements OnInit {
     } else if (average === 1) {
       this.performanceText = "Very Poor";
     } else {
-      this.performanceText = "";
+      this.performanceText = "No ratings yet";
     }
   }
 }
