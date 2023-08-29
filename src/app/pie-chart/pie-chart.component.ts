@@ -16,7 +16,7 @@ export type ChartOptions = {
 export class PieChartComponent implements OnInit {
   
 
-  chartSeries: ApexNonAxisChartSeries = [40, 32, 28, 30, 25];
+  chartSeries: ApexNonAxisChartSeries = [0, 0, 0, 0, 0 ];
   chartLegend: ApexLegend = {
       show:false
   }
