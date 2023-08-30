@@ -23,8 +23,8 @@ export class PieChartComponent implements OnInit {
 
   chartDetails: any = {
     type: 'donut',
-    width: 152.663, // Set the width
-    height: 152.663, // Set the height
+    width: 270, // Set the width
+    height: 270, // Set the height
     legend: {
       show: false // Hide the legend
     }

@@ -59,14 +59,14 @@
         </div>
       </div>
 
-      <div class="statistics d-flex">
-        <div class="graph d-flex flex-column">
+
+        <!-- <div class="graph d-flex flex-column">
           <div class="graph-header d-flex justify-content-between">
             <div><p id="review-report">Review Report</p></div>
             <div id="filter"><p id="filter">Filter: Monthly</p></div>
           </div>
           <div class="graph-data"></div>
-        </div>
+        </div> -->
 
         <div class="pie-chart-container d-flex flex-column">
           <div class="pie-chart-header">
@@ -79,32 +79,31 @@
               <div class="d-flex percentages">
                 <div><img src="\assets\dashboard\Ellipse 90.png" alt="" /></div>
                 <div><p class="review-text">5-star reviews</p></div>
-                <div class="percentage">{{ percentage5 }}%</div>
+                <div class="percentage">({{ percentage5 }}%)</div>
               </div>
               <div class="d-flex percentages">
                 <div><img src="\assets\dashboard\yellow.png" alt="" /></div>
                 <div><p class="review-text">4-star reviews</p></div>
-                <div class="percentage">{{ percentage4 }}%</div>
+                <div class="percentage">({{ percentage4 }}%)</div>
               </div>
               <div class="d-flex percentages">
                 <div><img src="\assets\dashboard\orange.png" alt="" /></div>
                 <div><p class="review-text">3-star reviews</p></div>
-                <div class="percentage">{{ percentage3 }}%</div>
+                <div class="percentage">({{ percentage3 }}%)</div>
               </div>
               <div class="d-flex percentages">
                 <div><img src="\assets\dashboard\red.png" alt="" /></div>
                 <div><p class="review-text">2-star reviews</p></div>
-                <div class="percentage">{{ percentage2 }}%</div>
+                <div class="percentage">({{ percentage2 }}%)</div>
               </div>
               <div class="d-flex percentages">
                 <div><img src="\assets\dashboard\pink.png" alt="" /></div>
                 <div><p class="review-text">1-star reviews</p></div>
-                <div class="percentage">{{ percentage1 }}%</div>
+                <div class="percentage">({{ percentage1 }}%)</div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
       <div class="loading-container" *ngIf="isLoading">
         <iframe

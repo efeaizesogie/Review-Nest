@@ -13,7 +13,7 @@ app-navbar-das {
 
 h3#dashboard-head {
   color: var(--primary-colour-primary-key-colour, #011055);
-  font-family: Palanquin Dark;
+  font-family: "Palanquin Dark", sans-serif;
   font-size: 32px;
   font-style: normal;
   font-weight: 500;
@@ -22,7 +22,7 @@ h3#dashboard-head {
 
 p#dashboard-para {
   color: var(--neutral-colours-neutral-colours-100, #545454);
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -57,7 +57,7 @@ p#dashboard-para {
 #overall-performance {
   background: var(--neutral-colours-white-colour, #fff);
   width: 465px;
-  padding: 16px 9px;
+  padding: 16px 24px;
 }
 
 .carousel-header {
@@ -69,7 +69,7 @@ p#dashboard-para {
 
 p.header-text {
   color: var(--neutral-colours-neutral-colours-100, #545454);
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 600;
@@ -80,7 +80,7 @@ p.header-text {
   color: var(--primary-colour-primary-colour-80, #010b39);
 
   /* Regular h/1 */
-  font-family: Palanquin Dark;
+  font-family: "Palanquin Dark", sans-serif;
   font-size: 56px;
   font-style: normal;
   font-weight: 400;
@@ -92,7 +92,7 @@ p.header-text {
 
 .this-month {
   color: var(--neutral-colours-neutral-colours-100, #545454);
-  font-family: Open Sans;
+  font-family:"Open Sans", sans-serif;
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
@@ -105,7 +105,7 @@ p#performance {
   color: var(--primary-colour-primary-colour-80, #010b39);
 
   /* Bold h/5 */
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -135,8 +135,8 @@ p#performance {
 }
 
 .pie-chart-container {
-  width: 328px;
-  padding: 24px 0px 48px 24px;
+ width: 92%;
+  padding: 24px 24px 48px 24px;
   align-items: flex-start;
   gap: 30px;
   border-radius: 8px;
@@ -148,9 +148,15 @@ p#performance {
   gap: 4px;
 }
 
+.percentage{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 p#review-report {
   color: var(--primary-colour-primary-colour-90, #01082b);
-  font-family: Open Sans;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -168,17 +174,24 @@ div#filter {
 }
 
 .chart-and-desc {
-  justify-content: space-between;
+  width: 100%;
+  justify-content: center;
+  gap: 60px;
+}
+
+.pie-chart-header{
+  text-align: center;
+  width: 100%;
 }
 
 p#pie-chart-header {
   color: var(--primary-colour-primary-colour-90, #01082b);
 
   /* Medium Bodytext/5 */
-  font-family: Open Sans;
-  font-size: 16px;
+  font-family: "Palanquin Dark", sans-serif;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 24px; /* 150% */
 }
 
@@ -186,16 +199,16 @@ p.review-text {
   color: var(--neutral-colours-neutral-colours-100, #545454);
 
   /* Regular Bodytext/3 */
-  font-family: Open Sans;
-  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px; /* 166.667% */
 }
 
 .chart {
-  width: 152.663px;
-  height: 152.663px;
+  width: 270px;
+  height: 270px;
 }
 
 .right-content {
