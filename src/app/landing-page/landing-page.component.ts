@@ -7,18 +7,13 @@ import { EventEmitter } from "@angular/core"; // Import EventEmitter
   styleUrls: ["./landing-page.component.css"],
 })
 export class LandingPageComponent {
-  // Declare scrollToSectionEvent as an EventEmitter
-  scrollToSectionEvent: EventEmitter<string> = new EventEmitter<string>();
+  loading: boolean = true;
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit() {
-    // Subscribe to the scrollToSectionEvent
-    this.scrollToSectionEvent.subscribe((sectionId: string) => {
-      const targetSection = this.el.nativeElement.querySelector(sectionId);
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: "smooth" });
-      }
-    });
+    setTimeout(() => {
+      this.loading = false;
+    }, 5000);
   }
 }

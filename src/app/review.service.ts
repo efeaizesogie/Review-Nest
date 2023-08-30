@@ -34,4 +34,21 @@ export class ReviewService {
       { headers }
     );
   }
+
+  getReviewsWithoutId(): Observable<any> {
+    const userID = "64ef5ef4df25d805c89787fd";
+    const headers = new HttpHeaders({
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.NjRlZjVlZjRkZjI1ZDgwNWM4OTc4N2Zk.baZqdlZ1YHMXjYabc8P5l35bzQyJ-DsQyIB6jkeoWsw`,
+    });
+
+    console.log(
+      this.http.get<any>(
+        `https://reviewnest.onrender.com/api/v1/reviews/${userID}`
+      )
+    );
+    return this.http.get<any>(
+      `https://reviewnest.onrender.com/api/v1/reviews/${userID}`,
+      { headers }
+    );
+  }
 }

@@ -44,6 +44,7 @@
 .review-content {
   width: 378px;
   height: 192px;
+  margin-right: 24px;
   border-radius: 8px;
   border: 0.6px solid;
 
@@ -90,16 +91,16 @@
 /* slider 1 */
 
 @keyframes autoScroll {
-  0% {
+  0%,
+  100% {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(calc(-100% + 10px));
+  50% {
+    transform: translateX(calc(-100% + 170px));
   }
 }
 
 .scroll-content {
-  display: flex;
   min-width: 100%;
   overflow: hidden;
 }
@@ -107,22 +108,57 @@
 .scroll-section {
   display: flex;
   min-width: 100%;
-  animation: autoScroll 20s linear infinite;
+  animation: autoScroll 60s linear infinite;
 }
 
 @keyframes autoScrollBack {
-  0% {
+  0%,
+  100% {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(calc(100% + 20px));
+  50% {
+    transform: translateX(calc(-100% - 50px));
   }
 }
 
 .scroll-section-2 {
   display: flex;
   min-width: 100%;
-  animation: autoScrollBack 20s linear infinite;
+  animation: autoScrollBack 60s linear infinite;
+}
+
+.star {
+  display: inline-block;
+  width: 18px; /* Adjust the width and height as needed */
+  height: 18px;
+  background-image: url("./../../assets/assets(svg)/Star_empty.svg"); /* Set the path to your unfilled star image */
+  background-size: cover;
+}
+
+.star.filled {
+  background-image: url("./../../assets/assets(svg)/star-4-11.svg"); /* Set the path to your filled star image */
+}
+
+.spinner-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  display: flex;
+}
+
+.spinner-item.load {
+  display: flex;
+}
+
+.review-img {
+  width: 40px;
+  height: 40px;
 }
 
 @media screen and (max-width: 980px) {

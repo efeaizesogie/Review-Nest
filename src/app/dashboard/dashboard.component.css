@@ -211,6 +211,10 @@ p.review-text {
   height: 270px;
 }
 
+.right-content {
+  overflow: hidden;
+}
+
 @media (max-width: 576px), (min-width: 577px) and (max-width: 800px) {
   .carousel-slide {
     width: 100%; /* Full width in mobile view */

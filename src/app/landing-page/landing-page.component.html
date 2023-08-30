@@ -1,16 +1,25 @@
-<app-navbar></app-navbar>
-<section id="header">
-  <app-header></app-header>
-</section>
-<section id="about">
-  <app-about-us></app-about-us>
-</section>
-<app-work-section></app-work-section>
-<app-company></app-company>
-<section id="reviews">
-  <app-recent-review class="reviews"></app-recent-review>
-</section>
-<section id="contact">
-  <app-contact class="contact"></app-contact>
-</section>
-<app-footer></app-footer>
+<div class="loaded" *ngIf="!loading">
+  <app-navbar></app-navbar>
+  <section id="header">
+    <app-header></app-header>
+  </section>
+  <section id="about">
+    <app-about-us></app-about-us>
+  </section>
+  <app-work-section></app-work-section>
+  <app-company></app-company>
+  <section id="reviews">
+    <app-recent-review class="reviews"></app-recent-review>
+  </section>
+  <section id="contact">
+    <app-contact class="contact"></app-contact>
+  </section>
+  <app-footer></app-footer>
+</div>
+<div class="loading" *ngIf="loading">
+  <div class="spinner-item">
+    <iframe
+      src="https://lottie.host/?file=3216f451-384a-4b43-bff5-a9dfc0777bea/BSKddAIRIa.json"
+    ></iframe>
+  </div>
+</div>
