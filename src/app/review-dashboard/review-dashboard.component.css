@@ -66,6 +66,10 @@ thead th {
   line-height: 20px;
 }
 
+.right-content {
+  overflow: hidden;
+}
+
 .display-btn {
   display: flex;
   padding: 4px 8px;

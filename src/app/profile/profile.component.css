@@ -17,6 +17,10 @@ app-navbar-das {
   opacity: 0;
 }
 
+.right-content {
+  overflow: hidden;
+}
+
 .darkBg.active::before {
   opacity: 1;
 }
