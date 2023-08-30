@@ -303,6 +303,10 @@ p#rating {
   line-height: 22px;
 }
 
+.star{
+  cursor: pointer;
+}
+
 button#submit-btn {
   display: flex;
   padding: 10px 24px;

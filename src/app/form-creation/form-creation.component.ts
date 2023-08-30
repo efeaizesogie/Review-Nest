@@ -3,13 +3,9 @@ import {
   FormBuilder,
   FormGroup,
   Validators,
-  FormControl,
-  AbstractControl,
-  ValidatorFn,
 } from "@angular/forms";
-import { ReviewService } from "../review.service";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { flatMap } from "rxjs";
+
 
 @Component({
   selector: "app-form-creation",
@@ -22,9 +18,11 @@ export class FormCreationComponent {
   feedbackForm: FormGroup;
   submitted: boolean = false;
   showOverlay: boolean = false;
-  pRating: number = 1; // Initialize pRating
+  pRating: number = 0; // Initialize pRating
   isDetailBoxActive: boolean = false;
   loading: boolean = false;
+  ratingGiven: boolean = false;
+
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.feedbackForm = this.fb.group({
@@ -41,7 +39,7 @@ export class FormCreationComponent {
 
   setRating(rating: number) {
     this.pRating = rating;
-    // You can log the selected rating to verify that it's working
+    this.ratingGiven = true;
     console.log("Selected rating:", this.pRating);
   }
 
@@ -56,6 +54,11 @@ export class FormCreationComponent {
     pUserName: string;
     pThoughts: string;
   }) {
+    if (this.pRating === 0) {
+      this.pRating = 0;
+      console.log("Rating must be more than zero");
+      return; // Do not proceed with submission
+    }
     this.loading = true;
     const formID = localStorage.getItem("formID");
     const feedbackData = {
@@ -66,16 +69,6 @@ export class FormCreationComponent {
       feedBack: feedbackDetails.pThoughts,
     };
 
-    // if (this.feedbackForm) {
-    //   this.loading = true;
-    //   // Check if the form exists
-    //   const pRatingControl = this.feedbackForm.get("pRating");
-    //   if (pRatingControl) {
-    //     // Check if the pRating form control exists
-    //     pRatingControl.setValue(feedbackDetails.pRating); // Set the value
-    //     rating: this.pRating.toString();
-    //   }
-    // }
     console.log(feedbackData);
     console.log(formID);
     this.http
@@ -90,7 +83,7 @@ export class FormCreationComponent {
           this.showOverlay = true;
           this.isDetailBoxActive = true;
           this.loading = false;
-
+          this.pRating = 0;
           this.feedbackForm.reset();
         },
         (error: HttpErrorResponse) => {
