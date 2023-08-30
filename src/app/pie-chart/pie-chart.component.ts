@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
+import { HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { ApexChart, ApexDataLabels, ApexNonAxisChartSeries, ApexLegend } from 'ng-apexcharts';
 
 export type ChartOptions = {
@@ -34,7 +37,7 @@ export class PieChartComponent implements OnInit {
     enabled: false
   };
 
-  constructor() {}
+  constructor(private http: HttpClient, private userService: UserService) {}
 
   ngOnInit(): void {
     // Retrieve the percentage values from localStorage

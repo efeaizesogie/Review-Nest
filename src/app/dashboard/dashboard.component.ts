@@ -73,7 +73,7 @@ export class DashboardComponent implements OnInit {
     this.http
       .get<ReviewsApiResponse>(
         `https://reviewnest.onrender.com/api/v1/user/${userId}`,
-        { headers: headers } // Replace with the actual API URL
+        { headers: headers } 
       )
       .subscribe(
         (reviewsResponse) => {
@@ -85,21 +85,12 @@ export class DashboardComponent implements OnInit {
           let totalSum = 0;
           let totalCount = 0;
 
-          const weightedRatings = reviews.reduce((acc, review) => {
-            const rating = review.rating;
-            const count = acc[rating] || 0;
-            acc[rating] = count + 1;
-
-            totalSum += rating * count;
-            console.log('line 96', totalSum);
-            totalCount += count;
-
-            return acc;
-          }, {});
+ 
           reviews.forEach((review) => {
             const rating = review.rating;
             totalSum += rating;
             console.log('Rating:', rating);
+            // console.log('tottal sum is', totalSum)
           });
           const totalAverage = Math.round(totalSum / reviews.length);
           this.pRating = totalAverage;
@@ -135,6 +126,10 @@ export class DashboardComponent implements OnInit {
                 break;
             }
           });
+
+          const bestaverage = (count1 + count2 + count3 + count4 + count5) / reviews.length;
+          console.log('the most correct average', bestaverage);
+          console.log('reviews lenght', reviews.length)
 
           console.log('Count of 1:', count1);
           console.log('Count of 2:', count2);
