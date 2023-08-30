@@ -109,8 +109,8 @@ export class SignUpComponent {
 
             setTimeout(() => {
               this.accountSuccess = false;
-            }, 3000);
-          }, 1000);
+            }, 5000);
+          }, 3000);
           // this.router.navigate(['/sign-in']);
           // this.renderer.setStyle(loadingScreen, "display", "none");
           this.loading = false;
@@ -125,8 +125,8 @@ export class SignUpComponent {
 
             setTimeout(() => {
               this.successMessageVisible = false;
-            }, 3000);
-          }, 1000);
+            }, 4000);
+          }, 3000);
         }
       );
   }

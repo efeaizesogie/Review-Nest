@@ -22,50 +22,58 @@
                 </tr>
               </thead>
               <tbody>
-                <tr
-                  class="tab-body"
-                  *ngFor="let review of reviews.slice(startIndex, endIndex)"
-                >
-                  <td>
-                    <h2 class="review-heading">{{ review.userName }}</h2>
-                    <p class="review-text">
-                      {{ review.feedBack }}
-                    </p>
-                  </td>
-                  <td>
-                    <p class="product-name">{{ review.product }}</p>
-                  </td>
-                  <td>
-                    <div
-                      class="rating d-flex align-items-center"
-                      *ngIf="review.rating > 0; else noRating"
-                    >
-                      <ng-container
-                        *ngFor="let _ of [1, 2, 3, 4, 5]; let i = index"
+                <ng-container *ngIf="totalReviews > 0; else noReviews">
+                  <tr
+                    class="tab-body"
+                    *ngFor="let review of reviews.slice(startIndex, endIndex)"
+                  >
+                    <td>
+                      <h2 class="review-heading">{{ review.userName }}</h2>
+                      <p class="review-text">
+                        {{ review.feedBack }}
+                      </p>
+                    </td>
+                    <td>
+                      <p class="product-name">{{ review.product }}</p>
+                    </td>
+                    <td>
+                      <div
+                        class="rating d-flex align-items-center"
+                        *ngIf="review.rating > 0; else noRating"
                       >
-                        <span
-                          class="star"
-                          [class.filled]="i < review.rating"
-                        ></span>
-                      </ng-container>
-                    </div>
-                    <ng-template #noRating> No Rating </ng-template>
-                  </td>
-                  <td>
-                    <button
-                      class="btn display-btn"
-                      (click)="showDetails(review)"
-                    >
-                      View Details
-                    </button>
-                  </td>
-                  <td>
-                    <div class="date-time">
-                      <p class="date-content">{{ review.updatedAt }}</p>
-                    </div>
-                  </td>
-                </tr>
+                        <ng-container
+                          *ngFor="let _ of [1, 2, 3, 4, 5]; let i = index"
+                        >
+                          <span
+                            class="star"
+                            [class.filled]="i < review.rating"
+                          ></span>
+                        </ng-container>
+                      </div>
+                      <ng-template #noRating> No Rating </ng-template>
+                    </td>
+                    <td>
+                      <button
+                        class="btn display-btn"
+                        (click)="showDetails(review)"
+                      >
+                        View Details
+                      </button>
+                    </td>
+                    <td>
+                      <div class="date-time">
+                        <p class="date-content">{{ review.updatedAt }}</p>
+                      </div>
+                    </td>
+                  </tr>
+                </ng-container>
               </tbody>
+
+              <ng-template #noReviews>
+                <tr>
+                  <td colspan="5">No reviews available.</td>
+                </tr>
+              </ng-template>
             </table>
           </div>
           <div class="scroll-nav">

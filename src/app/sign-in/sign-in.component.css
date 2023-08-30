@@ -188,6 +188,7 @@ input {
   border-radius: 8px;
   border: 1px solid var(--black-colour-black-colour-10, #ccc);
   padding: 14px 16px;
+  font-family: "Open Sans", sans-serif;
   width: 110%;
 }
 
