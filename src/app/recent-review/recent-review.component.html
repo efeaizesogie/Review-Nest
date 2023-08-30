@@ -6,294 +6,52 @@
 
   <div class="review-board">
     <div class="slider scroll-content">
-      <div #scrollSection class="slider-track flex-nowrap d-flex scroll-section">
+      <div
+        #scrollSection
+        class="slider-track flex-nowrap d-flex scroll-section"
+      >
         <div class="slide">
           <div
             class="review-content d-flex flex-column align-items-stretch justify-content-between"
+            *ngFor="let review of reviews"
           >
             <div class="">
-              <p class="review-para">
-                “I totally enjoyed using the application to keep record of my
-                activities. I’d highly recommend to everyone”
-              </p>
+              <p class="review-para">“{{ review.feedBack }}”</p>
             </div>
             <div
               class="review-id d-flex justify-content-between align-items-center"
             >
               <div class="d-flex justify-content-around align-items-center">
                 <img
-                  src="./../../assets/assets(svg)/Ugonna ken.svg"
+                  src="./../../assets/dashboard/brand_logo.svg"
                   alt="Ugbonna ken"
                   class="review-img"
                 />
                 <div class="review-name">
-                  <p class="review-para">Ugbonna Ken</p>
+                  <p class="review-para">{{ review.userName }}</p>
                   <p class="review-company">
-                    <span class="review-span">Reviewed</span> Mosaic Brand
+                    <span class="review-span">Reviewed</span>
+                    {{ review.product }}
                   </p>
                 </div>
               </div>
               <div
                 class="rating d-flex justify-content-lg-end align-items-center"
               >
-                <img
-                  src="./../../assets/assets(svg)/star-1-11.svg"
-                  alt=""
-                  class="rate 1"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-2-11.svg"
-                  alt=""
-                  class="rate 2"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-3-11.svg"
-                  alt=""
-                  class="rate 3"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-4-11.svg"
-                  alt=""
-                  class="rate 4"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-5-11.svg"
-                  alt=""
-                  class="rate 5"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="slide">
-          <div
-            class="review-content d-flex flex-column align-items-stretch justify-content-between"
-          >
-            <div class="">
-              <p class="review-para">
-                “I totally enjoyed using the application to keep record of my
-                activities. I’d highly recommend to everyone”
-              </p>
-            </div>
-            <div
-              class="review-id d-flex justify-content-between align-items-center"
-            >
-              <div class="d-flex justify-content-around align-items-center">
-                <img
-                  src="./../../assets/assets(svg)/Ugonna ken.svg"
-                  alt="Ugbonna ken"
-                  class="review-img"
-                />
-                <div class="review-name">
-                  <p class="review-para">Ugbonna Ken</p>
-                  <p class="review-company">
-                    <span class="review-span">Reviewed</span> Mosaic Brand
-                  </p>
+                <div
+                  class="rating d-flex align-items-center"
+                  *ngIf="review.rating > 0; else noRating"
+                >
+                  <ng-container
+                    *ngFor="let _ of [1, 2, 3, 4, 5]; let i = index"
+                  >
+                    <span
+                      class="star"
+                      [class.filled]="i < review.rating"
+                    ></span>
+                  </ng-container>
                 </div>
-              </div>
-              <div
-                class="rating d-flex justify-content-lg-end align-items-center"
-              >
-                <img
-                  src="./../../assets/assets(svg)/star-1-11.svg"
-                  alt=""
-                  class="rate 1"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-2-11.svg"
-                  alt=""
-                  class="rate 2"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-3-11.svg"
-                  alt=""
-                  class="rate 3"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-4-11.svg"
-                  alt=""
-                  class="rate 4"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-5-11.svg"
-                  alt=""
-                  class="rate 5"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-          <div
-            class="review-content d-flex flex-column align-items-stretch justify-content-between"
-          >
-            <div class="">
-              <p class="review-para">
-                “I totally enjoyed using the application to keep record of my
-                activities. I’d highly recommend to everyone”
-              </p>
-            </div>
-            <div
-              class="review-id d-flex justify-content-between align-items-center"
-            >
-              <div class="d-flex justify-content-around align-items-center">
-                <img
-                  src="./../../assets/assets(svg)/Ugonna ken.svg"
-                  alt="Ugbonna ken"
-                  class="review-img"
-                />
-                <div class="review-name">
-                  <p class="review-para">Ugbonna Ken</p>
-                  <p class="review-company">
-                    <span class="review-span">Reviewed</span> Mosaic Brand
-                  </p>
-                </div>
-              </div>
-              <div
-                class="rating d-flex justify-content-lg-end align-items-center"
-              >
-                <img
-                  src="./../../assets/assets(svg)/star-1-11.svg"
-                  alt=""
-                  class="rate 1"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-2-11.svg"
-                  alt=""
-                  class="rate 2"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-3-11.svg"
-                  alt=""
-                  class="rate 3"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-4-11.svg"
-                  alt=""
-                  class="rate 4"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-5-11.svg"
-                  alt=""
-                  class="rate 5"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-          <div
-            class="review-content d-flex flex-column align-items-stretch justify-content-between"
-          >
-            <div class="">
-              <p class="review-para">
-                “I totally enjoyed using the application to keep record of my
-                activities. I’d highly recommend to everyone”
-              </p>
-            </div>
-            <div
-              class="review-id d-flex justify-content-between align-items-center"
-            >
-              <div class="d-flex justify-content-around align-items-center">
-                <img
-                  src="./../../assets/assets(svg)/Ugonna ken.svg"
-                  alt="Ugbonna ken"
-                  class="review-img"
-                />
-                <div class="review-name">
-                  <p class="review-para">Ugbonna Ken</p>
-                  <p class="review-company">
-                    <span class="review-span">Reviewed</span> Mosaic Brand
-                  </p>
-                </div>
-              </div>
-              <div
-                class="rating d-flex justify-content-lg-end align-items-center"
-              >
-                <img
-                  src="./../../assets/assets(svg)/star-1-11.svg"
-                  alt=""
-                  class="rate 1"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-2-11.svg"
-                  alt=""
-                  class="rate 2"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-3-11.svg"
-                  alt=""
-                  class="rate 3"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-4-11.svg"
-                  alt=""
-                  class="rate 4"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-5-11.svg"
-                  alt=""
-                  class="rate 5"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-          <div
-            class="review-content d-flex flex-column align-items-stretch justify-content-between"
-          >
-            <div class="">
-              <p class="review-para">
-                “I totally enjoyed using the application to keep record of my
-                activities. I’d highly recommend to everyone”
-              </p>
-            </div>
-            <div
-              class="review-id d-flex justify-content-between align-items-center"
-            >
-              <div class="d-flex justify-content-around align-items-center">
-                <img
-                  src="./../../assets/assets(svg)/Ugonna ken.svg"
-                  alt="Ugbonna ken"
-                  class="review-img"
-                />
-                <div class="review-name">
-                  <p class="review-para">Ugbonna Ken</p>
-                  <p class="review-company">
-                    <span class="review-span">Reviewed</span> Mosaic Brand
-                  </p>
-                </div>
-              </div>
-              <div
-                class="rating d-flex justify-content-lg-end align-items-center"
-              >
-                <img
-                  src="./../../assets/assets(svg)/star-1-11.svg"
-                  alt=""
-                  class="rate 1"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-2-11.svg"
-                  alt=""
-                  class="rate 2"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-3-11.svg"
-                  alt=""
-                  class="rate 3"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-4-11.svg"
-                  alt=""
-                  class="rate 4"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-5-11.svg"
-                  alt=""
-                  class="rate 5"
-                />
+                <ng-template #noRating> No Rating </ng-template>
               </div>
             </div>
           </div>
@@ -306,408 +64,45 @@
         <div class="slide">
           <div
             class="review-content d-flex flex-column align-items-stretch justify-content-between"
+            *ngFor="let review of reviews"
           >
             <div class="">
-              <p class="review-para">
-                “I totally enjoyed using the application to keep record of my
-                activities. I’d highly recommend to everyone”
-              </p>
+              <p class="review-para">“{{ review.feedBack }}”</p>
             </div>
             <div
               class="review-id d-flex justify-content-between align-items-center"
             >
               <div class="d-flex justify-content-around align-items-center">
                 <img
-                  src="./../../assets/assets(svg)/Ugonna ken.svg"
-                  alt="Ugbonna ken"
+                  src="./../../assets/dashboard/brand_logo.svg"
+                  alt="review nest"
                   class="review-img"
                 />
                 <div class="review-name">
-                  <p class="review-para">Ugbonna Ken</p>
+                  <p class="review-para">{{ review.userName }}</p>
                   <p class="review-company">
-                    <span class="review-span">Reviewed</span> Mosaic Brand
+                    <span class="review-span">Reviewed</span>
+                    {{ review.product }}
                   </p>
                 </div>
               </div>
               <div
                 class="rating d-flex justify-content-lg-end align-items-center"
               >
-                <img
-                  src="./../../assets/assets(svg)/star-1-11.svg"
-                  alt=""
-                  class="rate 1"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-2-11.svg"
-                  alt=""
-                  class="rate 2"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-3-11.svg"
-                  alt=""
-                  class="rate 3"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-4-11.svg"
-                  alt=""
-                  class="rate 4"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-5-11.svg"
-                  alt=""
-                  class="rate 5"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="slide">
-          <div
-            class="review-content d-flex flex-column align-items-stretch justify-content-between"
-          >
-            <div class="">
-              <p class="review-para">
-                “I totally enjoyed using the application to keep record of my
-                activities. I’d highly recommend to everyone”
-              </p>
-            </div>
-            <div
-              class="review-id d-flex justify-content-between align-items-center"
-            >
-              <div class="d-flex justify-content-around align-items-center">
-                <img
-                  src="./../../assets/assets(svg)/Ugonna ken.svg"
-                  alt="Ugbonna ken"
-                  class="review-img"
-                />
-                <div class="review-name">
-                  <p class="review-para">Ugbonna Ken</p>
-                  <p class="review-company">
-                    <span class="review-span">Reviewed</span> Mosaic Brand
-                  </p>
+                <div
+                  class="rating d-flex align-items-center"
+                  *ngIf="review.rating > 0; else noRating"
+                >
+                  <ng-container
+                    *ngFor="let _ of [1, 2, 3, 4, 5]; let i = index"
+                  >
+                    <span
+                      class="star"
+                      [class.filled]="i < review.rating"
+                    ></span>
+                  </ng-container>
                 </div>
-              </div>
-              <div
-                class="rating d-flex justify-content-lg-end align-items-center"
-              >
-                <img
-                  src="./../../assets/assets(svg)/star-1-11.svg"
-                  alt=""
-                  class="rate 1"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-2-11.svg"
-                  alt=""
-                  class="rate 2"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-3-11.svg"
-                  alt=""
-                  class="rate 3"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-4-11.svg"
-                  alt=""
-                  class="rate 4"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-5-11.svg"
-                  alt=""
-                  class="rate 5"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-          <div
-            class="review-content d-flex flex-column align-items-stretch justify-content-between"
-          >
-            <div class="">
-              <p class="review-para">
-                “I totally enjoyed using the application to keep record of my
-                activities. I’d highly recommend to everyone”
-              </p>
-            </div>
-            <div
-              class="review-id d-flex justify-content-between align-items-center"
-            >
-              <div class="d-flex justify-content-around align-items-center">
-                <img
-                  src="./../../assets/assets(svg)/Ugonna ken.svg"
-                  alt="Ugbonna ken"
-                  class="review-img"
-                />
-                <div class="review-name">
-                  <p class="review-para">Ugbonna Ken</p>
-                  <p class="review-company">
-                    <span class="review-span">Reviewed</span> Mosaic Brand
-                  </p>
-                </div>
-              </div>
-              <div
-                class="rating d-flex justify-content-lg-end align-items-center"
-              >
-                <img
-                  src="./../../assets/assets(svg)/star-1-11.svg"
-                  alt=""
-                  class="rate 1"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-2-11.svg"
-                  alt=""
-                  class="rate 2"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-3-11.svg"
-                  alt=""
-                  class="rate 3"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-4-11.svg"
-                  alt=""
-                  class="rate 4"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-5-11.svg"
-                  alt=""
-                  class="rate 5"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-          <div
-            class="review-content d-flex flex-column align-items-stretch justify-content-between"
-          >
-            <div class="">
-              <p class="review-para">
-                “I totally enjoyed using the application to keep record of my
-                activities. I’d highly recommend to everyone”
-              </p>
-            </div>
-            <div
-              class="review-id d-flex justify-content-between align-items-center"
-            >
-              <div class="d-flex justify-content-around align-items-center">
-                <img
-                  src="./../../assets/assets(svg)/Ugonna ken.svg"
-                  alt="Ugbonna ken"
-                  class="review-img"
-                />
-                <div class="review-name">
-                  <p class="review-para">Ugbonna Ken</p>
-                  <p class="review-company">
-                    <span class="review-span">Reviewed</span> Mosaic Brand
-                  </p>
-                </div>
-              </div>
-              <div
-                class="rating d-flex justify-content-lg-end align-items-center"
-              >
-                <img
-                  src="./../../assets/assets(svg)/star-1-11.svg"
-                  alt=""
-                  class="rate 1"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-2-11.svg"
-                  alt=""
-                  class="rate 2"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-3-11.svg"
-                  alt=""
-                  class="rate 3"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-4-11.svg"
-                  alt=""
-                  class="rate 4"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-5-11.svg"
-                  alt=""
-                  class="rate 5"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-          <div
-            class="review-content d-flex flex-column align-items-stretch justify-content-between"
-          >
-            <div class="">
-              <p class="review-para">
-                “I totally enjoyed using the application to keep record of my
-                activities. I’d highly recommend to everyone”
-              </p>
-            </div>
-            <div
-              class="review-id d-flex justify-content-between align-items-center"
-            >
-              <div class="d-flex justify-content-around align-items-center">
-                <img
-                  src="./../../assets/assets(svg)/Ugonna ken.svg"
-                  alt="Ugbonna ken"
-                  class="review-img"
-                />
-                <div class="review-name">
-                  <p class="review-para">Ugbonna Ken</p>
-                  <p class="review-company">
-                    <span class="review-span">Reviewed</span> Mosaic Brand
-                  </p>
-                </div>
-              </div>
-              <div
-                class="rating d-flex justify-content-lg-end align-items-center"
-              >
-                <img
-                  src="./../../assets/assets(svg)/star-1-11.svg"
-                  alt=""
-                  class="rate 1"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-2-11.svg"
-                  alt=""
-                  class="rate 2"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-3-11.svg"
-                  alt=""
-                  class="rate 3"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-4-11.svg"
-                  alt=""
-                  class="rate 4"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-5-11.svg"
-                  alt=""
-                  class="rate 5"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="slide">
-          <div
-            class="review-content d-flex flex-column align-items-stretch justify-content-between"
-          >
-            <div class="">
-              <p class="review-para">
-                “I totally enjoyed using the application to keep record of my
-                activities. I’d highly recommend to everyone”
-              </p>
-            </div>
-            <div
-              class="review-id d-flex justify-content-between align-items-center"
-            >
-              <div class="d-flex justify-content-around align-items-center">
-                <img
-                  src="./../../assets/assets(svg)/Ugonna ken.svg"
-                  alt="Ugbonna ken"
-                  class="review-img"
-                />
-                <div class="review-name">
-                  <p class="review-para">Ugbonna Ken</p>
-                  <p class="review-company">
-                    <span class="review-span">Reviewed</span> Mosaic Brand
-                  </p>
-                </div>
-              </div>
-              <div
-                class="rating d-flex justify-content-lg-end align-items-center"
-              >
-                <img
-                  src="./../../assets/assets(svg)/star-1-11.svg"
-                  alt=""
-                  class="rate 1"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-2-11.svg"
-                  alt=""
-                  class="rate 2"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-3-11.svg"
-                  alt=""
-                  class="rate 3"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-4-11.svg"
-                  alt=""
-                  class="rate 4"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-5-11.svg"
-                  alt=""
-                  class="rate 5"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="slide">
-          <div
-            class="review-content d-flex flex-column align-items-stretch justify-content-between"
-          >
-            <div class="">
-              <p class="review-para">
-                “I totally enjoyed using the application to keep record of my
-                activities. I’d highly recommend to everyone”
-              </p>
-            </div>
-            <div
-              class="review-id d-flex justify-content-between align-items-center"
-            >
-              <div class="d-flex justify-content-around align-items-center">
-                <img
-                  src="./../../assets/assets(svg)/Ugonna ken.svg"
-                  alt="Ugbonna ken"
-                  class="review-img"
-                />
-                <div class="review-name">
-                  <p class="review-para">Ugbonna Ken</p>
-                  <p class="review-company">
-                    <span class="review-span">Reviewed</span> Mosaic Brand
-                  </p>
-                </div>
-              </div>
-              <div
-                class="rating d-flex justify-content-lg-end align-items-center"
-              >
-                <img
-                  src="./../../assets/assets(svg)/star-1-11.svg"
-                  alt=""
-                  class="rate 1"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-2-11.svg"
-                  alt=""
-                  class="rate 2"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-3-11.svg"
-                  alt=""
-                  class="rate 3"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-4-11.svg"
-                  alt=""
-                  class="rate 4"
-                />
-                <img
-                  src="./../../assets/assets(svg)/star-5-11.svg"
-                  alt=""
-                  class="rate 5"
-                />
+                <ng-template #noRating> No Rating </ng-template>
               </div>
             </div>
           </div>
@@ -716,5 +111,10 @@
     </div>
 
     <app-review-now></app-review-now>
+    <div class="spinner-item">
+      <iframe
+        src="https://lottie.host/?file=3216f451-384a-4b43-bff5-a9dfc0777bea/BSKddAIRIa.json"
+      ></iframe>
+    </div>
   </div>
 </div>
