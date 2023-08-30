@@ -145,14 +145,10 @@
               type="submit"
               class="btn"
               id="submit-btn"
-              [disabled]="loading"
+              [disabled]="loading || pRating === 0 || !ratingGiven"
             >
               <span *ngIf="!loading">Submit</span>
-              <span
-                *ngIf="loading"
-                class="spinner-border spinner-btn"
-                role="status "
-              ></span>
+              <span *ngIf="loading" class="spinner-border spinner-btn" role="status "></span>
             </button>
 
             <div
