@@ -153,7 +153,11 @@
           </div>
         </div>
 
-        <button type="submit" class="btn sign-up-btn" [disabled]="loading">
+        <button
+          type="submit"
+          class="btn sign-up-btn"
+          [disabled]="loading || !usersForm.get('pConfirmPassword')?.value || usersForm.errors?.['PasswordNoMatch']"
+        >
           <span *ngIf="!loading">Create Account</span>
           <span
             *ngIf="loading"
@@ -166,8 +170,7 @@
           class="error-msg btn my-1"
           [ngClass]="{ 'fade-out': !successMessageVisible }"
         >
-          Missing required fields or email already exist!
-          <div class="progress-bar"></div>
+          {{ errorMessage }}
         </div>
         <div
           class="success-msg btn"
@@ -178,7 +181,7 @@
         </div>
       </form>
 
-      <p id="sign-in" class="mt-4">
+      <p id="sign-in" class="mt-1">
         Already have an account?
         <a id="sign-in" href="" routerLink="/sign-in"
           ><span id="sign-in">Sign in</span></a

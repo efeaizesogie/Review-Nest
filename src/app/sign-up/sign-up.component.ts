@@ -39,6 +39,7 @@ export function passwordValidator(): ValidatorFn {
 export class SignUpComponent {
   successMessageVisible = false;
   loading: boolean = false;
+  errorMessage: string = "";
   // showPassword: boolean = false;
   // fpr show password
   // toggleShowPassword() {
@@ -88,6 +89,8 @@ export class SignUpComponent {
     pEmail: string;
     pPassword: string;
   }) {
+    console.log(userDetails);
+
     const loadingScreen = document.querySelector(".loading-container");
     this.loading = true;
     // this.renderer.setStyle(loadingScreen, "display", "flex");
@@ -109,8 +112,8 @@ export class SignUpComponent {
 
             setTimeout(() => {
               this.accountSuccess = false;
-            }, 5000);
-          }, 3000);
+            }, 6000);
+          }, 5000);
           // this.router.navigate(['/sign-in']);
           // this.renderer.setStyle(loadingScreen, "display", "none");
           this.loading = false;
@@ -118,6 +121,24 @@ export class SignUpComponent {
         },
         (error: HttpErrorResponse) => {
           console.error("Error while registering user:", error);
+
+          if (
+            error.error.errormessage ===
+            '"company_name" is not allowed to be empty'
+          ) {
+            this.errorMessage = "Brand name cannot be empty";
+          } else if (
+            error.error.errormessage === '"email" is not allowed to be empty'
+          ) {
+            this.errorMessage = "Email cannot be empty";
+          } else if (
+            error.error.errormessage === '"password" is not allowed to be empty'
+          ) {
+            this.errorMessage = "Password cannot be empty";
+          } else {
+            this.errorMessage = error.error.message;
+          }
+
           setTimeout(() => {
             this.successMessageVisible = true;
             this.loading = false;
@@ -125,8 +146,12 @@ export class SignUpComponent {
 
             setTimeout(() => {
               this.successMessageVisible = false;
-            }, 4000);
-          }, 3000);
+            }, 6000);
+          }, 5000);
+
+          if (error.status === 400) {
+            console.log(this.errorMessage);
+          }
         }
       );
   }

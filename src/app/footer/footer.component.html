@@ -3,29 +3,57 @@
     <div class="d-flex flex-wrap justify-content-between">
       <div class="logo">
         <div class="d-flex mb-2">
-          <img
-            src="../../assets/assets(png)/group-2@2x.png"
-            alt=""
-            class="logo-img"
-          />
-          <a class="navbar-brnad brand-text ms-1">
+          <!-- <a class="navbar-brnad brand-text ms-1">
+            <img
+              src="../../assets/assets(png)/group-2@2x.png"
+              alt=""
+              class="logo-img"
+            />
             Review<span class="brand-span">Nest</span>
-          </a>
+          </a> -->
+
+          <app-logo></app-logo>
         </div>
       </div>
       <div class="d-flex flex-wrap footer-nav">
         <div class="col-item v-line">
           <div class="row footer-nav-item">
-            <a href="#" class="about-para">Search Businesses</a>
+            <a
+              href="#"
+              class="about-para"
+              appSmoothScroll="header"
+              routerLink=""
+              >Search Businesses</a
+            >
             <a href="#" class="about-para">Get Started</a>
           </div>
         </div>
         <div class="col col-item v-line">
           <div class="row footer-nav-item">
-            <a href="#" class="about-para">Home</a>
-            <a href="#" class="about-para">About Us</a>
-            <a href="#" class="about-para">Reviews</a>
-            <a href="#" class="about-para">Contact Us</a>
+            <a
+              class="about-para"
+              href="#"
+              appSmoothScroll="header"
+              routerLink=""
+              >Home
+            </a>
+            <a class="about-para" appSmoothScroll="about" href="#" routerLink=""
+              >About Us</a
+            >
+            <a
+              class="about-para"
+              href="#"
+              appSmoothScroll="reviews"
+              routerLink=""
+              >Reviews</a
+            >
+            <a
+              class="about-para"
+              href="#"
+              appSmoothScroll="contact"
+              routerLink=""
+              >Contact Us</a
+            >
           </div>
         </div>
         <div class="col col-item">
@@ -39,7 +67,7 @@
                   class="socials"
                 />
               </a>
-              <a class="nav-link">
+              <a class="nav-link" href="#">
                 <img
                   src="./../../assets/assets(svg)/003-twitter.svg"
                   alt="Twitter icon"
