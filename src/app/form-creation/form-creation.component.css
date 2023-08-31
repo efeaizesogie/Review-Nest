@@ -166,7 +166,7 @@ img#sec-profile-pic {
   align-items: center;
   gap: 8px;
   position: relative;
-  top: -45px;
+  top: -60px;
 }
 
 .profile-picture {
@@ -273,6 +273,10 @@ label {
   font-style: normal;
   font-weight: 600;
   line-height: 22px; /* 157.143% */
+}
+
+img#white-bg{
+  height: 99px;
 }
 
 label#top-label {
@@ -384,5 +388,9 @@ button#submit-btn:hover {
     position: absolute;
     top: 18px;
     left: 170px;
+  }
+
+  img#white-bg{
+    height: 87px;
   }
 }
