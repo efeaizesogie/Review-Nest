@@ -28,7 +28,7 @@
   font-size: 12px;
   color: #f2f7fb;
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 10px !important;
   font-family: "Open Sans", Helvetica;
   line-height: 18px;
 }

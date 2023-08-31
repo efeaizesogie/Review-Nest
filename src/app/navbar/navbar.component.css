@@ -61,6 +61,10 @@
   min-height: 350px;
 }
 
+.navbar-collapse.show {
+  min-height: 54px !important;
+}
+
 @media screen and (max-width: 980px) {
   .list-item {
     width: 100%;
@@ -89,5 +93,13 @@
 
   .link-active::after {
     width: 0;
+  }
+
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+  .navbar-collapse.show {
+    display: block !important;
+    min-height: 350px;
   }
 }
