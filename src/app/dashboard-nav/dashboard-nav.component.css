@@ -4,13 +4,13 @@ a#logo {
 
 .dash-nav {
   background: #010b39;
-  width: 318px;
+  width: 275px;
   height: 106%;
   font-family: "Open Sans", Helvetica;
 }
 
 .navbar-dashboard {
-  padding: 56px 32px 0 32px;
+  padding: 56px 25px 0 25px;
   height: fit-content;
 }
 
@@ -32,7 +32,7 @@ a#logo {
 
 .dash-nav-item {
   display: flex;
-  width: 256px;
+  width: 230px;
   padding: 16px 24px;
   align-items: center;
   gap: 24px;

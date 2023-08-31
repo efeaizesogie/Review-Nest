@@ -9,20 +9,20 @@
     <div class="box">
       <div class="d-flex mt-4 flex-column">
         <h2 class="sub-heading">Reviews Received</h2>
-        <div class="review-table d-flex flex-column">
-          <div class="table-container">
-            <table class="table table-bordered mt-3 review-tab">
-              <thead class="tab-head">
-                <tr>
-                  <th scope="col" class="col-5">Review</th>
-                  <th scope="col">Product</th>
-                  <th scope="col">Rating</th>
-                  <th scope="col">Details</th>
-                  <th scope="col">Date and Time</th>
-                </tr>
-              </thead>
-              <tbody>
-                <ng-container *ngIf="totalReviews > 0; else noReviews">
+        <ng-container *ngIf="totalReviews > 0; else noReviews">
+          <div class="review-table d-flex flex-column">
+            <div class="table-container">
+              <table class="table table-bordered mt-3 review-tab">
+                <thead class="tab-head">
+                  <tr>
+                    <th scope="col" class="col-4">Review</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Details</th>
+                    <th scope="col">Date and Time</th>
+                  </tr>
+                </thead>
+                <tbody>
                   <tr
                     class="tab-body"
                     *ngFor="let review of reviews.slice(startIndex, endIndex)"
@@ -66,45 +66,46 @@
                       </div>
                     </td>
                   </tr>
-                </ng-container>
-              </tbody>
-
-              <ng-template #noReviews>
-                <tr>
-                  <td colspan="5">No reviews available.</td>
-                </tr>
-              </ng-template>
-            </table>
-          </div>
-          <div class="scroll-nav">
-            <div
-              class="scroll-content d-flex align-items-center justify-content-center gap-2"
-            >
-              <img
-                src="./../../assets/dashboard/arrow-left.svg"
-                alt=""
-                (click)="prevPage()"
-              />
-              <!-- Display page numbers based on the totalReviews and itemsPerPage -->
-              <ng-container
-                *ngFor="let page of getPageNumbers(); let i = index"
-              >
-                <p
-                  class="page-number"
-                  [class.active]="currentPage === page"
-                  (click)="changePage(page)"
-                >
-                  {{ page }}
-                </p>
-              </ng-container>
-              <img
-                src="./../../assets/dashboard/arrow-right.svg"
-                alt=""
-                (click)="nextPage()"
-              />
+                </tbody>
+              </table>
             </div>
+            <ng-container *ngIf="totalReviews > 6">
+              <div class="scroll-nav">
+                <div
+                  class="scroll-content d-flex align-items-center justify-content-center gap-2"
+                >
+                  <img
+                    src="./../../assets/dashboard/arrow-left.svg"
+                    alt=""
+                    (click)="prevPage()"
+                  />
+
+                  <ng-container
+                    *ngFor="let page of getPageNumbers(); let i = index"
+                  >
+                    <p
+                      class="page-number"
+                      [class.active]="currentPage === page"
+                      (click)="changePage(page)"
+                    >
+                      {{ page }}
+                    </p>
+                  </ng-container>
+                  <img
+                    src="./../../assets/dashboard/arrow-right.svg"
+                    alt=""
+                    (click)="nextPage()"
+                  />
+                </div>
+              </div>
+            </ng-container>
           </div>
-        </div>
+        </ng-container>
+        <ng-template #noReviews>
+          <tr>
+            <td colspan="5">No reviews available.</td>
+          </tr>
+        </ng-template>
       </div>
     </div>
   </div>
