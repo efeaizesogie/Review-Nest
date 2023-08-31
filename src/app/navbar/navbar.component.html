@@ -58,7 +58,12 @@
           >
         </li>
       </ul>
-      <a href="#" class="btn btn-up my-2 list-item" routerLink="/sign-up"
+
+      <a
+        href="#"
+        class="btn btn-up my-2 list-item"
+        routerLink="/sign-up"
+        *ngIf="!accessToken"
         >Sign Up</a
       >
     </div>
